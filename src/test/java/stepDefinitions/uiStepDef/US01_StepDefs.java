@@ -1,6 +1,7 @@
 package stepDefinitions.uiStepDef;
 
 public class US01_StepDefs {
-    // Burasi coftlict alani
-    //Bu ilk step defs
+    public static void main(String[] args) {
+        System.out.println("I passed here, Vural");
+    }
 }
