@@ -2,6 +2,7 @@ package stepDefinitions.uiStepDef;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
@@ -51,4 +52,7 @@ public class Deneme_stepDef {
         BrowserUtilities.loginMethod(email, password);
 
     }
+
+
+
 }
