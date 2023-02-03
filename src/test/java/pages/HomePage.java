@@ -31,4 +31,8 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "(//*[text()='Blog'])")
     public WebElement blogLink;
 
+    //Sevinc US16
+    @FindBy(xpath = "//a[contains(text(),'blog')]" )
+    public WebElement blogOption;
+
 }
