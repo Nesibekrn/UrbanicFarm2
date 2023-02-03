@@ -3,6 +3,7 @@ package runners;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
+import stepDefinitions.uiStepDef.US017_StepDefs;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -13,7 +14,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/reports/rerun.txt"
         },
         features = "src/test/resources/features",
-        glue = "stepDefinitions"
+        glue = "stepDefinitions",
+        tags = "@US017"
 )
 public class CukesRunner {
 }

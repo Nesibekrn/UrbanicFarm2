@@ -10,4 +10,6 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement logoutButton;
+    @FindBy(xpath = "//a[contains(text(),'Discover Local Sellers Near You')]")
+    public WebElement discoverLink;
 }
