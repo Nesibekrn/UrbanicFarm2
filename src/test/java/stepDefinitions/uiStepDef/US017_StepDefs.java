@@ -14,11 +14,6 @@ import static stepDefinitions.Hooks.driver;
 
 public class US017_StepDefs extends CommonPage {
 
-    @Given("User goes to {string}")
-    public void user_goes_to(String url) {
-        driver.get(url);
-
-    }
     @When("User goes to bottom page")
     public void user_goes_to_bottom_page() {
        actions.sendKeys(Keys.END).perform();

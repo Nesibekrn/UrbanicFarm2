@@ -13,6 +13,11 @@ public abstract class CommonPage {
 
     private LoginPage loginPage;
     private HomePage homePage;
+    private AccountPage accountPage;
+    private AddressPage addressPage;
+    private RegisterPage registerPage;
+    private SellShareTradePage sellShareTradePage;
+
 
     public LoginPage getLoginPage() {
         if (loginPage == null) {
@@ -27,6 +32,37 @@ public abstract class CommonPage {
         }
         return homePage;
     }
+
+    public AddressPage getAddressPage() {
+        if (addressPage == null) {
+            addressPage = new AddressPage();
+        }
+        return addressPage;
+    }
+
+    public RegisterPage getRegisterPage() {
+        if (registerPage == null) {
+            registerPage = new RegisterPage();
+        }
+        return registerPage;
+    }
+
+    public SellShareTradePage getSellShareTradePage() {
+        if (sellShareTradePage == null) {
+            sellShareTradePage = new SellShareTradePage();
+        }
+        return sellShareTradePage;
+    }
+
+    public AccountPage getAccountPage() {
+        if (accountPage == null) {
+            accountPage = new AccountPage();
+        }
+        return accountPage;
+    }
+
+
+
 }
 
 
