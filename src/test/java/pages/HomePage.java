@@ -57,6 +57,14 @@ public class HomePage extends CommonPage {
     //Said S. US006
     @FindBy(css = "a:nth-child(4)")
     public WebElement contactUsLink;
+
+    // Vural US013
+    @FindBy(xpath = "//*[text()='Contribution to the Environment and Society']")
+    public WebElement contributionToTheEnvironmentAndSocietyHeading;
+
+    // Vural US013
+    @FindBy(xpath = "//*[text()='Register Now']")
+    public WebElement registerNowLink;
 }
 
 
