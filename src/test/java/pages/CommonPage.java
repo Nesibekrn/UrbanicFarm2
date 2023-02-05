@@ -18,6 +18,8 @@ public abstract class CommonPage {
     private RegisterPage registerPage;
     private SellShareTradePage sellShareTradePage;
 
+    private YopMail yopMail;
+
 
     public LoginPage getLoginPage() {
         if (loginPage == null) {
@@ -59,6 +61,13 @@ public abstract class CommonPage {
             accountPage = new AccountPage();
         }
         return accountPage;
+    }
+
+    public YopMail getYopMail() {
+        if (yopMail == null) {
+            yopMail = new YopMail();
+        }
+        return yopMail;
     }
 
 

@@ -7,6 +7,8 @@ import java.util.List;
 
 public class HomePage extends CommonPage {
 
+
+    //niyaz US02
     @FindBy(css = "//a[text()='Login']")
     public WebElement loginButton;
 
@@ -33,5 +35,14 @@ public class HomePage extends CommonPage {
     //Sevinc US16
     @FindBy(xpath = "//a[contains(text(),'blog')]" )
     public WebElement blogOption;
+
+    //US37-Niyaz
+    @FindBy(xpath = "(//*[text()='Welcome to Urbanic Farm!'])[1]")
+    public WebElement welcomeTheUrbanicFarmWindowText;
+    @FindBy(xpath = "//button[@class='close btn']")
+    public WebElement welcomeTheUrbanicFarmWindowCloseButton;
+
+    @FindBy(xpath = "//*[text()='Register']")
+    public WebElement registerLink;
 
 }

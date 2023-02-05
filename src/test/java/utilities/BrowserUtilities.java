@@ -2,9 +2,12 @@ package utilities;
 
 import enums.USERINFO;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.html5.LocalStorage;
 import org.openqa.selenium.html5.WebStorage;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -50,6 +53,31 @@ public class BrowserUtilities {
         Driver.getDriver().navigate().refresh();
         waitForPageToLoad(10);
 
+    }
+
+
+    public static void cleanTextInBox(WebElement element) {
+        String inputText = element.getAttribute("value");
+        if (inputText != null) {
+            for (int i = 0; i < inputText.length(); i++) {
+                element.sendKeys(Keys.BACK_SPACE);
+            }
+        }
+        wait(1);
+    }
+    public static void switchToWindow(String targetTitle) {
+        String origin = Driver.getDriver().getWindowHandle();
+        for (String handle : Driver.getDriver().getWindowHandles()) {
+            Driver.getDriver().switchTo().window(handle);
+            if (Driver.getDriver().getTitle().equals(targetTitle)) {
+                return;
+            }
+        }
+        Driver.getDriver().switchTo().window(origin);
+    }
+    public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeToWaitInSec));
+        return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
 
