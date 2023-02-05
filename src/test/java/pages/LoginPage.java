@@ -27,5 +27,22 @@ public class LoginPage extends CommonPage {
         submitButton.click();
     }
 
+    //US37-Niyaz-
+    @FindBy(xpath = "//*[text()='Forgot Password']")
+    public WebElement forgotPasswordLink;
+    @FindBy(xpath = "(//input[@type='email'])[2]")
+    public WebElement pleaseVerifyYourEmailBox;
+    @FindBy(xpath = "//*[text()='Please verify your email.']")
+    public WebElement pleaseVerifyYourEmailText;
+    @FindBy(xpath = "//*[text()='Verify Email']")
+    public WebElement verifyEmailButton;
+    @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
+    public WebElement alertText;
+    @FindBy(xpath = "//*[text()='We have sent the password reset link to your email. Check your mail box.']")
+    public WebElement weHaveSentResetLinkMessage;
+    @FindBy(css = ".text-center.mb-3")
+    public WebElement changePasswordTitle;
+
+
 
 }
