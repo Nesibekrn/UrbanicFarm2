@@ -12,9 +12,11 @@ public class HomePage extends CommonPage {
     @FindBy(css = "//a[text()='Login']")
     public WebElement loginButton;
 
-    //niyaz US02
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
     public WebElement logoutButton;
+    //ramazan US017
+    @FindBy(xpath = "//a[contains(text(),'Discover Local Sellers Near You')]")
+    public WebElement discoverLink;
 
     //niyaz US02
     @FindBy(xpath = "//*[@id='Urban\\u0131cFarm']")
@@ -44,4 +46,17 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//*[text()='Register']")
     public WebElement registerLink;
 
+    //Said S. US0027
+    @FindBy(css = ".Footer_social-links__FYd8U a" )
+    public WebElement facebookButton;
+
+    //Said S. US0028
+    @FindBy(xpath = "//div[@class='Footer_social-links__FYd8U']//following::a" )
+    public WebElement linkedInButton;
+
+    //Said S. US006
+    @FindBy(css = "a:nth-child(4)")
+    public WebElement contactUsLink;
 }
+
+
