@@ -9,7 +9,7 @@ public class HomePage extends CommonPage {
 
 
     //niyaz US02
-    @FindBy(css = "//a[text()='Login']")
+    @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
