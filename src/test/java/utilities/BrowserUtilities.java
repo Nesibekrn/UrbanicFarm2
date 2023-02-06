@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Random;
 
 import static stepDefinitions.Hooks.commonPage;
 import static stepDefinitions.Hooks.driver;
@@ -78,6 +79,16 @@ public class BrowserUtilities {
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeToWaitInSec));
         return wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public static String generateAnEmail() {
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        Random rnd = new Random();
+        StringBuilder email = new StringBuilder();
+        for (int i = 0; i < 5; i++) {
+            email.append(alphabet.charAt(rnd.nextInt(alphabet.length())));
+        }
+        return email + "@gmail.com";
     }
 
 
