@@ -1,6 +1,7 @@
 package utilities;
 
 import enums.USERINFO;
+import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -13,8 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.Random;
 
-import static stepDefinitions.Hooks.commonPage;
-import static stepDefinitions.Hooks.driver;
+import static stepDefinitions.Hooks.*;
 
 public class BrowserUtilities {
     public static void loginMethod(USERINFO userinfo) {
@@ -35,6 +35,7 @@ public class BrowserUtilities {
             throw new RuntimeException(e);
         }
     }
+
     public static void waitForPageToLoad(long timeOutInSeconds) {
         ExpectedCondition<Boolean> expectation = driver -> {
             assert driver != null;
@@ -50,7 +51,7 @@ public class BrowserUtilities {
 
     public static void localClear() {
         LocalStorage local = ((WebStorage) Driver.getDriver()).getLocalStorage();
-         local.clear();
+        local.clear();
         Driver.getDriver().navigate().refresh();
         waitForPageToLoad(10);
 
@@ -66,6 +67,7 @@ public class BrowserUtilities {
         }
         wait(1);
     }
+
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
         for (String handle : Driver.getDriver().getWindowHandles()) {
@@ -76,6 +78,7 @@ public class BrowserUtilities {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeToWaitInSec));
         return wait.until(ExpectedConditions.visibilityOf(element));
@@ -91,5 +94,16 @@ public class BrowserUtilities {
         return email + "@gmail.com";
     }
 
+    public static void assertTextColor(String rgba, WebElement webElement) {
+        Assert.assertEquals(rgba, webElement.getCssValue("color"));
+    }
 
+    public static void cleanTextFromWebelemnt(WebElement webElement) {
+        int valueLength = webElement.getAttribute("value").length();
+
+        for (int i = 0; i < valueLength; i++) {
+            actions.sendKeys(Keys.BACK_SPACE).perform();
+        }
+
+    }
 }

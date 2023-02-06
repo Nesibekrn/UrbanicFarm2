@@ -19,4 +19,28 @@ public class RegisterPage extends CommonPage{
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement submitRegistrationButton;
 
+    //US31_Sevinc
+    @FindBy(css = "#registration_form_firstname")
+    public static WebElement registrationFirstName;
+
+    @FindBy(css = "#registration_form_lastname")
+    public static WebElement registrationLastName;
+    // public static WebElement registrationFormLastName;
+
+    @FindBy(xpath = "//*[@id=\"registration_form_email\"]")
+    public static WebElement registrationFormEmailAdd;
+
+    @FindBy(css = "#registration_form_plainPassword")
+    public static WebElement registrationFormPassword;
+
+    @FindBy(css ="#registration_form_confirmPassword" )
+    public static WebElement registrationFormConfirmEmailAdd;
+
+    @FindBy(name = "zipCode")
+    public static WebElement registrationFormZipCode;
+
+    @FindBy(xpath = "//div[text()='Welcome!']")
+    public static WebElement Welcome;
+
+
 }
