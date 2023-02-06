@@ -2,10 +2,7 @@ package stepDefinitions.uiStepDef;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 import pages.CommonPage;
-
-import static stepDefinitions.Hooks.driver;
 
 public class US045_StepDefs extends CommonPage {
     @When("User clicks the Notification button")
