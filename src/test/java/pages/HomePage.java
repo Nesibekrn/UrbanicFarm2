@@ -9,7 +9,7 @@ public class HomePage extends CommonPage {
 
 
     //niyaz US02
-    @FindBy(css = "//a[text()='Login']")
+    @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
@@ -57,6 +57,8 @@ public class HomePage extends CommonPage {
     //Said S. US006
     @FindBy(css = "a:nth-child(4)")
     public WebElement contactUsLink;
+
+
 }
 
 
