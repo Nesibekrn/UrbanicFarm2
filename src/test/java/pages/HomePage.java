@@ -37,6 +37,10 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[contains(text(),'blog')]" )
     public WebElement blogOption;
 
+    //Sevinc US31
+    @FindBy(xpath = "//a[contains(text(),'Register')]")
+    public WebElement registerButton;
+
     //US37-Niyaz
     @FindBy(xpath = "(//*[text()='Welcome to Urbanic Farm!'])[1]")
     public WebElement welcomeTheUrbanicFarmWindowText;
