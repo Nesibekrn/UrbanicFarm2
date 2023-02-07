@@ -9,7 +9,7 @@ public class HomePage extends CommonPage {
 
 
     //niyaz US02
-    @FindBy(css = "//a[text()='Login']")
+    @FindBy(xpath = "//a[text()='Login']")
     public WebElement loginButton;
 
     @FindBy(xpath = "(//a[text()='Logout'])[2]")
@@ -37,6 +37,10 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[contains(text(),'blog')]" )
     public WebElement blogOption;
 
+    //Sevinc US31
+    @FindBy(xpath = "//a[contains(text(),'Register')]")
+    public WebElement registerButton;
+
     //US37-Niyaz
     @FindBy(xpath = "(//*[text()='Welcome to Urbanic Farm!'])[1]")
     public WebElement welcomeTheUrbanicFarmWindowText;
@@ -57,6 +61,18 @@ public class HomePage extends CommonPage {
     //Said S. US006
     @FindBy(css = "a:nth-child(4)")
     public WebElement contactUsLink;
+
+    // Vural US013
+    @FindBy(xpath = "//*[text()='Contribution to the Environment and Society']")
+    public WebElement contributionToTheEnvironmentAndSocietyHeading;
+
+    // Vural US013
+    @FindBy(xpath = "//*[text()='Register Now']")
+    public WebElement registerNowLink;
+
+    //Furkan US010
+    @FindBy(xpath = "//button[text()='Sell your produce']")
+    public  WebElement sellyourproduce;
 }
 
 
