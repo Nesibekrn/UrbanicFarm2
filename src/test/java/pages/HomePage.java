@@ -69,6 +69,10 @@ public class HomePage extends CommonPage {
     // Vural US013
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement registerNowLink;
+
+    //Furkan US010
+    @FindBy(xpath = "//button[text()='Sell your produce']")
+    public  WebElement sellyourproduce;
 }
 
 
