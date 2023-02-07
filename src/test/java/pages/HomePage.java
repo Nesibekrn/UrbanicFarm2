@@ -1,9 +1,19 @@
 package pages;
 
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.BrowserUtilities;
 
 import java.util.List;
+
+import static stepDefinitions.Hooks.driver;
+import static utilities.Driver.getDriver;
 
 public class HomePage extends CommonPage {
 
@@ -69,6 +79,22 @@ public class HomePage extends CommonPage {
     // Vural US013
     @FindBy(xpath = "//*[text()='Register Now']")
     public WebElement registerNowLink;
+
+    //ayten US020
+    @FindBy(xpath = "(//a[@href='/about'])[3]")
+    public WebElement aboutUs;
+    //ayten US022
+    @FindBy(xpath = "//a[@href='/privacy-policy']")
+    public WebElement privacyPolicy;
+    //ayten US023
+    @FindBy(xpath = "//a[@href='/terms-of-service']")
+    public WebElement termOfservice;
+
+
+
+
+
+
 }
 
 
