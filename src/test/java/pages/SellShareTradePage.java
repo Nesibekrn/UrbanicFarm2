@@ -24,4 +24,8 @@ public class SellShareTradePage extends CommonPage{
     @FindBy(className = "Notifications_notificationDownEmpty__JLqO3")
     public WebElement userVerifiesNotificationPageIsVisible;
 
+    //ayten US042
+    @FindBy(xpath ="(//a[@href='/account/events'])[2]")
+    public WebElement eventsButton;
+
 }

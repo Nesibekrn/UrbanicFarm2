@@ -73,6 +73,16 @@ public class HomePage extends CommonPage {
     //Furkan US010
     @FindBy(xpath = "//button[text()='Sell your produce']")
     public  WebElement sellyourproduce;
+
+    //ayten US020
+    @FindBy(xpath = "(//a[@href='/about'])[3]")
+    public WebElement aboutUs;
+    //ayten US022
+    @FindBy(xpath = "//a[@href='/privacy-policy']")
+    public WebElement privacyPolicy;
+    //ayten US023
+    @FindBy(xpath = "//a[@href='/terms-of-service']")
+    public WebElement termOfservice;
 }
 
 
