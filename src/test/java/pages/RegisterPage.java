@@ -23,6 +23,9 @@ public class RegisterPage extends CommonPage{
     @FindBy(css = "#registration_form_firstname")
     public static WebElement registrationFirstName;
 
+    @FindBy(xpath ="//input[@id='registration_form_middlename']" )
+    public static WebElement getRegistrationMiddleName;
+
     @FindBy(css = "#registration_form_lastname")
     public static WebElement registrationLastName;
     // public static WebElement registrationFormLastName;
