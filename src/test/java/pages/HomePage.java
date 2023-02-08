@@ -83,6 +83,10 @@ public class HomePage extends CommonPage {
     //ayten US023
     @FindBy(xpath = "//a[@href='/terms-of-service']")
     public WebElement termOfservice;
+
+    //nida
+    @FindBy(xpath = "//div/a[text()='Explore']")
+    public WebElement exploreLink;
 }
 
 
