@@ -6,13 +6,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import pages.CommonPage;
-import pages.RegisterPage;
 import utilities.BrowserUtilities;
-
 import java.util.List;
-
-import static pages.RegisterPage.*;
-import static pages.RegisterPage.registrationFormPassword;
 import static stepDefinitions.Hooks.commonPage;
 import static utilities.BrowserUtilities.assertTextColor;
 import static utilities.BrowserUtilities.cleanTextFromWebelemnt;
@@ -40,10 +35,10 @@ public class US031_StepDefs extends CommonPage {
             cleanTextFromWebelemnt(commonPage.getRegisterPage().registrationFirstName);
         }
     }
-        @And("user enter middle name in to middle name box on the registration form")
-        public void userEnterMiddleInToMiddleNameBoxOnTheRegistrationForm() {
-            BrowserUtilities.wait(2);
-            getRegistrationMiddleName.sendKeys("sevinc" + Keys.ENTER);
+    @And("user enter middle name in to middle name box on the registration form")
+    public void userEnterMiddleInToMiddleNameBoxOnTheRegistrationForm() {
+        BrowserUtilities.wait(2);
+        getRegisterPage().registrationMiddleName.sendKeys("sevinc" + Keys.ENTER);
 
     }
 
@@ -73,27 +68,27 @@ public class US031_StepDefs extends CommonPage {
         }
     }
 
-    @And("user enter valid email address box on the registration form")
-    public void userEnterValidEmailAddressBoxOnTheRegistrationForm() {
-        BrowserUtilities.wait(3);
-        registrationFormEmailAdd.sendKeys("sevinc@gmail.com" + Keys.ENTER);
-    }
+    //    @And("user enter valid email address box on the registration form")
+//    public void userEnterValidEmailAddressBoxOnTheRegistrationForm() {
+//        BrowserUtilities.wait(3);
+//        getRegisterPage().registrationFormEmailAdd.sendKeys("sevinc@gmail.com" + Keys.ENTER);
+//    }
     @And("user enters valid password")
     public void userEntersValidPassword() {
         BrowserUtilities.wait(2);
-        registrationFormPassword.sendKeys("12345Aa!" + Keys.ENTER);
+        BrowserUtilities.cleanTextFromWebelemnt(getRegisterPage().registrationFormPassword);
+        getRegisterPage().registrationFormPassword.sendKeys("12345Aa!" + Keys.ENTER);
     }
-
-    @And("user enters confirm password")
+    @And("user enters valid confirm password")
     public void userEntersValidConfirmPassword() {
         BrowserUtilities.wait(3);
-        registrationFormPassword.sendKeys("12345Aa!" + Keys.ENTER);
+        BrowserUtilities.cleanTextFromWebelemnt(getRegisterPage().registrationFormConfirmPassword);
+        getRegisterPage().registrationFormConfirmPassword.sendKeys("12345Aa!" + Keys.ENTER);
     }
-
     @Then("user enter code in to zip code box")
     public void userEnterCodeInToZipCodeBox() {
         BrowserUtilities.wait(2);
-        RegisterPage.registrationFormZipCode.sendKeys("12345" + Keys.ENTER);
+        getRegisterPage().registrationFormZipCode.sendKeys("12345" + Keys.ENTER);
 
     }
 }
