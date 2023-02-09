@@ -113,6 +113,17 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "(//address[contains(text(),'Dr San Jose, Californ')])")
     public WebElement addressContent;
 
+   // ugur
+
+    @FindBy(xpath ="//*[text()='Reduce waste, strengthen your community']" )
+    public WebElement ReduceWasteStrengthenYourCommunityHeading;
+
+    @FindBy(xpath ="//*[text()='Whats Near You']" )
+    public WebElement WhatsNearYouLink;
+
+    @FindBy(xpath ="//*[text()='Post Your Goods']" )
+    public WebElement PostYourGoodsLink;
+
 }
 
 
