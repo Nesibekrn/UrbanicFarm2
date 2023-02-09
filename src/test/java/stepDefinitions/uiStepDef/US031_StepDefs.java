@@ -39,6 +39,11 @@ public class US031_StepDefs extends CommonPage {
             assertTextColor(color.get(i), commonPage.getRegisterPage().registrationFirstName);
             cleanTextFromWebelemnt(commonPage.getRegisterPage().registrationFirstName);
         }
+    }
+        @And("user enter middle name in to middle name box on the registration form")
+        public void userEnterMiddleInToMiddleNameBoxOnTheRegistrationForm() {
+            BrowserUtilities.wait(2);
+            getRegistrationMiddleName.sendKeys("sevinc" + Keys.ENTER);
 
     }
 

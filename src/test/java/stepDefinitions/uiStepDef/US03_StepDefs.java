@@ -16,7 +16,6 @@ public class US03_StepDefs extends CommonPage {
         Assert.assertTrue(getHomePage().blogLink.isDisplayed());
         getHomePage().blogLink.click();
         BrowserUtilities.wait(2);
-
     }
 
     @Then("User verifies relevant Blog Page with url")
