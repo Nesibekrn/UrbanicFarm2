@@ -43,6 +43,12 @@ public class LoginPage extends CommonPage {
     @FindBy(css = ".text-center.mb-3")
     public WebElement changePasswordTitle;
 
-
+    // ayten us42
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement emailRegister;
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement passwordRegister;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement loginButton;
 
 }
