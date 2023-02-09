@@ -1,12 +1,9 @@
 package pages;
 
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-
-
 
 public class HomePage extends CommonPage {
 
@@ -86,9 +83,6 @@ public class HomePage extends CommonPage {
     //ayten US023
     @FindBy(xpath = "//a[@href='/terms-of-service']")
     public WebElement termOfservice;
-     //ayten UserStroy42
-    @FindBy(xpath = "(//a[@href='/auth/login'])[1]")
-    public WebElement loginmodule;
 
     //nida
     @FindBy(xpath = "//div/a[text()='Explore']")
@@ -123,6 +117,12 @@ public class HomePage extends CommonPage {
 
     @FindBy(xpath ="//*[text()='Post Your Goods']" )
     public WebElement PostYourGoodsLink;
+
+
+    //nida
+    @FindBy (xpath = "//div/a[@href= '/about']")
+    public WebElement aboutUsLink;
+
 
 }
 
