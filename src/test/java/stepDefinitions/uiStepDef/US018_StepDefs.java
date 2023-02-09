@@ -14,10 +14,7 @@ import static stepDefinitions.Hooks.driver;
 
 public class US018_StepDefs extends CommonPage {
 
-    @Given("User goes to {string}")
-    public void user_goes_to(String url) {
-        driver.get(url);
-    }
+
 
     @When("User scrolls down")
     public void user_scrolls_down() {
