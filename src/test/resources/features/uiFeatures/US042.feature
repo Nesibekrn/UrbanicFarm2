@@ -3,6 +3,7 @@ Feature: US042 Events should be clickable and relevant page should be visible on
   @UI
   Scenario: TC001 Events should be clickable and relevant page should be visible on the Sale-Pay-Trade page
 
+
     Given the user goes to "https://test.urbanicfarm.com/account/home".
     When the user clicks login module button
     Then the user verifies the page is "https://test.urbanicfarm.com/auth/login".
