@@ -10,6 +10,7 @@ Feature: US_031, As a user, I should be able to check valid and invalid name, su
       |12|rgba(245, 110, 105, 1)|
       |A!  |rgba(245, 110, 105, 1)|
       |Sevinc |rgba(72, 72, 72, 1)|
+    And user enter middle name in to middle name box on the registration form
 
   Scenario: US_031 TC_002
     When user enter letter to last name box on the registration form

@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 public class SellShareTradePage extends CommonPage{
 
     @FindBy(css = ".ml-2.Navbar_cartText__1jkrK")
@@ -23,5 +24,10 @@ public class SellShareTradePage extends CommonPage{
     //ramazan US04
     @FindBy(className = "Notifications_notificationDownEmpty__JLqO3")
     public WebElement userVerifiesNotificationPageIsVisible;
+
+    //ayten US042
+    @FindBy(xpath ="(//a[contains(text(),'Events')])[1]")
+    public WebElement eventsButton;
+
 
 }

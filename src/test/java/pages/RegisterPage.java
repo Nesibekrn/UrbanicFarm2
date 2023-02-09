@@ -1,7 +1,9 @@
 package pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 
 public class RegisterPage extends CommonPage{
 
@@ -23,6 +25,9 @@ public class RegisterPage extends CommonPage{
     @FindBy(css = "#registration_form_firstname")
     public static WebElement registrationFirstName;
 
+    @FindBy(xpath ="//input[@id='registration_form_middlename']" )
+    public static WebElement getRegistrationMiddleName;
+
     @FindBy(css = "#registration_form_lastname")
     public static WebElement registrationLastName;
     // public static WebElement registrationFormLastName;
@@ -41,6 +46,5 @@ public class RegisterPage extends CommonPage{
 
     @FindBy(xpath = "//div[text()='Welcome!']")
     public static WebElement Welcome;
-
 
 }
