@@ -96,6 +96,23 @@ public class HomePage extends CommonPage {
     //omer hoca
     @FindBy(css = "nav>a[href^='/account/home']")
     public WebElement accountName_navbar;
+
+    //gulsum US018
+    @FindBy(xpath = "(//*[text()='get the app'])[2]")
+    public WebElement getTheApp;
+
+    //gulsum US019
+    @FindBy(xpath = "(//a[text()='Sell-Share-Trade'])")
+    public WebElement sellShareTrade;
+
+    //gulsum US024
+    @FindBy(xpath = "(//a[@class='d-block'])")
+    public WebElement address;
+
+    //gulsum US024
+    @FindBy(xpath = "(//address[contains(text(),'Dr San Jose, Californ')])")
+    public WebElement addressContent;
+
 }
 
 
