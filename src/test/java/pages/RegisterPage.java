@@ -1,7 +1,9 @@
 package pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 
 public class RegisterPage extends CommonPage{
 
@@ -44,6 +46,5 @@ public class RegisterPage extends CommonPage{
 
     @FindBy(xpath = "//div[text()='Welcome!']")
     public static WebElement Welcome;
-
 
 }
