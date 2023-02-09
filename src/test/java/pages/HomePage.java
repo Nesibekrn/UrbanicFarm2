@@ -93,6 +93,9 @@ public class HomePage extends CommonPage {
     //nida
     @FindBy(xpath = "//div/a[text()='Explore']")
     public WebElement exploreLink;
+    //omer hoca
+    @FindBy(css = "nav>a[href^='/account/home']")
+    public WebElement accountName_navbar;
 }
 
 

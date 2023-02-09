@@ -13,6 +13,11 @@ import static stepDefinitions.Hooks.actions;
 import static stepDefinitions.Hooks.driver;
 
 public class US37_StepDefs extends CommonPage {
+    @Given("User verifies Login Link is clickable and clicks")
+    public void user_verifies_login_link_is_clickable_and_clicks() {
+        Assert.assertTrue(getHomePage().loginButton.isDisplayed());
+        getHomePage().loginButton.click();
+    }
     @When("User clicks Forgot Password Link")
     public void user_clicks_forgot_password_link() {
         getLoginPage().forgotPasswordLink.click();

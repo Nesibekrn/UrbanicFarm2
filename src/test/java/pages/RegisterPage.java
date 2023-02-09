@@ -46,5 +46,32 @@ public class RegisterPage extends CommonPage{
 
     @FindBy(xpath = "//div[text()='Welcome!']")
     public static WebElement Welcome;
+//ezra hoca
+@FindBy(css = "#registration_form_firstname")
+public WebElement firstname;
+
+    @FindBy(css = "#registration_form_middlename")
+    public WebElement middleName;
+
+    @FindBy(css = "#registration_form_lastname")
+    public WebElement lastName;
+
+    @FindBy(css = "#registration_form_email")
+    public WebElement email;
+
+    @FindBy(css = "#registration_form_plainPassword")
+    public WebElement password;
+
+    @FindBy(css = "#registration_form_confirmPassword")
+    public WebElement confirmPassword;
+    @FindBy(css = "[name='zipCode']")
+    public WebElement zipCode;
+
+    @FindBy(css = ".btn.alazea-btn")
+    public WebElement registerButton;
+    @FindBy(xpath = "//h1")
+    public WebElement welcome;
+
+
 
 }
