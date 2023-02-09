@@ -88,8 +88,11 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//div/a[text()='Explore']")
     public WebElement exploreLink;
     //omer hoca
+
     @FindBy(css = "nav>a[href^='/account/home']")
     public WebElement accountName_navbar;
+
+
 
     //gulsum US018
     @FindBy(xpath = "(//*[text()='get the app'])[2]")
@@ -123,7 +126,9 @@ public class HomePage extends CommonPage {
     @FindBy (xpath = "//div/a[@href= '/about']")
     public WebElement aboutUsLink;
 
-
+//Aytem Hanim
+    @FindBy(xpath = "(//a[@href='/auth/login'])[1]")
+    public WebElement loginmodule;
 }
 
 
