@@ -21,12 +21,12 @@ Feature: US037 As a user Forgot your password? and I should be able to check the
     Then User verifies "You password has been successfully changed.." alert is displayed
     Then User verifies to navigate to the Login Page
 
-    #  @UI
-#  @US37_TC02
-#  Scenario: Negative Scenario for not registered email
-#    Then User enters an invalid email
-#    Then User clicks Verify Email Button
-#    And User verifies "We cannot find an account with that e-mail address." alert is displayed
+      @UI
+  @US37_TC02
+  Scenario: Negative Scenario for not registered email
+    Then User enters an invalid email
+    Then User clicks Verify Email Button
+    And User verifies "We cannot find an account with that e-mail address." alert is displayed
 
 
   @UI
