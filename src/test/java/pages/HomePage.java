@@ -129,6 +129,9 @@ public class HomePage extends CommonPage {
 //Aytem Hanim
     @FindBy(xpath = "(//a[@href='/auth/login'])[1]")
     public WebElement loginmodule;
+    // ramazan US36
+    @FindBy(xpath = "//div[contains(text(),'Invalid creds')]")
+    public WebElement invalidAlert;
 }
 
 
