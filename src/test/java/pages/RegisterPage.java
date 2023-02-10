@@ -73,6 +73,10 @@ public WebElement firstname;
     @FindBy(xpath = "//h1")
     public WebElement welcome;
 
+    //Rumeysa
+    @FindBy(xpath = "//*[@name='zipCode']")
+    public WebElement zipCodeBox;
+
 
 
 }
