@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 
 public class SellShareTradePage extends CommonPage{
 
@@ -33,5 +35,14 @@ public class SellShareTradePage extends CommonPage{
    // @FindBy(xpath = "(//a[text()='About us']")
    @FindBy(xpath ="//nav/a[@href='/about']")
    public WebElement AboutUs;
+
+   //nida
+   @FindBy(xpath = "//*[@class='Navbar_linkContainer__2jWIM']/a")
+    public List<WebElement> navbarA;
+
+   //nida
+   @FindBy (xpath = "//*[@class='Navbar_linkContainer__2jWIM']/div")
+   public List<WebElement> navbarDiv;
+
 
 }
