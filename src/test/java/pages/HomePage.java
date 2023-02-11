@@ -83,6 +83,19 @@ public class HomePage extends CommonPage {
     //ayten US023
     @FindBy(xpath = "//a[@href='/terms-of-service']")
     public WebElement termOfservice;
+
+    //aziz
+    @FindBy(name = "email")
+    public WebElement emailBox;
+    //aziz
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement passwordBox;
+    //aziz
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement ssubmitButton;
+    //aziz
+    @FindBy(xpath = "//div[@class='Navbar_addHub__USGHm']")
+    public WebElement sellShareTradeButton;
 }
 
 
