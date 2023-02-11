@@ -3,6 +3,9 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
+
 public class SellShareTradePage extends CommonPage{
 
     @FindBy(css = ".ml-2.Navbar_cartText__1jkrK")
@@ -43,5 +46,14 @@ public class SellShareTradePage extends CommonPage{
     //aziz
     @FindBy(xpath = "//div[@class='CheckDistrictModal_x-btn__sVOij']")
     public WebElement relevantPageClose;
+
+   //nida
+   @FindBy(xpath = "//*[@class='Navbar_linkContainer__2jWIM']/a")
+    public List<WebElement> navbarA;
+
+   //nida
+   @FindBy (xpath = "//*[@class='Navbar_linkContainer__2jWIM']/div")
+   public List<WebElement> navbarDiv;
+
 
 }

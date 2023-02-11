@@ -30,7 +30,7 @@ public class RegisterPage extends CommonPage{
     @FindBy(css = "#registration_form_lastname")
     public  WebElement registrationLastName;
 
-    @FindBy(xpath = "//*[@id=\"registration_form_email\"]")
+    @FindBy(xpath = "//*[@id='registration_form_email']")
     public  WebElement registrationFormEmailAdd;
 
     @FindBy(css = "#registration_form_plainPassword")
