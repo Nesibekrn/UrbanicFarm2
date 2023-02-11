@@ -132,6 +132,19 @@ public class HomePage extends CommonPage {
     // ramazan US36
     @FindBy(xpath = "//div[contains(text(),'Invalid creds')]")
     public WebElement invalidAlert;
+
+    //aziz
+    @FindBy(name = "email")
+    public WebElement emailBox;
+    //aziz
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement passwordBox;
+    //aziz
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement ssubmitButton;
+    //aziz
+    @FindBy(xpath = "//div[@class='Navbar_addHub__USGHm']")
+    public WebElement sellShareTradeButton;
 }
 
 
