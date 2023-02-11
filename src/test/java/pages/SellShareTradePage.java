@@ -28,13 +28,24 @@ public class SellShareTradePage extends CommonPage{
     public WebElement userVerifiesNotificationPageIsVisible;
 
     //ayten US042
-    @FindBy(xpath ="(//a[contains(text(),'Events')])[1]")
+    @FindBy(xpath ="(//a[@href='/account/events'])[2]")
     public WebElement eventsButton;
 
     //ugur
    // @FindBy(xpath = "(//a[text()='About us']")
    @FindBy(xpath ="//nav/a[@href='/about']")
    public WebElement AboutUs;
+
+
+    //aziz
+    @FindBy(xpath = "(//*[text()='Scheduled delivery'])[1]")
+    public WebElement scheduledDeliveryLink;
+    //aziz
+    @FindBy(xpath = "//a[@class='Sidebar_section_btn__1sp6i h6 '][9]")
+    public WebElement relevantPageText;
+    //aziz
+    @FindBy(xpath = "//div[@class='CheckDistrictModal_x-btn__sVOij']")
+    public WebElement relevantPageClose;
 
    //nida
    @FindBy(xpath = "//*[@class='Navbar_linkContainer__2jWIM']/a")
