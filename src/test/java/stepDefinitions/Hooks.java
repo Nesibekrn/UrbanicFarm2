@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 
+import com.github.javafaker.Faker;
 import enums.USERINFO;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -28,6 +29,7 @@ public class Hooks {
     public static boolean isFullScreen = true;
     public static int width;
     public static int height;
+    public static Faker faker;
 
     @Before(value = "@headless", order = 0)
     public void setIsHeadless() {
@@ -55,6 +57,7 @@ public class Hooks {
         commonPage = new CommonPage() {
         };
         actions = new Actions(driver);
+        faker=new Faker();
     }
 
     @After(value = "@UI")

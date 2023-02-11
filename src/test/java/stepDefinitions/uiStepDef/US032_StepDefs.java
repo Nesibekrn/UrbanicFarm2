@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import pages.CommonPage;
 import pages.RegisterPage;
 import utilities.BrowserUtilities;
 import utilities.Driver;
@@ -17,43 +18,54 @@ import utilities.Driver;
 import static pages.RegisterPage.*;
 import static stepDefinitions.Hooks.driver;
 
-public class US032_StepDefs extends RegisterPage {
+public class US032_StepDefs extends CommonPage {
+
     @And("user enter first name box")
     public void userEnterFirstNameBox() {
-        registrationFirstName.sendKeys("sevinc" + Keys.ENTER);
+        BrowserUtilities.wait(2);
+        getRegisterPage().registrationFirstName.sendKeys("sevinc" + Keys.ENTER);
     }
     @And("user enter last name box")
     public void userEnterLastNameBox() {
         BrowserUtilities.wait(2);
-        registrationLastName.sendKeys("ozmen" + Keys.ENTER);
+        getRegisterPage().registrationLastName.sendKeys("ozmen" + Keys.ENTER);
+    }
+    @And("user enter valid email address on the registration form")
+    public void userEnterValidEmailAddressOnTheRegistrationForm() {
+        BrowserUtilities.wait(2);
+        getRegisterPage().registrationFormEmailAdd.sendKeys("sevinc@gmail.com"+Keys.ENTER);
+
     }
     @Given("user enters invalid password")
     public void userEntersInvalidPassword() {
         BrowserUtilities.wait(2);
-        registrationFormPassword.sendKeys("11111" + Keys.ENTER);
+        getRegisterPage().registrationFormPassword.sendKeys("11111" + Keys.ENTER);
     }
     @Then("user verifies that the alert is displayed on the Registration Page")
     public void userVerifiesThatTheAlertIsDisplayedOnTheRegistrationPage() {
         Assert.assertEquals("Must contain at least one number and one uppercase and lowercase letter, " +
                         "and at least 8 or more characters",
-                RegisterPage.registrationFormPassword.getAttribute("title"));
-    }
-    @And("user enters valid confirm password")
-    public void userEntersValidConfirmPassword() {
-        registrationFormPassword.sendKeys("12345Aa!" + Keys.ENTER);
+                getRegisterPage().registrationFormPassword.getAttribute("title"));
     }
     @When("user enter invalid confirm password")
     public void userEnterInvalidConfirmPassword() {
-        registrationFormConfirmEmailAdd.sendKeys("12345Aaa" + Keys.ENTER);
+        BrowserUtilities.wait(2);
+        getRegisterPage().registrationFormConfirmEmailAdd.sendKeys("12345Aaa" + Keys.ENTER);
     }
     @Then("user verifies that the {string} alert appears")
     public void userVerifiesThatTheAlertAppears(String arg0) {
+        BrowserUtilities.wait(2);
         Assert.assertEquals("Passwords Don't Match",
-                RegisterPage.registrationFormConfirmEmailAdd.getAttribute("validationMessage"));
+                getRegisterPage().registrationFormConfirmEmailAdd.getAttribute("validationMessage"));
 
     }
+
+//    @And("user enters valid confirm password")
+//    public void userEntersValidConfirmPassword() {
+//        BrowserUtilities.wait(2);
+//        registrationFormConfirmPassword.sendKeys("12345Aa!" + Keys.ENTER);
+//    }
+
+
 }
-
-
-
 

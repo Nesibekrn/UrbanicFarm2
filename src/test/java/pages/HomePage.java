@@ -84,6 +84,55 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[@href='/terms-of-service']")
     public WebElement termOfservice;
 
+    //nida
+    @FindBy(xpath = "//div/a[text()='Explore']")
+    public WebElement exploreLink;
+    //omer hoca
+
+    @FindBy(css = "nav>a[href^='/account/home']")
+    public WebElement accountName_navbar;
+
+
+
+    //gulsum US018
+    @FindBy(xpath = "(//*[text()='get the app'])[2]")
+    public WebElement getTheApp;
+
+    //gulsum US019
+    @FindBy(xpath = "(//a[text()='Sell-Share-Trade'])")
+    public WebElement sellShareTrade;
+
+    //gulsum US024
+    @FindBy(xpath = "(//a[@class='d-block'])")
+    public WebElement address;
+
+    //gulsum US024
+    @FindBy(xpath = "(//address[contains(text(),'Dr San Jose, Californ')])")
+    public WebElement addressContent;
+
+   // ugur
+
+    @FindBy(xpath ="//*[text()='Reduce waste, strengthen your community']" )
+    public WebElement ReduceWasteStrengthenYourCommunityHeading;
+
+    @FindBy(xpath ="//*[text()='Whats Near You']" )
+    public WebElement WhatsNearYouLink;
+
+    @FindBy(xpath ="//*[text()='Post Your Goods']" )
+    public WebElement PostYourGoodsLink;
+
+
+    //nida
+    @FindBy (xpath = "//div/a[@href= '/about']")
+    public WebElement aboutUsLink;
+
+//Aytem Hanim
+    @FindBy(xpath = "(//a[@href='/auth/login'])[1]")
+    public WebElement loginmodule;
+    // ramazan US36
+    @FindBy(xpath = "//div[contains(text(),'Invalid creds')]")
+    public WebElement invalidAlert;
+
     //aziz
     @FindBy(name = "email")
     public WebElement emailBox;

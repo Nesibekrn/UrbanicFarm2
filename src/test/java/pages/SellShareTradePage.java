@@ -28,6 +28,11 @@ public class SellShareTradePage extends CommonPage{
     @FindBy(xpath ="(//a[@href='/account/events'])[2]")
     public WebElement eventsButton;
 
+    //ugur
+   // @FindBy(xpath = "(//a[text()='About us']")
+   @FindBy(xpath ="//nav/a[@href='/about']")
+   public WebElement AboutUs;
+
 
     //aziz
     @FindBy(xpath = "(//*[text()='Scheduled delivery'])[1]")
