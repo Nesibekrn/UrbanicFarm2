@@ -18,4 +18,6 @@ public class US04_StepDefs extends CommonPage {
     public void userVerifiesRelaventPageIs(String expectedUrl) {
         Assert.assertEquals(expectedUrl, driver.getCurrentUrl());
     }
+
+
 }

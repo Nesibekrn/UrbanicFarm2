@@ -26,7 +26,6 @@ Feature: US_031, As a user, I should be able to check valid and invalid name, su
       |A!  |rgba(245, 110, 105, 1)|
       |sevinc@gmail.com |rgba(72, 72, 72, 1)|
 
-    And user enter valid email address box on the registration form
     And user enters valid password
-    And user enters confirm password
+    And user enters valid confirm password
     Then user enter code in to zip code box

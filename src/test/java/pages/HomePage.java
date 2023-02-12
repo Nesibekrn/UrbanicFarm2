@@ -1,12 +1,9 @@
 package pages;
 
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-
-
 
 public class HomePage extends CommonPage {
 
@@ -86,16 +83,84 @@ public class HomePage extends CommonPage {
     //ayten US023
     @FindBy(xpath = "//a[@href='/terms-of-service']")
     public WebElement termOfservice;
-     //ayten UserStroy42
-    @FindBy(xpath = "(//a[@href='/auth/login'])[1]")
-    public WebElement loginmodule;
 
     //nida
     @FindBy(xpath = "//div/a[text()='Explore']")
     public WebElement exploreLink;
     //omer hoca
+
     @FindBy(css = "nav>a[href^='/account/home']")
     public WebElement accountName_navbar;
+
+
+
+    //gulsum US018
+    @FindBy(xpath = "(//*[text()='get the app'])[2]")
+    public WebElement getTheApp;
+
+    //gulsum US019
+    @FindBy(xpath = "(//a[text()='Sell-Share-Trade'])")
+    public WebElement sellShareTrade;
+
+    //gulsum US024
+    @FindBy(xpath = "(//a[@class='d-block'])")
+    public WebElement address;
+
+    //gulsum US024
+    @FindBy(xpath = "(//address[contains(text(),'Dr San Jose, Californ')])")
+    public WebElement addressContent;
+
+   // ugur
+
+    @FindBy(xpath ="//*[text()='Reduce waste, strengthen your community']" )
+    public WebElement ReduceWasteStrengthenYourCommunityHeading;
+
+    @FindBy(xpath ="//*[text()='Whats Near You']" )
+    public WebElement WhatsNearYouLink;
+
+    @FindBy(xpath ="//*[text()='Post Your Goods']" )
+    public WebElement PostYourGoodsLink;
+
+
+    //nida
+    @FindBy (xpath = "//div/a[@href= '/about']")
+    public WebElement aboutUsLink;
+
+//Aytem Hanim
+    @FindBy(xpath = "(//a[@href='/auth/login'])[1]")
+    public WebElement loginmodule;
+    // ramazan US36
+    @FindBy(xpath = "//div[contains(text(),'Invalid creds')]")
+    public WebElement invalidAlert;
+
+    //aziz
+    @FindBy(name = "email")
+    public WebElement emailBox;
+    //aziz
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement passwordBox;
+    //aziz
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement ssubmitButton;
+    //aziz
+    @FindBy(xpath = "//div[@class='Navbar_addHub__USGHm']")
+    public WebElement sellShareTradeButton;
+
+    //Rumeysa
+    @FindBy(xpath = "//a[text()='Phone:']")
+    public WebElement phoneHomePage;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logoutButton2;
+
+    //Furkan
+    @FindBy(xpath = "//button[text()='Register now!']" )
+    public WebElement registernow;
+
+    @FindBy(xpath = "//button[text()='GO WEFUNDER']" )
+    public WebElement goWefunderButton;
+
+
 }
 
 

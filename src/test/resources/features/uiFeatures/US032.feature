@@ -4,7 +4,7 @@ Feature: US032, User should be able to check valid and invalid passwords.
     And user clicks on registration button on the navbar
     And user enter first name box
     And user enter last name box
-    And user enter valid email address box on the registration form
+    And user enter valid email address on the registration form
 
   @UI
   @US032

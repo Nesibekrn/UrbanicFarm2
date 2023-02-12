@@ -51,4 +51,12 @@ public class LoginPage extends CommonPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement loginButton;
 
+    //gulsum US035
+    @FindBy(xpath = "(//input[@name='email'])")
+    public WebElement emailBox;
+
+    @FindBy(xpath = "(//input[@type='password'])")
+    public WebElement passwordBox;
+
+
 }
