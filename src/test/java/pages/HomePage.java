@@ -145,6 +145,15 @@ public class HomePage extends CommonPage {
     //aziz
     @FindBy(xpath = "//div[@class='Navbar_addHub__USGHm']")
     public WebElement sellShareTradeButton;
+
+    //Rumeysa
+    @FindBy(xpath = "//a[text()='Phone:']")
+    public WebElement phoneHomePage;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logoutButton2;
+
+
 }
 
 
