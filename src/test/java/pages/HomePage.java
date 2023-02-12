@@ -153,6 +153,13 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//a[text()='Logout']")
     public WebElement logoutButton2;
 
+    //Furkan
+    @FindBy(xpath = "//button[text()='Register now!']" )
+    public WebElement registernow;
+
+    @FindBy(xpath = "//button[text()='GO WEFUNDER']" )
+    public WebElement goWefunderButton;
+
 
 }
 
