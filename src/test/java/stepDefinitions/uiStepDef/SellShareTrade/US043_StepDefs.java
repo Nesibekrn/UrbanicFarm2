@@ -13,14 +13,14 @@ public class US043_StepDefs extends CommonPage {
     @Then("User clicks {string} username")
     public void user_clicks_username(String userNameCristian) {
         BrowserUtilities.wait(3);
-        getAccountPage().userNameVerify.click();
+        getSellShareTradePage().userNameVerify.click();
         BrowserUtilities.wait(3);
     }
 
     @Then("User verifies the username is visible")
     public void user_verifies_the_username_is_visible() {
         BrowserUtilities.wait(3);
-        Assert.assertTrue(getAccountPage().userNameVisible.isDisplayed());
+        Assert.assertTrue(getSellShareTradePage().userNameVisible.isDisplayed());
         BrowserUtilities.wait(3);
     }
 
