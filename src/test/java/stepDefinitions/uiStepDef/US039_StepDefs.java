@@ -16,6 +16,7 @@ public class US039_StepDefs extends CommonPage {
     public void user_click_the_login_link() {
         getHomePage().loginButton.click();
     }
+
     @Then("User enter valid email address & password & clicks the login button")
     public void user_enter_valid_email_address_password_clicks_the_login_button() {
         getLoginPage().loginMethod(ConfigurationReader.getProperty("buyerEmail"), ConfigurationReader.getProperty("buyerPassword"));
