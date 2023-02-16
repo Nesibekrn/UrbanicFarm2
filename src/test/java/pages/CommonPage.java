@@ -17,9 +17,42 @@ public abstract class CommonPage {
     private AddressPage addressPage;
     private RegisterPage registerPage;
     private SellShareTradePage sellShareTradePage;
-
     private YopMail yopMail;
+    private DeliveryPickupSettingsPage deliveryPickupSettingsPage;
+    private OrdersPage ordersPage;
+    private WelcomePage welcomePage;
+    private YourProductsServicesPage yourProductsServicesPage;
 
+
+
+
+    public YourProductsServicesPage getYourProductsServicesPage() {
+        if(yourProductsServicesPage==null){
+            yourProductsServicesPage=new YourProductsServicesPage();
+        }
+        return yourProductsServicesPage;
+    }
+
+    public WelcomePage getWelcomePage() {
+        if(welcomePage==null){
+            welcomePage=new WelcomePage();
+        }
+        return welcomePage;
+    }
+
+    public OrdersPage getOrdersPage() {
+        if(ordersPage==null){
+            ordersPage=new OrdersPage();
+        }
+        return ordersPage;
+    }
+
+    public DeliveryPickupSettingsPage getDeliveryPickupSettingsPage() {
+        if (deliveryPickupSettingsPage==null) {
+            deliveryPickupSettingsPage = new DeliveryPickupSettingsPage();
+        }
+        return deliveryPickupSettingsPage;
+    }
 
     public LoginPage getLoginPage() {
         if (loginPage == null) {
