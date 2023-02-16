@@ -1,16 +1,23 @@
 package stepDefinitions.uiStepDef;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import pages.CommonPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
+import utilities.JSutilities;
 
 import java.util.List;
+import java.util.Set;
 
-import static stepDefinitions.Hooks.commonPage;
-import static stepDefinitions.Hooks.driver;
+import static stepDefinitions.Hooks.*;
 
 public class Deneme_stepDef {
 
@@ -22,7 +29,7 @@ public class Deneme_stepDef {
 
     @Given("Scenario Outline {string} and {string}")
     public void scenarioOutlineAnd(String email, String password) {
-     //Assert.fail();
+        //Assert.fail();
         BrowserUtilities.loginMethod(email, password);
     }
 
@@ -52,7 +59,4 @@ public class Deneme_stepDef {
         BrowserUtilities.loginMethod(email, password);
 
     }
-
-
-
 }

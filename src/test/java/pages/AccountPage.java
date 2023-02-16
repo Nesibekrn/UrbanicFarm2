@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 
 
-public class AccountPage extends CommonPage{
+public class AccountPage extends CommonPage {
 
     @FindBy(xpath = "//a[contains(text(),'ayten')]")
     public WebElement accountName;
@@ -52,13 +52,6 @@ public class AccountPage extends CommonPage{
 
     @FindBy(css = "span.AccountLayout_backtoTop__1FvtX")
     public WebElement toggle;
-
-    //Gulsum US043
-    @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
-    public WebElement userNameVerify;
-
-    @FindBy(xpath = "((//td[@class='Profile_td__w9cTI'])[2])")
-    public WebElement userNameVisible;
-
-
 }
+
+
