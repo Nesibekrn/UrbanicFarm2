@@ -1,4 +1,9 @@
 package stepDefinitions.uiStepDef;
 
-public class US049_StepDefs {
+import pages.CommonPage;
+
+public class US049_StepDefs extends CommonPage {
+    /*
+      -------------------
+     */
 }
