@@ -61,6 +61,15 @@ public class SellShareTradePage extends CommonPage{
    public List<WebElement> navbarDiv;
 
 
+    //Gulsum US043
+    @FindBy(xpath = "//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']")
+    public WebElement userNameVerify;
+
+    @FindBy(xpath = "((//td[@class='Profile_td__w9cTI'])[2])")
+    public WebElement userNameVisible;
+
+
+
 }
 
 
