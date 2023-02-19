@@ -36,6 +36,11 @@ public class SellShareTradePage extends CommonPage{
    @FindBy(xpath ="//nav/a[@href='/about']")
    public WebElement AboutUs;
 
+    @FindBy(xpath = "//select[@id='sellerRate']")
+    public WebElement AnySellerRating;
+
+    @FindBy(xpath = "//select[@id='productRate']")
+    public WebElement AnyProductRating;
 
     //aziz
     @FindBy(xpath = "(//*[text()='Scheduled delivery'])[1]")
@@ -57,3 +62,5 @@ public class SellShareTradePage extends CommonPage{
 
 
 }
+
+
