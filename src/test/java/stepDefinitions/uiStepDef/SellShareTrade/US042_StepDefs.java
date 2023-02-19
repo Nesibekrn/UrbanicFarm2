@@ -4,6 +4,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import pages.*;
 import utilities.BrowserUtilities;
 
@@ -78,7 +80,7 @@ public class US042_StepDefs {
         Assert.assertTrue(sellShareTradePage.eventsButton.isEnabled());
         BrowserUtilities.wait(2);
         sellShareTradePage.eventsButton.click();
-
+        BrowserUtilities.wait(2);
 
     }
 }
