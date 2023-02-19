@@ -15,6 +15,7 @@ public class US022_StepDefs {
 
         BrowserUtilities.wait(2);
         homePage.privacyPolicy.click();
+        BrowserUtilities.wait(3);
     }
 
     @Then("the user verifies the Privacy Policy is enabled.")
