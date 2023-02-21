@@ -45,6 +45,36 @@ public class DeliveryPickupSettingsPage extends  CommonPage{
         @FindBy(xpath = "//div[@id='availabilityBranch']" )
         public WebElement availableTime;
 
+        //nida
+        @FindBy (xpath= "//a[@class='Navbar_textLink__f6_Al cursor-pointer ml-4 mr-3 text-capitalize']" )
+        public WebElement navbarName;
 
-    }
+        @FindBy (xpath = "//span[@class='h4']")
+        public WebElement welcomeAlertClose;
+
+        @FindBy (xpath = "//input[@id='BUYER_PICKUP']\n")
+        public WebElement buyerPickUp;
+
+        @FindBy (xpath = "//input[@id='startTime']")
+        public WebElement pickUp_StartTime;
+
+        @FindBy (xpath = "//input[@id='endTime']")
+        public WebElement pickUp_EndTime;
+
+        @FindBy (xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']\n")
+        public WebElement alertText;
+
+        @FindBy (xpath = "//button[@class='btn btn-outline-success ml-3 mt-3']")
+        public WebElement pickUp_UpDate;
+
+        @FindBy (xpath = "//input[@id='SELLER_DELIVERY']")
+        public WebElement sellerDelivery;
+
+        @FindBy (xpath = "//input[@id='SELLER_FLEXIBLE']")
+        public WebElement sellerFlexible;
+
+
+
+
+}
 
