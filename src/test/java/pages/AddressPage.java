@@ -46,7 +46,6 @@ public class AddressPage extends CommonPage{
     @FindBy(xpath = "(//*[text()='Mark as a delivery address'])[2]")
     public WebElement addressInformation;
 
-
     @FindBy(xpath = "(//button[@class='btn btn-outline-success ml-3'])[1]")
     public WebElement submitButtonToAddAddress;
 
@@ -71,6 +70,10 @@ public class AddressPage extends CommonPage{
     @FindBy(css = "#postal")
     public WebElement zipNumberBox;
 
+    //Said US060
+    @FindBy(xpath = "//input[@placeholder='Search Places ...']")
+    public WebElement postalBoxSearchBar;
+
     @FindBy(css = ".text-center.mb-4")
     public WebElement alertAfterClickedRemoveButtonOnAddressSection;
 
@@ -82,4 +85,35 @@ public class AddressPage extends CommonPage{
 
     @FindBy(xpath = "//div[text()='Address deleted']")
     public WebElement addressDeletedAlertMessageOnAddressSection;
+
+    // Said US060
+    @FindBy(xpath = "(//*[@role='option'])[1]")
+    public WebElement optionalAddress;
+
+    //Said US060
+    @FindBy(xpath = "(//input[@id='isDefault'])[1]")
+    public WebElement markAsDeliveryAddress;
+
+    //Said US060
+    @FindBy(xpath = "(//input[@id='isSellerAddress'])[1]")
+    public WebElement markAsSalesAddress;
+
+    @FindBy(xpath = "//button[normalize-space()='Submit']")
+    public WebElement submitButtonToCreateAddress;
+
+    @FindBy(xpath = "//button[@name='sales']")
+    public WebElement mySalesAddressLink;
+
+    @FindBy(xpath = "//button[@class='btn btn-outline-success']")
+    public WebElement addNewAddressLink;
+
+    //Said US060
+    @FindBy(xpath = "//button[normalize-space()='Remove']")
+    public WebElement removeExistingAddressButton;
+
+    //Said US060
+    @FindBy(xpath = "//button[normalize-space()='Yes']")
+    public WebElement confirmingOfRemoveExistingAddress;
 }
+
+

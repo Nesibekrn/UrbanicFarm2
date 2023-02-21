@@ -160,6 +160,9 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//button[text()='GO WEFUNDER']" )
     public WebElement goWefunderButton;
 
+    //Said US060
+    @FindBy(xpath = "(//span[contains(text(),'Sell-Share-Trade')])[1]")
+    public WebElement sellShareTradeLink;
 
 }
 
