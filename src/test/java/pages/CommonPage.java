@@ -22,6 +22,7 @@ public abstract class CommonPage {
     private OrdersPage ordersPage;
     private WelcomePage welcomePage;
     private YourProductsServicesPage yourProductsServicesPage;
+    private  CartPage cartPage;
 
 
 
@@ -38,6 +39,12 @@ public abstract class CommonPage {
             welcomePage=new WelcomePage();
         }
         return welcomePage;
+    }
+    public CartPage getCartPage() {
+        if (cartPage == null) {
+            cartPage = new CartPage();
+        }
+        return cartPage;
     }
 
     public OrdersPage getOrdersPage() {
