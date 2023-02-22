@@ -1,26 +1,20 @@
-package stepDefinitions.uiStepDef;
+package stepDefinitions.uiStepDef.Welcome;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.CommonPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
-import utilities.Driver;
-
-import static stepDefinitions.Hooks.driver;
 
 public class US064_StepDefs extends CommonPage {
- Select select;
-   // @Given("User goes to https://test.urbanicfarm.com/")
-  // public void userGoesToHttpsTestUrbanicfarmCom(String baseUrl) {
-  // @Given("User go to {baseUrl}")
-   //public void userGoTo(String baseUrl) {
-     //  Driver.getDriver().get(ConfigurationReader.getProperty(baseUrl));
-       //driver.get(url);
+
+
+    Select select;
+
+
+
 
 
 
@@ -39,34 +33,40 @@ public class US064_StepDefs extends CommonPage {
     @Then("User seller rating icon clicked")
     public void userSellerRatingIconClicked() {
         BrowserUtilities.wait(4);
-        getSellShareTradePage().AnySellerRating.click();
+        getWelcomePage().AnySellerRating.click();
     }
 
     @Then("User selected seller rating from the dropdown menu")
-    public void userSelectedSellerRatingFromTheDropdownMenu(WebElement element) {
-    select=new Select(element);
+    public void userSelectedSellerRatingFromTheDropdownMenu() {
+    select=new Select(getWelcomePage().AnySellerRating);
     select.selectByIndex(2);
-       System.out.println(select.getFirstSelectedOption().getText());
+       //System.out.println(select.getFirstSelectedOption().getText());
     }
 
     @Then("User displays the selected seller rating on the screen")
     public void userDisplaysTheSelectedSellerRatingOnTheScreen() {
-getSellShareTradePage().AnySellerRating.isDisplayed();
+     // getSellShareTradePage().AnySellerRating.isDisplayed();
+   Assert.assertEquals("3",select.getFirstSelectedOption().getText());
     }
 
 
-    @Then("User product seller rating icon clicked")
-    public void userProductSellerRatingIconClicked() {
+    @Then("User product rating icon clicked")
+    public void userProductRatingIconClicked() {
+        BrowserUtilities.wait(4);
+        getWelcomePage().AnyProductRating.click();
     }
 
 
     @Then("User selected product rating from the dropdown menu")
     public void userSelectedProductRatingFromTheDropdownMenu() {
+        select=new Select(getWelcomePage().AnyProductRating);
+        select.selectByIndex(2);
     }
 
 
     @Then("User displays the selected  product rating on the screen")
     public void userDisplaysTheSelectedProductRatingOnTheScreen() {
+    Assert.assertEquals("3",select.getFirstSelectedOption().getText());
     }
 
 
