@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import pages.CommonPage;
 import utilities.BrowserUtilities;
+import utilities.DatabaseUtilities;
 import utilities.Driver;
 
 
@@ -75,12 +76,12 @@ public class Hooks {
 
     @Before("@DB")
     public void setupDatabase() {
-
+        DatabaseUtilities.createConnection();
     }
 
     @After("@DB")
     public void closeDatabase() {
-
+        DatabaseUtilities.closeConnection();
     }
 
     @Before(order = 2, value = "@buyer")
