@@ -24,6 +24,7 @@ import static stepDefinitions.Hooks.*;
 
 public class BrowserUtilities {
     static Random random = new Random();
+
     public static void loginMethod(USERINFO userinfo) {
         driver.get("https://test.urbanicfarm.com/auth/login");
         commonPage.getLoginPage().loginMethod(userinfo);
@@ -105,7 +106,7 @@ public class BrowserUtilities {
     }
 
     public static void cleanTextFromWebelemnt(WebElement webElement) {
-       // omer -> 4 -> 4 defa backspace
+        // omer -> 4 -> 4 defa backspace
         webElement.click();
         // a -> 1
         int valueLength = webElement.getAttribute("value").length();
@@ -114,6 +115,7 @@ public class BrowserUtilities {
             actions.sendKeys(Keys.BACK_SPACE).perform();
         }
     }
+
     public static void scrollToElement(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", element);
     }
@@ -277,8 +279,7 @@ public class BrowserUtilities {
             fakeResult.append(random.nextInt(10));
 
         }
-        return "1"+fakeResult.toString();
-
+        return "1" + fakeResult.toString();
 
 
     }
@@ -304,6 +305,7 @@ public class BrowserUtilities {
         return flag;
 
     }
+
     /**
      * method javascript kullanilarak verilen webelemente tiklanmasini sagliyor
      *
@@ -352,7 +354,7 @@ public class BrowserUtilities {
      * @since 11.02.2023
      */
     public static String getStatusOfProduct(String productName) {
-        return driver.findElement(By.xpath("//a[@title='"+productName+"']/../../span")).getText();
+        return driver.findElement(By.xpath("//a[@title='" + productName + "']/../../span")).getText();
 
     }
 
@@ -407,5 +409,8 @@ public class BrowserUtilities {
         Assert.assertEquals(expectedToastMessage, actualToastMessage);
     }
 
+    public static void verifyElementEnabled(WebElement element) {
+        Assert.assertTrue(element.isEnabled());
     }
+}
 
