@@ -33,7 +33,7 @@ public class US058_StepDefs extends CommonPage {
     @Given("User login as Seller")
     public void userLoginAsSeller() {
 
-        BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerToken"), "account/hub");
+        BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerTokenOmer"), "account/hub");
     }
 
 
