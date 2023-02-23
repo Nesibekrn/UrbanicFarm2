@@ -1,7 +1,10 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.BrowserUtilities;
+import utilities.JSutilities;
 
 public class AddressPage extends CommonPage{
 
@@ -154,6 +157,24 @@ public class AddressPage extends CommonPage{
 
     @FindBy(xpath = "(//button[@class='btn btn-outline-danger mr-3'])[1]")
     public WebElement cancelButton;
+
+    //Rumeysa
+    @FindBy(xpath = "//*[@name='delivery']")
+    public WebElement deliveryAddress;
+
+    @FindBy(xpath = "(//span[@title='use this address'])[last()]")
+    public WebElement addressOptions2;
+
+    public void addNewAddress(String address) {
+
+        getAddressPage().addNewAddressButton.click();
+        getAddressPage().searchPlacesBox.click();
+        getAddressPage().searchPlacesBox.sendKeys(address + Keys.SPACE);
+        JSutilities.clickWithJS(getAddressPage().addressOptions2);
+        JSutilities.clickWithJS(getAddressPage().submitButtonToAddAddress);
+        BrowserUtilities.wait(5);
+
+    }
 
 }
 
