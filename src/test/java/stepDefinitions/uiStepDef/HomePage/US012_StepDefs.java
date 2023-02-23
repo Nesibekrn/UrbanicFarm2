@@ -4,6 +4,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.CommonPage;
 import utilities.BrowserUtilities;
+import utilities.ConfigurationReader;
 
 import static stepDefinitions.Hooks.driver;
 
@@ -13,16 +14,15 @@ public class US012_StepDefs extends  CommonPage {
         getHomePage().loginButton.click();
     }
 
-    @Then("User goes to e-mail box and write address")
-    public void user_goes_to_e_mail_box_and_write_address() {
-        getHomePage().emailBox.sendKeys("fikritester@gmail.com");
+    @Then("User goes to e mail box and write address")
+    public void user_goes_to_e_mail_box_and_write_address( ) {
+        getHomePage().emailBox.sendKeys(ConfigurationReader.getProperty("emailAziz"));
 
     }
 
     @Then("User goes to password box and writes password")
     public void User_goes_to_password_box_and_writes_password() {
-        getHomePage().passwordBox.sendKeys("A123456789a");
-
+        getHomePage().passwordBox.sendKeys(ConfigurationReader.getProperty("passwordAziz"));
 
     }
 
@@ -48,7 +48,6 @@ public class US012_StepDefs extends  CommonPage {
     @Then("User closes the browser")
     public void user_closes_the_browser() {
         //  driver.close();
-
 
     }
 }
