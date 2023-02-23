@@ -1,7 +1,10 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utilities.BrowserUtilities;
+import utilities.JSutilities;
 
 public class AddressPage extends CommonPage{
 
@@ -114,6 +117,65 @@ public class AddressPage extends CommonPage{
     //Said US060
     @FindBy(xpath = "//button[normalize-space()='Yes']")
     public WebElement confirmingOfRemoveExistingAddress;
+
+    //Gulsum US052
+    @FindBy(xpath = "//input[@placeholder='Search Places ...']")
+    public WebElement searchPlacesBox;
+
+    @FindBy(xpath = "(//span[contains(text(),'Netherlands')])[4]")
+    public WebElement addressOptions;
+
+    @FindBy(xpath = "//input[@id='isSellerAddress']")
+    public WebElement markSalesAddress;
+
+    @FindBy(xpath = "//button[@class='mr-2 btn btn-outline-warning']")
+    public WebElement editButton;
+
+    @FindBy(xpath = "//button[@class='btn btn-outline-danger']")
+    public WebElement removeButton;
+
+    @FindBy(xpath = "//input[@id='postal']")
+    public WebElement postalZipBox;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement submitButton;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public WebElement alertYourAddressSuccessfully;
+
+    @FindBy(xpath = "//h5[@class='text-center mb-4']")
+    public WebElement messageAreYouSureToDeleteTheAddress;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary mr-4']")
+    public WebElement yesButton;
+
+    @FindBy(xpath = "//button[@class='btn btn-primary ml-4']")
+    public WebElement noButton;
+
+    @FindBy(xpath = "//p[@class='card-text']")
+    public WebElement notBeRemovedAddress;
+
+    @FindBy(xpath = "(//button[@class='btn btn-outline-danger mr-3'])[1]")
+    public WebElement cancelButton;
+
+    //Rumeysa
+    @FindBy(xpath = "//*[@name='delivery']")
+    public WebElement deliveryAddress;
+
+    @FindBy(xpath = "(//span[@title='use this address'])[last()]")
+    public WebElement addressOptions2;
+
+    public void addNewAddress(String address) {
+
+        getAddressPage().addNewAddressButton.click();
+        getAddressPage().searchPlacesBox.click();
+        getAddressPage().searchPlacesBox.sendKeys(address + Keys.SPACE);
+        JSutilities.clickWithJS(getAddressPage().addressOptions2);
+        JSutilities.clickWithJS(getAddressPage().submitButtonToAddAddress);
+        BrowserUtilities.wait(5);
+
+    }
+
 }
 
 

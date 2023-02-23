@@ -12,21 +12,19 @@ import utilities.ConfigurationReader;
 import utilities.JSutilities;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import static stepDefinitions.Hooks.actions;
+import static stepDefinitions.Hooks.driver;
 import static utilities.Driver.getDriver;
 
 public class US062_stepDefs extends CommonPage {
 
     @And("the user fill out valid email in username text box")
     public void theUserFillOutValidEmailInUsernameTextBox() {
-        BrowserUtilities.loginMethod("seller_urban2@yopmail.com","Seller2/");
-        //getLoginPage().emailBox.sendKeys(ConfigurationReader.getProperty("buyer_urban@mailsac.com"));
-    }
+        BrowserUtilities.loginMethod(" urbanicfarm2@yopmail.com","Urbanicfarm2/");
 
-    @And("the user fill out valid email in password text box")
-    public void theUserFillOutValidEmailInPasswordTextBox() {
-        getLoginPage().passwordBox.sendKeys(ConfigurationReader.getProperty("VHt*zzt*wQNu6XS"));
     }
 
     @And("the user clicks account name")
@@ -72,41 +70,18 @@ public class US062_stepDefs extends CommonPage {
 
     @When("The user clicks view order details")
     public void theUserClicksViewOrderDetails() {
-        WebElement orderQuick1 = getDriver().findElement(By.xpath("//a[@href='/account/orders/order-details/776']"));
-        // orderQuick1.click();
-        JSutilities.scrollToWebElement(orderQuick1);
+        WebElement orderQuick1 = getDriver().findElement(By.xpath("//a[@href='/account/orders/order-details/813']"));
+        //a[contains(text(),'View order details')]"));
+        orderQuick1.click();
         BrowserUtilities.wait(3);
-//        getDriver().navigate().back();
-//        BrowserUtilities.wait(5);
-//        WebElement orderQuick2 = getDriver().findElement(By.xpath("//a[@href='/account/orders/order-details/775']"));
-//        orderQuick2.click();
-//        BrowserUtilities.wait(3);
-//        getDriver().navigate().back();
-//        BrowserUtilities.wait(5);
-//        WebElement orderQuick3 = getDriver().findElement(By.xpath("//a[@href='/account/orders/order-details/774']"));
-//        orderQuick3.click();
-//        BrowserUtilities.wait(3);
-//        getDriver().navigate().back();
-//        BrowserUtilities.wait(5);
-//        List<WebElement> orderviewCount = new ArrayList<>();
-//        orderviewCount.add(orderQuick1);
-//        orderviewCount.add(orderQuick2);
-//        orderviewCount.add(orderQuick3);
-//        System.out.println(orderviewCount.size());
-//        for (WebElement each : orderviewCount) {
-//            each.click();
-//            BrowserUtilities.wait(5);
-//            getDriver().navigate().back();
-//            BrowserUtilities.wait(5);
-//
-////        }
+
         }
 
 
     @Then("The Order Details text should be displayed on the Order Details page")
     public void theOrderDetailsTextShouldBeDisplayedOnTheOrderDetailsPage() {
 
-        WebElement orderDetail=getDriver().findElement(By.xpath("//div/span[contains(text(),'Order Details ')]"));
+        WebElement orderDetail=getDriver().findElement(By.xpath("//div/span[contains(text(),'Order Details')]"));
         Assert.assertTrue(String.valueOf(orderDetail.isDisplayed()),true);
 
     }
@@ -121,7 +96,8 @@ public class US062_stepDefs extends CommonPage {
     @Then("The Order contents fields should be visible on the Order Details page")
     public void theOrderContentsFieldsShouldBeVisibleOnTheOrderDetailsPage() {
 
-        WebElement orderContent=getDriver().findElement(By.xpath("//h5[contains(text(),'Order contents')]"));
+        WebElement orderContent=getDriver().findElement(By.xpath("//h5[contains(text(),'Order content')]"));
+        BrowserUtilities.wait(2);
         Assert.assertTrue(String.valueOf(orderContent.isDisplayed()),true);
 
     }
@@ -129,15 +105,43 @@ public class US062_stepDefs extends CommonPage {
     @And("The Seller page link should be enabled")
     public void theSellerPageLinkShouldBeEnabled() {
 
-        WebElement sellerPage=getDriver().findElement(By.xpath("//a[@href='/point/1484']"));
-        sellerPage.click();
-        BrowserUtilities.wait(5);
+        WebElement sellerPage=getDriver().findElement(By.xpath("//a[@href='/point/1807']"));
+        Assert.assertTrue(sellerPage.isEnabled());
+        BrowserUtilities.wait(3);
+        JSutilities.clickWithJS(sellerPage);
+        BrowserUtilities.wait(3);
+
 
 
     }
 
     @And("Seller page should redirect to correct page when click back")
     public void sellerPageShouldRedirectToCorrectPageWhenClickBack() {
-        getDriver().navigate().back();
+
+    }
+
+
+    @And("The Seller page should be redirected to correct page when click back")
+    public void theSellerPageShouldBeRedirectedToCorrectPageWhenClickBack() {
+        getDriver().navigate().to("https://test.urbanicfarm.com/account/orders/order-details/813");
+        BrowserUtilities.wait(5);
+
+    }
+
+    @Then("The user verifies seller address is correct on the seller page")
+    public void theUserVerifiesSellerAddressIsCorrectOnTheSellerPage() {
+        WebElement iframelement=getDriver().findElement(By.xpath("//iframe[@class='my-0 mx-auto d-block shadow mb-5 bg-white rounded']"));
+        getDriver().switchTo().frame(iframelement);
+        WebElement address=getDriver().findElement(By.xpath("//div[@class='address']"));
+        String expectedAddress="26581 Joshua St, Hayward, CA 94544";
+        String actualAddress= address.getText();
+        Assert.assertEquals(expectedAddress,actualAddress);
+        BrowserUtilities.wait(3);
+    }
+
+    @And("The user should closed driver")
+    public void theUserShouldClosedDriver() {
+        driver.close();
+        BrowserUtilities.wait(5);
     }
 }
