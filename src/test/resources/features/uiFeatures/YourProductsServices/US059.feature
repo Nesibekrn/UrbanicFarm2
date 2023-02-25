@@ -2,7 +2,6 @@
 @DB
 @US059
 Feature:US059
-
   Background:
     Given User login as Seller to Address link
     When User add new address if it is not exist
