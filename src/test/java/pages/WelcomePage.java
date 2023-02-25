@@ -36,4 +36,17 @@ public class WelcomePage extends CommonPage{
     public WebElement addAlertMessage;
     @FindBy(xpath = "//span[@class='Navbar_cartText__1jkrK'] ")
     public WebElement numberOfCart;
+    //nesibe
+    @FindBy(xpath = "//*[@id='mapSearchBox']")
+    public WebElement searchBox;//what are u looking for?
+    @FindBy(xpath = "//*[@id='searchMapButton']")
+    public WebElement searchButton;
+    @FindBy(xpath = "//select[@id='location']")
+    public WebElement searchInMilesBox;
+    @FindBy(xpath = "//input[@name='isOrganic']")
+    public WebElement organicButton;
+    @FindBy(xpath = "//span[.='Organic']")
+    public WebElement organicTag;
+    @FindBy(xpath = "//*[text()='Available for Trade']")
+    public WebElement availableForTradeButton;
 }

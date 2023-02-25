@@ -67,6 +67,15 @@ public class YourProductsServicesPage extends CommonPage{
 
     @FindBy(xpath = "(//div[@class='text-center mb-2']/a)[2]")
     public WebElement no;
+    @FindBy(xpath = "//input[@name='stock']")
+    public WebElement stockOfProduct;
+    @FindBy(xpath = "//input[@name='price']")
+    public WebElement priceOfProduct;
+@FindBy(xpath = "//*[@class='addNewHubProduct_switch__1IW7o mr-2']")
+    public WebElement organicButton;
+@FindBy(xpath = "//*[@class='addNewHubProduct_switch__1IW7o']")
+    public WebElement tradeButton;
+
 
 
     public void clickAddedProduct(String productName) {

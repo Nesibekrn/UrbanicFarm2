@@ -1,5 +1,6 @@
 package stepDefinitions.uiStepDef.SellShareTrade;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.CommonPage;
@@ -29,5 +30,6 @@ public class US043_StepDefs extends CommonPage {
         Assert.assertEquals("https://test.urbanicfarm.com/account/home", driver.getCurrentUrl());
         BrowserUtilities.wait(3);
     }
+
 
 }
