@@ -35,10 +35,11 @@ public class US059_StepDefs extends CommonPage {
             Assert.assertTrue(getAddressPage().editButton.isDisplayed());
         } catch (Exception e) {
             e.printStackTrace();
-            getAddressPage().addNewAddress("Ankara");
+            getAddressPage().addNewAddress("NE4 8UH");
             getAddressPage().nonSelectedAddressButton.click();
             getAddressPage().editButtonOnNonSelectedAddress.click();
             getAddressPage().markAsSalesAddress.click();
+            getAddressPage().markAsDeliveryAddress.click();
             getAddressPage().submitButtonToAddAddress.click();
         }
     }
@@ -137,6 +138,7 @@ public class US059_StepDefs extends CommonPage {
     }
     @And("User sees the product with Avaliable for Trade link.")
     public void userSeesTheProductWithAvaliableForTradeLink() {
+        BrowserUtilities.waitForVisibility(getWelcomePage().availableForTradeButton,5);
         Assert.assertTrue(getWelcomePage().availableForTradeButton.isDisplayed());
         BrowserUtilities.wait(3);
     }
