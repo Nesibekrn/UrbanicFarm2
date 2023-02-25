@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import pages.CommonPage;
 import utilities.BrowserUtilities;
 import utilities.DatabaseUtilities;
@@ -31,6 +32,7 @@ public class Hooks {
     public static int width;
     public static int height;
     public static Faker faker;
+    public static Select select;
 
     @Before(value = "@headless", order = 0)
     public void setIsHeadless() {
@@ -59,6 +61,7 @@ public class Hooks {
         };
         actions = new Actions(driver);
         faker=new Faker();
+
     }
 
     @After(value = "@UI")

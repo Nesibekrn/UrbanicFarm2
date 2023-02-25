@@ -33,7 +33,7 @@ public class US058_StepDefs extends CommonPage {
     @Given("User login as Seller")
     public void userLoginAsSeller() {
 
-        BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerToken"), "account/hub");
+        BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerTokenOmer"), "account/hub");
     }
 
 
@@ -122,7 +122,7 @@ public class US058_StepDefs extends CommonPage {
 
 
         BrowserUtilities.scrollAndClickWithJS(getYourProductsServicesPage().addNewProduct_Submit);
-
+       // getYourProductsServicesPage().addNewProduct_Submit.click();
     }
 
     @Then("One of the Approved, In-Review, Rejected options for each product should be visible on the file.")
@@ -149,6 +149,7 @@ BrowserUtilities.wait(5);
 
         String actualProductStatus = BrowserUtilities.getStatusOfProduct(addedProduct);
         String expectedProductStatus = "IN_REVIEW";
+        System.out.println(actualProductStatus);
 
         Assert.assertEquals(expectedProductStatus, actualProductStatus);
 
@@ -188,14 +189,17 @@ BrowserUtilities.wait(5);
 
     @When("Product information should be able to be changed on this page")
     public void productInformationShouldBeAbleToBeChangedOnThisPage() {
+        getYourProductsServicesPage().stockOfProduct.sendKeys(String.valueOf(random.nextInt(30)));
+        getYourProductsServicesPage().priceOfProduct.sendKeys(String.valueOf(random.nextInt(30)));
     }
 
     @When("the update option is clicked after the necessary corrections, \\(.....) has been succesfully updated alert should be displayed.")
     public void theUpdateOptionIsClickedAfterTheNecessaryCorrectionsHasBeenSuccesfullyUpdatedAlertShouldBeDisplayed() {
         getYourProductsServicesPage().update.click();
-
+        BrowserUtilities.wait(2);
 
         BrowserUtilities.toastMessageAssertion(addedProduct + " has been successfully updated");
+        BrowserUtilities.wait(5);
 
     }
 
@@ -220,6 +224,8 @@ BrowserUtilities.wait(5);
 
     @Then("No option should cancel the operation")
     public void noOptionShouldCancelTheOperation() {
+
+
     }
 
     @When("Yes option is selected, the product should be removed from the page.")
