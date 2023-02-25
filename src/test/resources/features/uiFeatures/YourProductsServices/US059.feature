@@ -40,8 +40,6 @@ Feature:US059
     When User clicks previous hub
     Then It should be possible to click on the product name on the file related to the previously added product2.
     When The product name is clicked, the update-delete page is displayed.
-    When Product information should be able to be changed on this page
-    When the update option is clicked after the necessary corrections, (.....) has been succesfully updated alert should be displayed2.
     When the Delete button is clicked, yes- no options should appear.
     Then Yes-No options should appear.
     When Yes option is selected, the product should be removed from the page2.
