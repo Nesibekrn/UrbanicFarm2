@@ -25,8 +25,9 @@ public class US016_StepDefs extends CommonPage{
 
     @And("user clicks on Blog option under the Explore Icon")
     public void user_Clicks_On_Blog_Icon_Under_The_Explore_Icon() {
+        BrowserUtilities.wait(3);
         getHomePage().blogOption.click();
-        //BrowserUtilities.wait(3);
+
 
     }
     @Then("user verifies that current url")
