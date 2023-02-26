@@ -5,15 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.SourceType;
 import org.openqa.selenium.support.ui.Select;
 import pages.CommonPage;
 import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
-import utilities.JSutilities;
 
 import static stepDefinitions.Hooks.driver;
 
@@ -92,8 +89,7 @@ public class US063_Stepdefs extends CommonPage {
 
         BrowserUtilities.wait(3);
        // JSutilities.clickWithJS(getWelcomePage().priceFilter);
-        System.out.println(getWelcomePage().priceFilter.getText());
-        Assert.assertEquals("Price",getWelcomePage().priceFilter.getText());
+        Assert.assertEquals("Price",getWelcomePage().priceFilter3rdOption.getText());
         BrowserUtilities.wait(3);
         Assert.assertTrue(getWelcomePage().deliveryType.isDisplayed());
         BrowserUtilities.wait(3);
