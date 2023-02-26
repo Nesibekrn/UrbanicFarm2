@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.SourceType;
 import org.openqa.selenium.support.ui.Select;
 import pages.CommonPage;
 import utilities.BrowserUtilities;
@@ -82,7 +83,7 @@ public class US063_Stepdefs extends CommonPage {
     public void userClicksSearchMenusBox() {
 
         getWelcomePage().searchSliderButton.click();
-        BrowserUtilities.wait(10);
+        BrowserUtilities.wait(3);
 
     }
 
@@ -91,12 +92,13 @@ public class US063_Stepdefs extends CommonPage {
 
         BrowserUtilities.wait(3);
        // JSutilities.clickWithJS(getWelcomePage().priceFilter);
-        Assert.assertEquals("Price",getWelcomePage().priceFilter3rdOption.getText());
+        System.out.println(getWelcomePage().priceFilter.getText());
+        Assert.assertEquals("Price",getWelcomePage().priceFilter.getText());
         BrowserUtilities.wait(3);
-//        Assert.assertTrue(getWelcomePage().deliveryType.isDisplayed());
-//        BrowserUtilities.wait(3);
-//        Assert.assertTrue(getWelcomePage().unitType.isDisplayed());
-//        BrowserUtilities.wait(3);
+        Assert.assertTrue(getWelcomePage().deliveryType.isDisplayed());
+        BrowserUtilities.wait(3);
+        Assert.assertTrue(getWelcomePage().unitType.isDisplayed());
+        BrowserUtilities.wait(3);
 
     }
 

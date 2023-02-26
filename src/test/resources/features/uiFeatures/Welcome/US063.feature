@@ -13,7 +13,6 @@ Feature: US063_TC001_As a user, after entering valid information, I should be ab
       And User verifies if Catergories box is functional
       And User verifies if Search only in organic produce is functional
       And User verifies if Search menus box is functional
-      And User clicks Search menus box
       Then User verifies if Price, Delivery type, Unit type options are visible
       When User selects any option of dropdown menu by What are you looking for box
       And User selects any option of dropdown menu by Search miles box
