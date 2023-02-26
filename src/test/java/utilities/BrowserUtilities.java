@@ -354,7 +354,7 @@ public class BrowserUtilities {
      * @since 11.02.2023
      */
     public static String getStatusOfProduct(String productName) {
-        return driver.findElement(By.xpath("//a[@title='" + productName + "']/../../span")).getText();
+         return driver.findElement(By.xpath("//a[@title='" + productName + "']/../../span")).getText();
 
     }
 
