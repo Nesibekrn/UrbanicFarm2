@@ -4,7 +4,9 @@ Feature: US063_TC001_As a user, after entering valid information, I should be ab
   Background: User goes to URL
     Given User goes to Welcome Page
 
-    Scenario:
+  @UI
+  @US063
+    Scenario: User checks if Several Buttons which are mentioned in Acceptance Criteria are functional
       Then User verifies if Welcome Page appears
       And User verifies if What are you looking for box is functional
       And User verifies if Search miles box is functional

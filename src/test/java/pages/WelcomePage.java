@@ -36,17 +36,74 @@ public class WelcomePage extends CommonPage{
     public WebElement addAlertMessage;
     @FindBy(xpath = "//span[@class='Navbar_cartText__1jkrK'] ")
     public WebElement numberOfCart;
+
     //nesibe
     @FindBy(xpath = "//*[@id='mapSearchBox']")
     public WebElement searchBox;//what are u looking for?
+
     @FindBy(xpath = "//*[@id='searchMapButton']")
     public WebElement searchButton;
+
     @FindBy(xpath = "//select[@id='location']")
     public WebElement searchInMilesBox;
+
     @FindBy(xpath = "//input[@name='isOrganic']")
     public WebElement organicButton;
+
     @FindBy(xpath = "//span[.='Organic']")
     public WebElement organicTag;
+
     @FindBy(xpath = "//*[text()='Available for Trade']")
     public WebElement availableForTradeButton;
+
+    @FindBy(xpath = "//select[@id='allCategories']")
+    public WebElement allCategories;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "//button[@class='btn p-0 SearchBarOptions_sliderButton__1oak8']")
+    public WebElement searchSliderButton;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "//label[@for='priceFilter']")
+    public WebElement priceFilter;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "//*[text()='Price']")
+    public WebElement priceFilter2ndOption;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "//span[@id='priceFilterPreview']")
+    public WebElement priceFilter3rdOption;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "(//span[@class='text-muted font-weight-bold'])[1]")
+    public WebElement deliveryType;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "(//span[@class='text-muted font-weight-bold'])[2]")
+    public WebElement unitType;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "//input[@id='priceFilter']")
+    public WebElement sliderOfPrice;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "(//input[@name='deliveryFilter'])[1]")
+    public WebElement firstOptionOfDeliveryType;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "(//input[@name='unitTypeFilter'])[1]")
+    public WebElement firstOptionOfUnitType;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "//button[@class='ProductCard_productBtn__3OdlW']")
+    public WebElement verifyForAlicanteTomato;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "//span[@class='SearchBarOptions_slider__1xZ3L SearchBarOptions_round__3BMhA']")
+    public WebElement toggleButtonOfOrganic;
+
+    //Said & Aziz US063
+    @FindBy(xpath = "//body/div[@id='__next']/div/div/div[@class='row m-0 Map_container__1LjV9']/div[@class='col-xl-8 col-lg-8 col-md-8 col-sm-8 Map_search_area__3F17y']/div[@id='mainId']/div[@class='SearchBarOptions_filterContainers__15rsk']/div[@id='searchFilters']/div[@class='SearchBarOptions_rangeOptionsContainer__1iicd']/div[1]")
+    public WebElement priceBlock;
 }
