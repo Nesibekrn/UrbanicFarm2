@@ -72,7 +72,7 @@ public class WelcomePage extends CommonPage{
     public WebElement priceFilter2ndOption;
 
     //Said & Aziz US063
-    @FindBy(xpath = "//span[@id='priceFilterPreview']")
+    @FindBy(xpath = "//span[@id='priceFilterPreview']/..")
     public WebElement priceFilter3rdOption;
 
     //Said & Aziz US063

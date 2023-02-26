@@ -91,6 +91,7 @@ public class US063_Stepdefs extends CommonPage {
 
         BrowserUtilities.wait(3);
        // JSutilities.clickWithJS(getWelcomePage().priceFilter);
+
         Assert.assertEquals("Price",getWelcomePage().priceFilter3rdOption.getText());
         BrowserUtilities.wait(3);
 //        Assert.assertTrue(getWelcomePage().deliveryType.isDisplayed());
