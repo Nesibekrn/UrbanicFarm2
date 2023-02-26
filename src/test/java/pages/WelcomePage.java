@@ -3,16 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-<<<<<<< HEAD
-public class WelcomePage extends CommonPage{
-
-    @FindBy(xpath = "//select[@id='sellerRate']")
-    public WebElement AnySellerRating;
-
-    @FindBy(xpath = "//select[@id='productRate']")
-    public WebElement AnyProductRating;
-=======
 import java.util.List;
+
 
 public class WelcomePage extends CommonPage{
 
@@ -115,5 +107,9 @@ public class WelcomePage extends CommonPage{
     //Said & Aziz US063
     @FindBy(xpath = "//body/div[@id='__next']/div/div/div[@class='row m-0 Map_container__1LjV9']/div[@class='col-xl-8 col-lg-8 col-md-8 col-sm-8 Map_search_area__3F17y']/div[@id='mainId']/div[@class='SearchBarOptions_filterContainers__15rsk']/div[@id='searchFilters']/div[@class='SearchBarOptions_rangeOptionsContainer__1iicd']/div[1]")
     public WebElement priceBlock;
->>>>>>> main
+    @FindBy(xpath = "//select[@id='sellerRate']")
+    public WebElement AnySellerRating;
+
+    @FindBy(xpath = "//select[@id='productRate']")
+    public WebElement AnyProductRating;
 }
