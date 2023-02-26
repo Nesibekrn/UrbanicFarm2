@@ -26,7 +26,6 @@ public class BrowserUtilities {
     static Random random = new Random();
 
     public static void loginMethod(USERINFO userinfo) {
-
         driver.get("https://test.urbanicfarm.com/auth/login");
         commonPage.getLoginPage().loginMethod(userinfo);
     }
