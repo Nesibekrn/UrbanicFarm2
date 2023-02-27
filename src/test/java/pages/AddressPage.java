@@ -176,6 +176,10 @@ public class AddressPage extends CommonPage{
 
     }
 
+    // Gulsum US060
+    @FindBy(xpath = "//p[@class='card-text']")
+    public WebElement notBeRemovedMySalesAddress;
+
 }
 
 

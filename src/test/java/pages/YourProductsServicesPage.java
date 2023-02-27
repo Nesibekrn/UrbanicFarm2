@@ -75,6 +75,11 @@ public class YourProductsServicesPage extends CommonPage{
     public WebElement organicButton;
 @FindBy(xpath = "//*[@class='addNewHubProduct_switch__1IW7o']")
     public WebElement tradeButton;
+//nesibe US067
+    @FindBy(xpath = "//*[@hubuniquename='VEGETABLES_AND_FRUITS_HUB']")
+    public WebElement vegetablesAndFruitsHub;
+    @FindBy(xpath = "//*[@class='HubManagement_product_img__1TGwA']")
+    public WebElement productImage;
 
 
 
