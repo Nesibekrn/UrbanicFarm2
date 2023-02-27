@@ -28,14 +28,18 @@ public class US059_StepDefs extends CommonPage {
     public void userLoginAsSellerToAddressLink() {
         BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerTokenOmer"), "account/address");
     }
-    @When("User add new address if it is not exist")
-    public void userAddNewAddressIfItIsNotExist() {
+    @When("User {string} add new address if it is not exist as {string}")
+    public void userAddNewAddressIfItIsNotExistAs(String user, String address) {
+        BrowserUtilities.waitForVisibility(getAddressPage().deliveryAddress,5);
+        if (user.equals("buyer")){
+            getAddressPage().deliveryAddress.click();}
+        if (user.equals("seller")){
+            getAddressPage().mySalesAddressButton.click();}
         try {
-            getAddressPage().mySalesAddressButton.click();
-            Assert.assertTrue(getAddressPage().editButton.isDisplayed());
+          Assert.assertTrue(getAddressPage().editButton.isDisplayed());
         } catch (Exception e) {
             e.printStackTrace();
-            getAddressPage().addNewAddress("NE4 8UH");
+            getAddressPage().addNewAddress(address);
             getAddressPage().nonSelectedAddressButton.click();
             getAddressPage().editButtonOnNonSelectedAddress.click();
             getAddressPage().markAsSalesAddress.click();

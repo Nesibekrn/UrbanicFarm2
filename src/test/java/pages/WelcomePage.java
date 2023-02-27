@@ -111,4 +111,7 @@ public class WelcomePage extends CommonPage{
 
     @FindBy(xpath = "//select[@id='productRate']")
     public WebElement AnyProductRating;
+    //nesibe US067
+    @FindBy(xpath = "//*[@class='Notifications_notificationIconContainer__2jS5E']")
+    public WebElement notificationIcon;
 }
