@@ -3,7 +3,9 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CartPage extends CommonPage {
+import java.util.List;
+
+public class CartPage extends CommonPage{
 
     @FindBy(xpath = "//td[@class='text-end py-3']/p")
     public WebElement subtotal;
@@ -45,6 +47,12 @@ public class CartPage extends CommonPage {
     public WebElement payPalCompletePurchaseButton;
     @FindBy(xpath = "//*[text()='Payment successful']")
     public WebElement paymentSuccessfulText;
+
+
+    @FindBy(xpath = "//button[@class='btn btn-primary mr-4']")
+    public List<WebElement> yesButton;
+    @FindBy(xpath = "//*[local-name()='svg']/*[local-name()='g'][@fill='#f44336']")
+    public List<WebElement> xIconButton;
 
 }
 

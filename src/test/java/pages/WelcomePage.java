@@ -34,6 +34,8 @@ public class WelcomePage extends CommonPage{
 
     @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
     public WebElement addAlertMessage;
+
+
     @FindBy(xpath = "//span[@class='Navbar_cartText__1jkrK'] ")
     public WebElement numberOfCart;
 
