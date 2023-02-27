@@ -4,7 +4,7 @@
 Feature:US059
   Background:
     Given User login as Seller to Address link
-    When User add new address if it is not exist
+    When User "seller" add new address if it is not exist as "NE4 8UH"
     And User goes to Your products-service
 
   @UI
