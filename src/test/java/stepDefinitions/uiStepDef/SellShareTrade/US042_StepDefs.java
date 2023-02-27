@@ -42,7 +42,6 @@ public class US042_StepDefs {
     public void theUserClicksLoginButtonOnTheLoginPage() {
 
         loginPage.loginButton.click();
-        BrowserUtilities.wait(2);
     }
 
     @Then("the user verifes page is {string}")
