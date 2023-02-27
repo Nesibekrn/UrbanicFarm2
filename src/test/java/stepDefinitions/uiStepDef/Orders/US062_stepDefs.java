@@ -27,13 +27,6 @@ public class US062_stepDefs extends CommonPage {
 
     }
 
-    @And("the user clicks login button on the login page_")
-    public void theUserClicksLoginButtonOnTheLoginPage_() {
-
-        WebElement loginBbutton = getDriver().findElement(By.xpath(" //*[.='submit']"));
-        loginBbutton.click();
-    }
-
     @And("the user clicks account name")
     public void theUserClicksAccountName() {
         BrowserUtilities.wait(2);
@@ -49,17 +42,16 @@ public class US062_stepDefs extends CommonPage {
 
     @And("The user clicks orders option")
     public void theUserClicksOrdersOption() {
-        WebElement order = getDriver().findElement(By.xpath("//a[@href='/account/orders']"));
-        order.click();
+
+        getOrdersPage().order.click();
         BrowserUtilities.wait(2);
 
     }
 
     @Then("The user verifies orders tab is enabled")
     public void theUserVerifiesOrdersTabIsEnabled() {
-        WebElement order = getDriver().findElement(By.xpath("//a[@href='/account/orders']"));
-        order.click();
-        Assert.assertTrue(String.valueOf(order.isEnabled()), true);
+        getOrdersPage().order.click();
+        Assert.assertTrue(String.valueOf(getOrdersPage().order.isEnabled()), true);
     }
 
     @Then("The orders page should be displayed")
@@ -70,8 +62,8 @@ public class US062_stepDefs extends CommonPage {
 
     @And("Orders list should be displayed")
     public void ordersListShouldBeDisplayed() {
-        List<WebElement> orderlist = getDriver().findElements(By.xpath(" //section[@class='card mb-2']"));
-        for (WebElement each : orderlist) {
+
+        for (WebElement each : getOrdersPage().orderlist) {
             each.isDisplayed();
             Assert.assertTrue(each.isDisplayed());
         }
@@ -79,8 +71,8 @@ public class US062_stepDefs extends CommonPage {
 
     @When("The user clicks view order details")
     public void theUserClicksViewOrderDetails() {
-        WebElement orderview = getDriver().findElement(By.xpath(" //a[contains(text(),'View order details')]"));
-        orderview.click();
+
+        getOrdersPage().orderviewdetails.click();
 
 
     }
@@ -89,24 +81,24 @@ public class US062_stepDefs extends CommonPage {
     @Then("The Order Details text should be displayed on the Order Details page")
     public void theOrderDetailsTextShouldBeDisplayedOnTheOrderDetailsPage() {
 
-        WebElement orderDetail = getDriver().findElement(By.xpath("//div/span[contains(text(),'Order Details')]"));
-        Assert.assertTrue(String.valueOf(orderDetail.isDisplayed()), true);
+
+        Assert.assertTrue(getOrdersPage().orderDetail.isDisplayed());
 
     }
 
     @Then("The Order summary should be displayed on the Order Details page")
     public void theOrderSummaryShouldBeDisplayedOnTheOrderDetailsPage() {
 
-        WebElement orderSummary = getDriver().findElement(By.xpath("//h5[contains(text(),'Order summary')]"));
-        Assert.assertTrue(String.valueOf(orderSummary.isDisplayed()), true);
+
+        Assert.assertTrue(String.valueOf(getOrdersPage().orderSummary.isDisplayed()), true);
     }
 
     @Then("The Order contents fields should be visible on the Order Details page")
     public void theOrderContentsFieldsShouldBeVisibleOnTheOrderDetailsPage() {
 
-        WebElement orderContent = getDriver().findElement(By.xpath("//h5[contains(text(),'Order content')]"));
+
         BrowserUtilities.wait(2);
-        Assert.assertTrue(String.valueOf(orderContent.isDisplayed()), true);
+        Assert.assertTrue(String.valueOf(getOrdersPage().orderContent.isDisplayed()), true);
 
     }
 
@@ -115,10 +107,10 @@ public class US062_stepDefs extends CommonPage {
     @And("The Seller page link should be enabled")
     public void theSellerPageLinkShouldBeEnabled() {
 
-        WebElement sellerPage = getDriver().findElement(By.xpath("//a[contains(text(),'Seller page')]"));
-        Assert.assertTrue(sellerPage.isEnabled());
+
+        Assert.assertTrue(getOrdersPage().sellerPage.isEnabled());
         BrowserUtilities.wait(3);
-        JSutilities.clickWithJS(sellerPage);
+        JSutilities.clickWithJS(getOrdersPage().sellerPage);
         BrowserUtilities.wait(3);
 
 
@@ -136,11 +128,10 @@ public class US062_stepDefs extends CommonPage {
 
     @Then("The user verifies seller address is correct")
     public void theUserVerifiesSellerAddressIsCorrect() {
-        WebElement iframelement = getDriver().findElement(By.xpath("(//iframe[@class='d-block'])[1]")); //(//iframe[@class='d-block'])[1]
+        WebElement iframelement = getDriver().findElement(By.xpath("(//iframe[@class='d-block'])[1]"));
         getDriver().switchTo().frame(iframelement);
-        List<WebElement> address = getDriver().findElements(By.xpath("(//a[contains(text(),'View l')])[1]"));  //(//a[text()='View larger map'])[1]
+        List<WebElement> address = getDriver().findElements(By.xpath("(//a[contains(text(),'View l')])[1]"));
         String defaulthandle = getDriver().getWindowHandle();
-
         address.get(0).click();
         getDriver().switchTo().defaultContent();
         for (String each : getDriver().getWindowHandles()) {
@@ -148,15 +139,14 @@ public class US062_stepDefs extends CommonPage {
                 getDriver().switchTo().window(each);
             }
         }
-        WebElement address2 = getDriver().findElement(By.xpath("(//div[@role='button'])[1]"));
+
         String expectedAddress = "239 Dilston Rd, Newcastle upon Tyne NE4 5AD, UK";
-        String actualAddress = address2.getText();
+        String actualAddress = getOrdersPage().address2page.getText();
         Assert.assertEquals(expectedAddress, actualAddress);
     }
 
     @Then("The user clicks Seller address is displayed")
     public void theUserClicksSellerAddressIsDisplayed() {
-        WebElement sellerAdress = getDriver().findElement(By.xpath("(//span[contains(text(),'Seller address')])[1]"));
-        Assert.assertTrue(sellerAdress.isDisplayed());
+        Assert.assertTrue(getOrdersPage().sellerAdress.isDisplayed());
     }
 }
