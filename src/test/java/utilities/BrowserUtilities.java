@@ -17,6 +17,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -26,7 +27,6 @@ public class BrowserUtilities {
     static Random random = new Random();
 
     public static void loginMethod(USERINFO userinfo) {
-
         driver.get("https://test.urbanicfarm.com/auth/login");
         commonPage.getLoginPage().loginMethod(userinfo);
     }
@@ -337,6 +337,9 @@ public class BrowserUtilities {
         String value2 = token;
         String value1 = token.split("\\.")[1];
         driver.get(url);
+        localStorage.clear();
+        Driver.getDriver().navigate().refresh();
+        waitForPageToLoad(10);
         localStorage.setItem(key1, value1);
         localStorage.setItem(key2, value2);
 
@@ -412,6 +415,13 @@ public class BrowserUtilities {
 
     public static void verifyElementEnabled(WebElement element) {
         Assert.assertTrue(element.isEnabled());
+    }
+    public static void switchToWindowWithIndex ( int index){
+        List<String> windowHandles = new ArrayList<>(Driver.getDriver().getWindowHandles());
+        Driver.getDriver().switchTo().window(windowHandles.get(index));
+    }
+    public static void switchToNewWindow (){
+        Driver.getDriver().switchTo().newWindow(WindowType.TAB);
     }
 }
 

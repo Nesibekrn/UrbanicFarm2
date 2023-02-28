@@ -37,6 +37,7 @@ public class SellShareTradePage extends CommonPage{
    public WebElement AboutUs;
 
 
+
     //aziz
     @FindBy(xpath = "(//*[text()='Scheduled delivery'])[1]")
     public WebElement scheduledDeliveryLink;
@@ -66,3 +67,5 @@ public class SellShareTradePage extends CommonPage{
 
 
 }
+
+

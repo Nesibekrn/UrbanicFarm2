@@ -28,7 +28,6 @@ public class US050_StepDefs extends CommonPage {
 
     @Then("User clicks Address Button")
     public void user_click_address_button() {
-        // BrowserUtilities
         getAddressPage().addressButton.click();
         BrowserUtilities.wait(1);
     }

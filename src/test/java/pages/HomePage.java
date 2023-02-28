@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.nio.file.FileStore;
 import java.util.List;
 
 public class HomePage extends CommonPage {
@@ -164,6 +165,11 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "(//span[contains(text(),'Sell-Share-Trade')])[1]")
     public WebElement sellShareTradeLink;
 
+@FindBy(xpath = "//input[@class='ProductCard_number__1yGnR']")
+    public WebElement productAdcartNumberSeenIcon;
+
+@FindBy(xpath = "//div[@class='ProductCard_stockInfo__1vJgJ']")
+    public WebElement listOfPoundAvailable;
 }
 
 
