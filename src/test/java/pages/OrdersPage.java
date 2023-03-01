@@ -1,12 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
-
-import static utilities.Driver.getDriver;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +7,40 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class OrdersPage extends  CommonPage{
+
+
+//User clicks Account Name Navbar
+@FindBy(xpath="//span[text()='Alicante Tomato']")
+    public WebElement productName;
+@FindBy(xpath = "//span[text()='Unit Price:']")
+    public WebElement productPrice;
+@FindBy(xpath = "//span[text()='Qty:']")
+    public WebElement productLb;
+
+@FindBy(xpath = "//span[text()='Unit Total:']")
+    public WebElement productTotal;
+@FindBy(xpath = "//img[@class='rounded']")
+    public WebElement productImage;
+
+@FindBy(xpath = "//span[text()='Rate the product']")
+    public WebElement rateTheProduct;
+
+@FindBy(xpath = "//a[text()='rate the seller']")
+    public WebElement rateTheSeller;
+
+@FindBy(xpath = "//*[@class='cursor-pointer'][last()]")
+    public WebElement cursorPointer;
+
+@FindBy(xpath = "//*[@class='sc-bdnxRM bQSYRq']")
+    public WebElement commitBox;
+
+@FindBy(xpath="(//button[@type='button'])[2]")
+    public WebElement submitButton;
+
+@FindBy(xpath="//div[@role='alert']")
+    public WebElement alert;
+
+
     @FindBy(xpath = "//a[@href='/account/orders']")
     public WebElement order;
     @FindBy(xpath = " //section[@class='card mb-2']")
@@ -58,5 +85,6 @@ public class OrdersPage extends  CommonPage{
     public List<WebElement> markReadList;
     @FindBy(xpath = "//*[text()='View all']")
     public WebElement viewAllLink;
+
 
 }
