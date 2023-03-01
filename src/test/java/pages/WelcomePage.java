@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class WelcomePage extends CommonPage{
+public class WelcomePage extends CommonPage {
 
     //aziz US065
     @FindBy(xpath = "//span[.='Local seller near you']")
@@ -30,7 +30,7 @@ public class WelcomePage extends CommonPage{
     public WebElement addCartButton;
 
     @FindBy(xpath = "//button[@class='col-12 mt-2 w-75 btn btn-success ProductCard_addCartBtn___oxgf']")
-    public List< WebElement> listOfAddCartProduct;
+    public List<WebElement> listOfAddCartProduct;
 
     @FindBy(css = ".Toastify__toast-body.toastr_custom-toastr__iiU37")
     public WebElement addAlertMessage;
@@ -116,4 +116,33 @@ public class WelcomePage extends CommonPage{
     //nesibe US067
     @FindBy(xpath = "//*[@class='Notifications_notificationIconContainer__2jS5E']")
     public WebElement notificationIcon;
+
+    @FindBy(xpath = "//button[@class= 'counter_plus__22R0m']")
+    public WebElement plusButton;
+
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/div/div[1]/div[1]/table/tbody[1]/tr[1]/td[1]/div/input")
+    public WebElement plusButtonNumberElement;
+
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/div/div[1]/div[1]/table/tbody[1]/tr[1]/td[5]")
+    public WebElement removeButton;
+    @FindBy(xpath = "//*[@id=\"__remove-modal\"]/div/h5")
+    public WebElement areYouSureWarningMessage;
+
+    @FindBy(xpath = "//*[@id=\"__remove-modal\"]/div/div/button[2]")
+    public WebElement noProductDeleteButton;
+
+    @FindBy(xpath = "//*[text()='Yes']")
+    public WebElement yesProductDeleteButton;
+
+    @FindBy(xpath = "//tbody[@class='border-bottom']/tr")
+    public List<WebElement> itemList;
+
+
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/div/div[1]/div[1]/table/tbody/tr[1]/td[4]")
+    public WebElement productWrapAmount;
+
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/div/div[1]/div[3]/table/tbody/tr[3]/td")
+    public WebElement finalTotalElement;
 }
+
+
