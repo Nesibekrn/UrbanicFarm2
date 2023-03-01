@@ -23,6 +23,7 @@ public abstract class CommonPage {
     private WelcomePage welcomePage;
     private YourProductsServicesPage yourProductsServicesPage;
     private  CartPage cartPage;
+    private EventsPage events;
 
 
 
@@ -32,6 +33,12 @@ public abstract class CommonPage {
             yourProductsServicesPage=new YourProductsServicesPage();
         }
         return yourProductsServicesPage;
+    }
+    public EventsPage getEvent() {
+        if(events==null){
+            events=new EventsPage();
+        }
+        return events;
     }
 
     public WelcomePage getWelcomePage() {
