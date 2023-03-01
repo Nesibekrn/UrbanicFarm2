@@ -28,8 +28,9 @@ public class US012_StepDefs extends  CommonPage {
 
     @Then("User clicks Submit button")
     public void user_clicks_Submit_button() {
-        getHomePage().ssubmitButton.click();
-        BrowserUtilities.wait(7);
+        BrowserUtilities.scrollAndClickWithJS(getHomePage().ssubmitButton);
+      //  getHomePage().ssubmitButton.click();
+        BrowserUtilities.wait(2);
 
     }
 
