@@ -92,6 +92,7 @@ public class US065_StepDefs extends CommonPage {
     }
     @Then("User verifies the product is added to the cart.")
     public void userVerifiesTheProductIsAddedToTheCart() {
+        int count =0;
         int anyseller = random.nextInt(getWelcomePage().allSellersList.size());
         if(!getWelcomePage().allSellersList.get(anyseller).getText().equals(getHomePage().accountName_navbar.getText())){
             for (int i = 1; i <=7; i=i+2) {
