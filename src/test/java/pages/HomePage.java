@@ -141,7 +141,7 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//input[@type='password']")
     public WebElement passwordBox;
     //aziz
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(xpath = "//button[@class='btn btn-outline-success px-4']")
     public WebElement ssubmitButton;
     //aziz
     @FindBy(xpath = "//div[@class='Navbar_addHub__USGHm']")
