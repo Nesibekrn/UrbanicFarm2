@@ -12,7 +12,7 @@ Background:
   Then  The orders page should be displayed
   @US061_TC_01
   @UI
-  Scenario: Product Name, Price, Stock, Unit, Image should be seen
+  Scenario:US061_TC_01 Product Name, Price, Stock, Unit, Image should be seen
   And Product name should be seen
   Then Product Price should be seen
   Then Product Stock should be seen
@@ -20,11 +20,11 @@ Background:
   Then Product Image should be seen
    @US061_TC_02
    @UI
-    Scenario: Rate the product, Rate The Seller buttons should be clickable
+    Scenario: US061_TC_02 Rate the product, Rate The Seller buttons should be clickable
       And Rate the product button should be clickable
       And Rate the Seller button should be clickable
-  @US061_TC_02
+  @US061_TC_03
   @UI
-      Scenario: When the Rate the product, Rate The Seller buttons are clicked, various actions should be performed on the screen that opens.
+      Scenario: US061_TC_03When the Rate the product, Rate The Seller buttons are clicked, various actions should be performed on the screen that opens.
       And The Rate the product button are clicked various actions should be performed on the screen that open
       Then The Rate the Seller button are clicked various actions should be performed on the screen that open

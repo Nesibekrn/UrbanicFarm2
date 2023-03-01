@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 import pages.CommonPage;
 import utilities.BrowserUtilities;
+import utilities.JSutilities;
 
 import static stepDefinitions.Hooks.driver;
 
@@ -54,25 +55,32 @@ Actions actions=new Actions(driver);
 
     @And("Rate the Seller button should be clickable")
     public void rateTheSellerButtonShouldBeClickable() {
-   getOrdersPage().rateTheSeller.click();
+      getOrdersPage().rateTheSeller.click();
+       //BrowserUtilities.waitForClickable(getOrdersPage().rateTheSeller);
+       // JSutilities.clickWithJS(getOrdersPage().rateTheSeller);
     }
 
     @And("The Rate the product button are clicked various actions should be performed on the screen that open")
     public void theRateTheProductButtonAreClickedVariousActionsShouldBePerformedOnTheScreenThatOpen() {
+getOrdersPage().rateTheProduct.click();
+       BrowserUtilities.waitForClickable(getOrdersPage().cursorPointer);
         getOrdersPage().cursorPointer.click();
         BrowserUtilities.wait(2);
-        actions.moveToElement(getOrdersPage().commitBox).sendKeys("iyi").click(getOrdersPage().submitButton);
-        //getOrdersPage().commitBox.sendKeys("iyi");
+       // actions.moveToElement(getOrdersPage().commitBox).sendKeys("iyi").click(getOrdersPage().submitButton).build().perform();
+        getOrdersPage().commitBox.sendKeys("iyi");
+        getOrdersPage().submitButton.click();
         BrowserUtilities.wait(2);
         Assert.assertTrue(getOrdersPage().alert.isDisplayed());
     }
 
     @Then("The Rate the Seller button are clicked various actions should be performed on the screen that open")
     public void theRateTheSellerButtonAreClickedVariousActionsShouldBePerformedOnTheScreenThatOpen() {
+       getOrdersPage().rateTheSeller.click();
         getOrdersPage().cursorPointer.click();
         BrowserUtilities.wait(2);
-        actions.moveToElement(getOrdersPage().commitBox).sendKeys("iyi").click(getOrdersPage().submitButton);
-        //getOrdersPage().commitBox.sendKeys("iyi");
+        //actions.moveToElement(getOrdersPage().commitBox).sendKeys("iyi").click(getOrdersPage().submitButton).build().perform();
+        getOrdersPage().commitBox.sendKeys("iyi");
+        getOrdersPage().submitButton.click();
         BrowserUtilities.wait(2);
         Assert.assertTrue(getOrdersPage().alert.isDisplayed());
 

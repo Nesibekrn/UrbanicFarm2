@@ -1,8 +1,10 @@
 package pages;
 
-<<<<<<< HEAD
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class OrdersPage extends  CommonPage{
 
@@ -37,21 +39,8 @@ public class OrdersPage extends  CommonPage{
 
 @FindBy(xpath="//div[@role='alert']")
     public WebElement alert;
-=======
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
 
-import static utilities.Driver.getDriver;
-
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
-import java.util.List;
-
-public class OrdersPage extends  CommonPage{
     @FindBy(xpath = "//a[@href='/account/orders']")
     public WebElement order;
     @FindBy(xpath = " //section[@class='card mb-2']")
@@ -97,5 +86,5 @@ public class OrdersPage extends  CommonPage{
     @FindBy(xpath = "//*[text()='View all']")
     public WebElement viewAllLink;
 
->>>>>>> refs/remotes/origin/main
+
 }
