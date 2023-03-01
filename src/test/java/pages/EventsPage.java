@@ -61,4 +61,80 @@ public class EventsPage extends CommonPage{
 @FindBy(xpath="//*[text()='My Scheduled Events']")
     public WebElement MyScheduledEvents;
 
+
+    //Said US078
+    @FindBy(xpath = "//a[@class='Sidebar_section_btn__1sp6i h6 Sidebar_active__1HCV5']")
+    public WebElement myEvenetsButton;
+
+    //Said US078
+    @FindBy(xpath = "//button[@class='events-i-organize_btnCreate__2AWbt']")
+    public WebElement createNewEventButton;
+
+    //Said US078
+    @FindBy(xpath = "//input[@id='title']")
+    public WebElement titleBox;
+
+    //Said US078
+    @FindBy(xpath = "//select[@id='address2']")
+    public WebElement addressBox;
+
+    //Said US078
+    @FindBy(xpath = "//input[@id='date']")
+    public WebElement dateBox;
+
+    //Said US078
+    @FindBy(xpath = "//input[@id='time']")
+    public WebElement timeBox;
+
+    //Said US078
+    @FindBy(xpath = "//input[@id='fee']")
+    public WebElement feeeBox;
+
+    //Said US078
+    @FindBy(xpath = "//input[@id='duration']")
+    public WebElement durationBox;
+
+    //Said US078
+    @FindBy(xpath = "//input[@id='attendeeLimit']")
+    public WebElement attendeeLimitBox;
+
+    //Said US078
+    @FindBy(xpath = "//textarea[@id='tac']")
+    public WebElement termsAndConditionsBox;
+
+    //Said US078
+    @FindBy(xpath = "//*[@fill-rule='evenodd']")
+    public WebElement closeOfToastMessageAboutCreationOfEvent;
+
+    //Said US078
+    @FindBy(xpath = "//button[@class='btn btn-outline-warning p-1 col-lg-3 col-12 ScheduledEvents_btn__1gJtD']")
+    public WebElement cancelButton;
+
+    //Said US078
+    @FindBy(xpath = "(//button[@class='btn btn-primary mr-4'])[1]")
+    public WebElement yesButtonForCancellation;
+
+    //Said US078
+    @FindBy(xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
+    public WebElement toastMessageOfEventCancelled;
+
+    //Said US078
+    @FindBy(xpath = "//button[@class='btn btn-outline-primary p-1 col-lg-5 col-12 ScheduledEvents_btn__1gJtD']")
+    public WebElement markAsCompletedButton;
+
+    //Said US078
+    @FindBy(xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
+    public WebElement toastMessageOfEventMarkedAsCompleted;
+
+    //Said US078
+    @FindBy(xpath = "//button[@class='btn btn-outline-danger p-1 col-lg-3 col-12 ScheduledEvents_btn__1gJtD']")
+    public WebElement delete2Button;
+
+    //Said US078
+    @FindBy(xpath = "(//button[@class='btn btn-primary mr-4'])[1]")
+    public WebElement yesButtonForDeleting;
+
+    //Said US078
+    @FindBy(xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
+    public WebElement toastMessageOfEventDeleted;
 }
