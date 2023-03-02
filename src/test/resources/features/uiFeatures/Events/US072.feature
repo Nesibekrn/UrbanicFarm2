@@ -1,24 +1,22 @@
 @UI
+@US072_TC001
 Feature: US072 User goes to Events page
 
- Background:
-   And User goes to My Event page
+  Background:
+    And User goes to My Event page
+
   Scenario Outline: User goes to my events page
     Given User goes to click Create New Event
     And  when user enter this info "<Title>" ,"<Address>","<Date>","<Time>","<Fee>","<Duration>","<Attendee>","<Schedule>","<Description>","<Ters and Conditions>"
     Then User clicks Submit button
     Then User  check alert message"<Alert Message>","<Number>"
     Examples:
-      | Title | Address    | Date      | Time   | Fee | Duration | Attendee | Schedule | Description | Ters and Conditions | Alert Message                                                                                                                                                                             | Number |
-      |       |            |           |        |     |          |          |          |             |                     | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions. | 7      |
-#      | Home  | 23456 sout | 030229232 | 215252 |     |          |          |          |             |                     | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions. | 7      |
-#      |       |            |           |        |     |          |          |          |             |                     | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions. | 7      |
-#      |       |            |           |        |     |          |          |          |             |                     | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions. | 7      |
-#      |       |            |           |        |     |          |          |          |             |                     | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions. | 7      |
-#      |       |            |           |        |     |          |          |          |             |                     | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions. | 7      |
-#      |       |            |           |        |     |          |          |          |             |                     | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions. | 7      |
-#
-#
+      | Title | Address    | Date     | Time   | Fee | Duration | Attendee | Schedule | Description | Ters and Conditions | Alert Message                                                                                                                                                                                  | Number |
+      |       |            |          |        | 0   |          |          |          |             |                     | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions.      | 7      |
+      | Home  | 23456 sout | 03021222 | 215252 | 0   |          | 25       |          |             | vxczv               | Please enter a valid title.,Please select an address.,Please enter a further date,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions. | 7      |
+      |       |            |          |        | 0   |          | 25       |          |             | VSDFV               | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions.      | 7      |
+      | Home  | xcvx       |          | 215252 | 0   |          | 25       |          |             |                     | Please enter a valid title.,Please select an address.,Please fill this field,Please enter a valid duration.,Please enter a valid attendee limit.,Please enter valid terms and conditions.      | 7      |
+
 
 
 
