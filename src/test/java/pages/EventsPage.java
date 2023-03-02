@@ -61,6 +61,36 @@ public class EventsPage extends CommonPage{
 @FindBy(xpath="//*[text()='My Scheduled Events']")
     public WebElement MyScheduledEvents;
 
+    //Sevinc
+    @FindBy(xpath = "//button[contains(text(),'Add')]")
+    public WebElement AddButton;
+
+    @FindBy(id = "addressTitle")
+    public WebElement AddressTitle;
+
+    @FindBy(id = "address")
+    public WebElement Address3;
+
+    @FindBy(id = "states")
+    public WebElement States;
+
+    @FindBy(id = "cities")
+    public WebElement City;
+
+    @FindBy(id = "postal")
+    public WebElement PostalCode;
+
+    @FindBy(xpath = "//a[contains(text(),'Address')]")
+    public WebElement accountAddress;
+
+    @FindBy(xpath = "//button[@class='btn btn-outline-success ml-3']")
+    public WebElement submitButtonS;
+
+    @FindBy(xpath = "(//*[@class='card-title'])[9]")
+    public WebElement confAddress;
+
+    @FindBy(xpath = "//*[@class='card-title']")
+    public List<WebElement> confAddressList;
 
     //Said US078
     @FindBy(xpath = "//a[@class='Sidebar_section_btn__1sp6i h6 Sidebar_active__1HCV5']")
