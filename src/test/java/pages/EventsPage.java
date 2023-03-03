@@ -92,6 +92,9 @@ public class EventsPage extends CommonPage{
     @FindBy(xpath = "//*[@class='card-title']")
     public List<WebElement> confAddressList;
 
+    @FindBy(xpath="//div[@role='alert']")
+    public WebElement alert;
+
     //Said US078
     @FindBy(xpath = "//a[@class='Sidebar_section_btn__1sp6i h6 Sidebar_active__1HCV5']")
     public WebElement myEvenetsButton;
