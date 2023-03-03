@@ -22,8 +22,18 @@ public class US050_StepDefs extends CommonPage {
 
     @When("User clicks Account Name Navbar")
     public void userClicksAccountNameNavbar() {
-        getHomePage().accountName_navbar.click();
-        BrowserUtilities.wait(1);
+
+        do {
+            try {
+                Assert.assertTrue(getDeliveryPickupSettingsPage().deliveryPickUpSetting.isDisplayed());
+                break;
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            }
+            getHomePage().accountName_navbar.click();
+
+        } while (true);
     }
 
     @Then("User clicks Address Button")
