@@ -24,7 +24,7 @@ Feature: US073_User should be able to add an address successfully by providing w
     And  when user enter this info "<Address Title>" ,"<Address>","<State>","<City>","<Postal/Zip>"
     Then User clicks My events Submit button
 #    this message is not working
-#    Then user verifies the  "Address successfully added." message
+  Then user verifies the  "Address successfully added." message
 
     Examples:
       | Address Title | Address         | State   | City      | Postal/Zip |

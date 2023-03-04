@@ -7,7 +7,7 @@ Feature: US072 User goes to Events page
 
   Scenario Outline: User goes to my events page
     Given User goes to click Create New Event
-    And  when user enter this info "<Title>" ,"<Address>","<Date>","<Time>","<Fee>","<Duration>","<Attendee>","<Schedule>","<Description>","<Ters and Conditions>"
+    And  when user enter this info "<Title>","<Address>","<Date>","<Time>","<Fee>","<Duration>","<Attendee>","<Schedule>","<Description>","<Ters and Conditions>"
     Then User clicks Submit button
     Then User  check alert message"<Alert Message>","<Number>"
     Examples:
