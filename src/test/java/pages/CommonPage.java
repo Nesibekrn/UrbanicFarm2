@@ -24,12 +24,19 @@ public abstract class CommonPage{
     private YourProductsServicesPage yourProductsServicesPage;
     private  CartPage cartPage;
     private EventsPage events;
+    private PayPalPage payPalPage;
 
     private SupportUs supportUs;
 
 
 
+    public PayPalPage getPayPalPage() {
+        if (payPalPage == null) {
+            payPalPage = new PayPalPage();
+        }
 
+        return payPalPage;
+    }
     public YourProductsServicesPage getYourProductsServicesPage() {
         if(yourProductsServicesPage==null){
             yourProductsServicesPage=new YourProductsServicesPage();
