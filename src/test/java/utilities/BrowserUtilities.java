@@ -447,6 +447,19 @@ public class BrowserUtilities {
         }
 
     }
+    /**
+     * method is used to switch window by giving window index number
+     *
+     * @param index index number of windows
+     */
+    public static void switchToWindow(int index) {
+        waitForSecondWindow();
+        List<String> windowsHandles = new ArrayList<>(Driver.getDriver().getWindowHandles());
+
+        Driver.getDriver().switchTo().window(windowsHandles.get(index));
+
+
+    }
 
     /**
      * method is used to wait second window
