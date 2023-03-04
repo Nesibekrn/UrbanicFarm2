@@ -19,14 +19,14 @@ public class US071_stepDefs extends CommonPage {
     @Then("User verifies event created alert massages")
     public void user_verifies_even_created_alert_massages() {
         BrowserUtilities.wait(3);
-        Assert.assertTrue(getEvent().eventCreatedAlertMassage.isDisplayed());
-        BrowserUtilities.waitForVisibility(getEvent().eventCreatedAlertMassage,5);
+        Assert.assertTrue(getEvent().eventCreateddAlertMassage.isDisplayed());
+        BrowserUtilities.waitForVisibility(getEvent().eventCreateddAlertMassage,5);
     }
 
     @Then("User verifies new sign massages")
     public void user_verifies_new_sign_massages() {
         BrowserUtilities.wait(3);
-        Assert.assertTrue(getEvent().newSingMassage.isDisplayed());
+        Assert.assertTrue(getEvent().newSinggMassage.isDisplayed());
 
 
     }

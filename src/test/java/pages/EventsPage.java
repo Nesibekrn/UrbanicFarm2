@@ -197,5 +197,22 @@ public class EventsPage extends CommonPage{
     public WebElement toastMessageOfEventLinkCopied;
 
 
+    //aziz US071
+    @FindBy(xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
+    public WebElement eventCreateddAlertMassage;
+
+    //aziz US071
+    @FindBy(xpath = "(//*[text()='NEW'])[1]")
+    public WebElement newSinggMassage;
+
+  //aziz US071
+    @FindBy(xpath = "//button[@class='btn btn-outline-success px-4']")
+    public WebElement submitButton2;
+
+
+
+
+
+
 
 }
