@@ -167,4 +167,5 @@ public class EventsPage extends CommonPage{
     //Said US078
     @FindBy(xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
     public WebElement toastMessageOfEventDeleted;
+
 }
