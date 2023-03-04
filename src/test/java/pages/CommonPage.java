@@ -25,6 +25,8 @@ public abstract class CommonPage{
     private  CartPage cartPage;
     private EventsPage events;
 
+    private SupportUs supportUs;
+
 
 
 
@@ -39,6 +41,13 @@ public abstract class CommonPage{
             events=new EventsPage();
         }
         return events;
+    }
+
+    public SupportUs getSupportUs() {
+        if(supportUs==null){
+            supportUs=new SupportUs();
+        }
+        return supportUs;
     }
 
     public WelcomePage getWelcomePage() {
