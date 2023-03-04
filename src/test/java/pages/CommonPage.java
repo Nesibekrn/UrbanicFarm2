@@ -26,6 +26,8 @@ public abstract class CommonPage{
     private EventsPage events;
     private PayPalPage payPalPage;
 
+    private SupportUs supportUs;
+
 
 
     public PayPalPage getPayPalPage() {
@@ -46,6 +48,13 @@ public abstract class CommonPage{
             events=new EventsPage();
         }
         return events;
+    }
+
+    public SupportUs getSupportUs() {
+        if(supportUs==null){
+            supportUs=new SupportUs();
+        }
+        return supportUs;
     }
 
     public WelcomePage getWelcomePage() {

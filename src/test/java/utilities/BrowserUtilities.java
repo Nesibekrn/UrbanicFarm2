@@ -20,6 +20,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import static stepDefinitions.Hooks.*;
 
@@ -423,5 +424,51 @@ public class BrowserUtilities {
     public static void switchToNewWindow (){
         Driver.getDriver().switchTo().newWindow(WindowType.TAB);
     }
+
+    /**
+     * method is used to switch window
+     */
+    public static void switchToWindow() {
+
+        waitForSecondWindow();
+        String currentWindowHandle = Driver.getDriver().getWindowHandle(); //current
+
+        Set<String> windowHandles = Driver.getDriver().getWindowHandles(); // current other
+
+        for (String w : windowHandles) {
+
+            if (!currentWindowHandle.equals(w)) {
+
+                Driver.getDriver().switchTo().window(w);
+                break;
+
+            }
+
+        }
+
+    }
+
+    /**
+     * method is used to wait second window
+     */
+    private static void waitForSecondWindow() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+
+        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+
+    }
+
+    /**
+     * method used to add two double string in proper way
+     *
+     * @param no1 first double in String format
+     * @param no2 second double in String format
+     * @return proper addition in String format
+     */
+    public static String addTwoDouble(String no1, String no2) {
+
+        return "";
+    }
+
 }
 
