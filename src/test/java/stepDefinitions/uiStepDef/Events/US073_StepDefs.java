@@ -32,11 +32,12 @@ public class US073_StepDefs extends CommonPage {
         BrowserUtilities.scrollAndClickWithJS(getEvent().submitButtonS);
     }
 //     this message is not display
-//    @Then("user verifies the  {string} message")
-//    public void userVerifiesTheMessage(String arg0) {
-//
-//
-//    }
+    @Then("user verifies the  {string} message")
+    public void userVerifiesTheMessage(String arg0) {
+        Assert.assertTrue(getEvent().alert.isDisplayed());
+
+
+    }
 
 
     @And("User click on Address button")

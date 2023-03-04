@@ -25,22 +25,34 @@ public class US072_stepDefs extends CommonPage {
     }
 
 
-    @And("when user enter this info {string} ,{string},{string},{string},{string},{string},{string},{string},{string},{string}")
+    @And("when user enter this info {string},{string},{string},{string},{string},{string},{string},{string},{string},{string}")
     public void whenUserEnterThisInfo(String Title, String Address, String Date,
                                       String Time, String Fee, String Duration,
                                       String Attendee, String Schedule,
                                       String Description, String TersAndConditions) {
 
-          getEvent().tittle.sendKeys(Title);
-          getEvent().address2.sendKeys(Address);
-          getEvent().Date.sendKeys(Date);
-          getEvent().Time.sendKeys(Time);
-          getEvent().Fee.sendKeys(Fee);
-          getEvent().Duration.sendKeys(Duration);
-          getEvent().Attendee.sendKeys(Attendee);
-          getEvent().Schedule.sendKeys(Schedule);
-          getEvent().Description.sendKeys(Description);
-          getEvent().TersAndConditions.sendKeys(TersAndConditions);
+        getEvent().tittle.sendKeys(Title);
+        BrowserUtilities.wait(1);
+        getEvent().tittle.sendKeys(Title);
+        BrowserUtilities.wait(1);
+        getEvent().address2.sendKeys(Address);
+        BrowserUtilities.wait(1);
+        getEvent().Date.sendKeys(Date);
+        BrowserUtilities.wait(1);
+        getEvent().Time.sendKeys(Time);
+        BrowserUtilities.wait(1);
+        getEvent().Fee.sendKeys(Fee);
+        BrowserUtilities.wait(1);
+        getEvent().Duration.sendKeys(Duration);
+        BrowserUtilities.wait(1);
+        getEvent().Attendee.sendKeys(Attendee);
+        BrowserUtilities.wait(1);
+        getEvent().Schedule.sendKeys(Schedule);
+        BrowserUtilities.wait(1);
+        getEvent().Description.sendKeys(Description);
+        BrowserUtilities.wait(1);
+        getEvent().TersAndConditions.sendKeys(TersAndConditions);
+        BrowserUtilities.wait(1);
 
     }
 

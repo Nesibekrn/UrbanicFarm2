@@ -92,6 +92,9 @@ public class EventsPage extends CommonPage{
     @FindBy(xpath = "//*[@class='card-title']")
     public List<WebElement> confAddressList;
 
+    @FindBy(xpath="//div[@role='alert']")
+    public WebElement alert;
+
     //Said US078
     @FindBy(xpath = "//a[@class='Sidebar_section_btn__1sp6i h6 Sidebar_active__1HCV5']")
     public WebElement myEvenetsButton;
@@ -167,5 +170,32 @@ public class EventsPage extends CommonPage{
     //Said US078
     @FindBy(xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
     public WebElement toastMessageOfEventDeleted;
+
+    //Said US078
+    @FindBy(xpath = "//span[@class='ScheduledEvents_canceled__3gHpw']")
+    public WebElement canceledSignMessage;
+
+    //Said US078
+    @FindBy(xpath = "//*[@aria-label='close']")
+    public WebElement alertCloseButton;
+
+    //Said US078
+    @FindBy(xpath = "//*[text()='My Completed Events']")
+    public WebElement myCompletedEventsTab;
+
+    //Said US078
+    @FindBy(xpath = "(//*[text()='COMPLETED'])[1]")
+    public WebElement completedSignMessage;
+
+
+    //Said US078
+    @FindBy(xpath = "(//*[text()='Copy Link'])[1]")
+    public WebElement copyLinkButton;
+
+    //Said US078
+    @FindBy(xpath = "//*[text()='Event Link Copied to Clipboard']")
+    public WebElement toastMessageOfEventLinkCopied;
+
+
 
 }
