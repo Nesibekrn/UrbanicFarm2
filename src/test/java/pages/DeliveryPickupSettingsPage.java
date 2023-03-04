@@ -3,6 +3,10 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class DeliveryPickupSettingsPage extends  CommonPage{
 
         //Sevinc
@@ -103,6 +107,62 @@ public class DeliveryPickupSettingsPage extends  CommonPage{
         public WebElement orderByDay;
         @FindBy(css = "#_orderByTime")
         public WebElement orderByTime;
+
+        //Furkan US056
+        @FindBy(xpath = "//a[@href='/account/delivery']")
+        public WebElement deliveryPickUpSetting;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='BUYER_PICKUP_FROM_BRANCH']")
+        public WebElement buyerPicksUpOnTheVineCheckbox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='BUYER_PICKUP']")
+        public WebElement buyerPicksUpCheckbox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='SELLER_DELIVERY']")
+        public WebElement sellerDeliversTheProductsCheckbox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='SELLER_FLEXIBLE']")
+        public WebElement sellerFlexibleDeliveryCheckbox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='freeDeliveryRange']")
+        public WebElement freeDeliveryRangeMileBox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='perMileCost']")
+        public WebElement perMileCostBox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='estimatedDeliveryTime']")
+        public WebElement estimatedDeliveryTimeBox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='minFreeDeliveryOrder']")
+        public WebElement minimumOrderAmountForFreeDeliveryBox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='maxDeliveryRange']")
+        public WebElement maximumDeliveryRangeBox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[@id='providingDistance']")
+        public WebElement upToMileBox;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[text()='Update']")
+        public WebElement updateButton;
+
+        //Furkan US056
+        @FindBy(xpath = "//*[text()='+']")
+        public WebElement plusButton;
+        public List<WebElement> arkadortlu = new ArrayList<>(Arrays.asList(freeDeliveryRangeMileBox,minimumOrderAmountForFreeDeliveryBox,perMileCostBox,maximumDeliveryRangeBox));
+
+        @FindBy(xpath="//div[@role='alert']")
+        public WebElement alert;
 
 
 
