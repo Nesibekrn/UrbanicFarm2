@@ -10,7 +10,7 @@
 #user should provide Zip code for the event, it is required filed
 #user should be able to add an address by clicking "Submit " button.
 #seeing successful message "Address successfully added."
-
+#Sevinc
 @UI
 @073
 Feature: US073_User should be able to add an address successfully by providing with valid data
