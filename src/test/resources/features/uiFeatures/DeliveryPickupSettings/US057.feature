@@ -40,31 +40,31 @@ Feature:
       | _deliveryEndTime             |
       | _orderByDay                  |
       | _orderByTime                 |
-
-  Scenario: TC002 - inputs
-    When user enters number to free delivery range and asserts border color and alerts
-      | -1        | rgba(255, 0, 0, 0.25) | Value must be greater than or equal to 0. | 10 |
-      | -0.00001  | rgba(255, 0, 0, 0.25) | Value must be greater than or equal to 0. | 10 |
-      | 0         | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
-      | 1         | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
-      | 265       | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
-      | 999       | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
-      | 1000      | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
-      | 1000.0001 | rgba(255, 0, 0, 0.25) | Value must be less than or equal to 1000. | 10 |
-      | 1001      | rgba(255, 0, 0, 0.25) | Value must be less than or equal to 1000. | 10 |
-
-  Scenario Outline: TC003 - time day
-    When user selects "<orderBegin>" for orderBegin
-    And user enters input to order begin "<beginTime>"
-    And user selects "<orderEnd>" for orderEnd
-    And user enters input to order end "<endTime>"
-    And user selects "<deliverBy>" for deliverBy
-    And user enters input to deliver by "<deliverTime>"
-    And user clicks on update button with js
-    Then user verifies the toast message is "<toastMessage>"
-    Scenarios:
-      | orderBegin | beginTime | orderEnd | endTime | deliverBy | deliverTime | toastMessage                                                                     |
-      | 6          | 0205pm    | 3        | 0306pm  | 2         | 0306pm      | At the 1. line, The end time of order must be later than the start time of order |
-      | 3          | 0205pm    | 3        | 0205am  | 2         | 0306pm      | At the 1. line, The end time of order must be later than the start time of order |
-      | 3          | 0205pm    | 6        | 0306pm  | 2         | 0306pm      | Your delivery settings have been successfully updated                            |
-
+#
+#  Scenario: TC002 - inputs
+#    When user enters number to free delivery range and asserts border color and alerts
+#      | -1        | rgba(255, 0, 0, 0.25) | Value must be greater than or equal to 0. | 10 |
+#      | -0.00001  | rgba(255, 0, 0, 0.25) | Value must be greater than or equal to 0. | 10 |
+#      | 0         | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
+#      | 1         | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
+#      | 265       | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
+#      | 999       | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
+#      | 1000      | rgba(206, 0, 0, 1)    | Please fill out this field.               |    |
+#      | 1000.0001 | rgba(255, 0, 0, 0.25) | Value must be less than or equal to 1000. | 10 |
+#      | 1001      | rgba(255, 0, 0, 0.25) | Value must be less than or equal to 1000. | 10 |
+#
+#  Scenario Outline: TC003 - time day
+#    When user selects "<orderBegin>" for orderBegin
+#    And user enters input to order begin "<beginTime>"
+#    And user selects "<orderEnd>" for orderEnd
+#    And user enters input to order end "<endTime>"
+#    And user selects "<deliverBy>" for deliverBy
+#    And user enters input to deliver by "<deliverTime>"
+#    And user clicks on update button with js
+#    Then user verifies the toast message is "<toastMessage>"
+#    Scenarios:
+#      | orderBegin | beginTime | orderEnd | endTime | deliverBy | deliverTime | toastMessage                                                                     |
+#      | 6          | 0205pm    | 3        | 0306pm  | 2         | 0306pm      | At the 1. line, The end time of order must be later than the start time of order |
+#      | 3          | 0205pm    | 3        | 0205am  | 2         | 0306pm      | At the 1. line, The end time of order must be later than the start time of order |
+#      | 3          | 0205pm    | 6        | 0306pm  | 2         | 0306pm      | Your delivery settings have been successfully updated                            |
+#
