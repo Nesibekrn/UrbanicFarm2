@@ -21,7 +21,7 @@ Feature:As a User, should able to delete the event
     And User click Submit button
     Examples:
       | Title   | Address | Date       | Time  | Duration | Attendee | Terms and Conditions | Title Address | Address1    | State | City | Postal |
-      | Meeting | Home    | 08.03.2023 | 19.15 | 90       | 90       | Business Man         | Apartman      | kemaloz mah | Ege   | Usak | 64200  |
+      | Meeting | Home    | 10.11.2023 | 19.15 | 90       | 90       | Business Man         | Apartman      | kemaloz mah | Ege   | Usak | 64200  |
 
   @US077_TC_02
   @UI

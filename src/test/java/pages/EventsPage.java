@@ -238,4 +238,6 @@ public class EventsPage extends CommonPage{
 @FindBy(xpath = "//div[text()='You have not any scheduled events yet.']")
     public WebElement notScheduledEvents;
 
+@FindBy(xpath = "//button[text()='Submit']")
+    public WebElement submitButton2;
 }
