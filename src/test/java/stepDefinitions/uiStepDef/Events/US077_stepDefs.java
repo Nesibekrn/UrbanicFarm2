@@ -73,10 +73,12 @@ import utilities.BrowserUtilities;
         @And("User click Submit button")
         public void userClickSubmitButton() {
            BrowserUtilities.wait(3);
-           BrowserUtilities.scrollAndClickWithJS(getEvent().submitButton);
-          // BrowserUtilities.waitForClickable(getEvent().submitButton).click();
+           BrowserUtilities.scrollAndClickWithJS(getEvent().submitButton2);
+
+           // BrowserUtilities.waitForClickable(getEvent().submitButton).click();
           // BrowserUtilities.waitForVisibility(getEvent().submitButton,2).click();
-            // getEvent().submitButtonS.click();
+            // getEvent().submitButton2.click();
+             BrowserUtilities.wait(2);
         }
 
 
