@@ -29,7 +29,8 @@ public class Address {
 
     @Then("user gets address info")
     public void userGetsAddressInfo() {
-       addressIds= ApiUtilities.Address.getAddress(USER.EZRA);
+
+        addressIds= ApiUtilities.Address.getAddress(USER.EZRA);
     }
 
     @When("user adds an address")
