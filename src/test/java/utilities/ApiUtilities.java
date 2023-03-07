@@ -26,6 +26,7 @@ public class ApiUtilities {
                 .setBaseUri("https://test.urbanicfarm.com/api")
                 .setRelaxedHTTPSValidation()
                 .build();
+
     }
 
     public static RequestSpecification requestSpecification(USER user) {
