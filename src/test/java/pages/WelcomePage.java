@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import stepDefinitions.Hooks;
 
 import java.util.List;
 
@@ -143,6 +144,41 @@ public class WelcomePage extends CommonPage {
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/div/div[1]/div[3]/table/tbody/tr[3]/td")
     public WebElement finalTotalElement;
+
+
+    @FindBy(xpath = "//*[text() = 'Contact Us']")
+    public WebElement contactUsButtonOnMainPage;
+
+    @FindBy(xpath = "//*[text() = 'GET IN TOUCH']")
+    public WebElement getInTouchText;
+
+    @FindBy(name = "email")
+    public WebElement emailBoxInContactPage;
+
+    public String fakeEmailAddress = Hooks.faker.name().fullName();
+
+    @FindBy(xpath = "//*[text()='Send Message']")
+    public WebElement sendMessageButton;
+
+    @FindBy(name = "name")
+    public WebElement nameBox;
+
+    @FindBy(xpath = "//*[text()='Please enter a valid name.']")
+    public WebElement pleaseEnterAValidNameErrorMessage;
+
+
+    @FindBy(xpath = "//*[text()='Please enter a valid email address.']")
+    public WebElement pleaseEnterAValidEmailErrorMessage;
+
+    @FindBy(xpath = "//textarea[@class = 'form-control is-invalid']")
+    public WebElement messageBoxInContactPage;
+
+    @FindBy(name = "subject")
+    public WebElement subjectBoxInContactPage;
+
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/div/div/div[2]/form/div/div[4]/div/div")
+    public WebElement pleaseEnterAValidMessageErrorMessage;
+
 }
 
 
