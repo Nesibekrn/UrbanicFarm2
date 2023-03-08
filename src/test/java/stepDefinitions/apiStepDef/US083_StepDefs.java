@@ -26,23 +26,14 @@ public class US083_StepDefs {
         map.put("subject","BUYING");
 
         response= RestAssured.given().contentType("application/json")
-
                 .when().body(map).post(URL);
-
         response.prettyPrint();
-
-
     }
-
 
     @Then("user verifies the status code  {int}")
     public void userVerifiesTheStatusCode(int statusCode){
-
         // response.then().assertThat().statusCode(200);
-
         Assert.assertEquals(statusCode,response.statusCode());
-
-
     }
 
 
