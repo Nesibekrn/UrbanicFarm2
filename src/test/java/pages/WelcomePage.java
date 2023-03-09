@@ -143,6 +143,8 @@ public class WelcomePage extends CommonPage {
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/div/div[1]/div[3]/table/tbody/tr[3]/td")
     public WebElement finalTotalElement;
+    @FindBy(xpath = "//div[@class='Notifications_notificationNumContainer__myxVE']/span")
+    public WebElement numberOfNotification;
 }
 
 
