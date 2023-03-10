@@ -209,10 +209,42 @@ public class EventsPage extends CommonPage{
     @FindBy(xpath = "//button[@class='btn btn-outline-success px-4']")
     public WebElement submitButton2;
 
+// public class EventsPage extends CommonPage{
 
+    @FindBy(xpath="//input[@id='addressTitle']")
+    public WebElement addressTitle;
 
+    @FindBy(xpath = "//button[@class='btn btn-outline-success mb-1']")
+    public WebElement addButton;
 
+    @FindBy(xpath = "(//button[@class='btn btn-primary ml-4'])[1]")
+    public WebElement noButton;
 
+    @FindBy(xpath="//div[@role='alert']")
+    public WebElement alertDelete;
 
+    @FindBy(xpath = "//p[@class='text-center font-weight-bold']")
+    public WebElement createEvent;
+
+   @FindBy(xpath="//input[@id='address']")
+    public WebElement addressBox2;
+
+    @FindBy(xpath = "//input[@id='states']")
+    public WebElement statesBox;
+
+    @FindBy(xpath = "//input[@id='cities']")
+    public WebElement citiesBox;
+
+    @FindBy(xpath="//input[@id='postal']")
+    public WebElement postalBox;
+
+    @FindBy(xpath = "(//h5[@class='text-center mb-4'])[1]")
+    public WebElement h5;
+////button[@class='events-i-organize_accordionTab__166n1 events-i-organize_accordionActive__3YSTx']
+@FindBy(xpath = "//div[text()='You have not any scheduled events yet.']")
+    public WebElement notScheduledEvents;
 
 }
+
+
+

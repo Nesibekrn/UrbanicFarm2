@@ -9,6 +9,7 @@ import utilities.BrowserUtilities;
 import utilities.ConfigurationReader;
 import utilities.JSutilities;
 
+import static stepDefinitions.Hooks.driver;
 import static stepDefinitions.Hooks.select;
 
 public class US067_StepDefs extends CommonPage {
@@ -85,9 +86,10 @@ public class US067_StepDefs extends CommonPage {
         getOrdersPage().ordersLink.click();
     }
 
-    @And("User -Buyer- verifies that Orders status is {string}")
-    public void userBuyerVerifiesThatOrdersStatusIs(String expectedStatus) {
+    @And("User verifies that Orders status is {string}")
+    public void userVerifiesThatOrdersStatusIs(String expectedStatus) {
         Assert.assertEquals(expectedStatus, getOrdersPage().activeOrderStatus.getText());
+        driver.navigate().refresh();
     }
 
     @When("User -Seller- changes Orders status {string}")

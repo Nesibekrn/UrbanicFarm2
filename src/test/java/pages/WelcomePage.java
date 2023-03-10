@@ -179,6 +179,8 @@ public class WelcomePage extends CommonPage {
     @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[3]/div/div/div[2]/form/div/div[4]/div/div")
     public WebElement pleaseEnterAValidMessageErrorMessage;
 
+    @FindBy(xpath = "//div[@class='Notifications_notificationNumContainer__myxVE']/span")
+    public WebElement numberOfNotification;
 }
 
 
