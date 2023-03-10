@@ -20,12 +20,14 @@ public class ApiUtilities {
 
     public static Map<String, Object> payload = new HashMap<>();
 
+
     public static RequestSpecification requestSpecification(String token) {
-        return specification = new RequestSpecBuilder()
+   return  specification = new RequestSpecBuilder()
                 .addHeader("Authorization", "Bearer " + token)
                 .setBaseUri("https://test.urbanicfarm.com/api")
                 .setRelaxedHTTPSValidation()
                 .build();
+
     }
 
     public static RequestSpecification requestSpecification(USER user) {
@@ -43,13 +45,13 @@ public class ApiUtilities {
                 .formParams(payload)
                 .baseUri("https://test.urbanicfarm.com/api")
                 .post("/public/login");
+
         response.prettyPrint();
         token = response.jsonPath().getString("token");
         return token;
     }
 
     public static class Address {
-
 
         public static List<Integer> getAddress(USER user) {
             response = given().spec(requestSpecification(user)).post("/account/address/getAddress");
@@ -58,8 +60,15 @@ public class ApiUtilities {
 
 
             return response.jsonPath().getList("addresses.id");
+        }
+
+            public static List<Integer> getAddress(String token) {
+                response = given().spec(requestSpecification(token)).post("/account/address/getAddress");
+
+                response.prettyPrint();
 
 
+                return response.jsonPath().getList("addresses.id");
         }
 
         public static int addAddress(String address, String city, boolean isDefault, boolean isSellerAddress, String postal, String state, String title, boolean emptyBasket, USER user) {
@@ -73,7 +82,7 @@ public class ApiUtilities {
             payload.put("emptyBasket?", emptyBasket);
 
             response = given().
-                    body(payload).
+                    body(payload). contentType(ContentType.JSON).
                     spec(requestSpecification(user)).post("/account/address/addAddress");
 
             response.prettyPrint();

@@ -29,7 +29,7 @@ public class Address {
 
     @Then("user gets address info")
     public void userGetsAddressInfo() {
-       addressIds= ApiUtilities.Address.getAddress(USER.EZRA);
+        addressIds= ApiUtilities.Address.getAddress(USER.EZRA);
     }
 
     @When("user adds an address")
@@ -49,12 +49,12 @@ public class Address {
     public void userVerifiesAddedAddressExists() {
 //        response.prettyPrint();
         System.out.println(addressIds);
-        boolean bayrak=false;
+        boolean flag=false;
         for (int i = 0; i < addressIds.size(); i++) {
-            if(addressIds.get(i).equals(id)) bayrak=true;
+            if(addressIds.get(i).equals(id)) flag=true;
         }
 
-        Assert.assertTrue(bayrak);
+        Assert.assertTrue(flag);
     }
 
     @When("user updates the address")
@@ -69,7 +69,6 @@ public class Address {
                 "hello",
                 false,
                 token);
-
 
     }
 

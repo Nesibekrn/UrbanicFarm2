@@ -1,6 +1,6 @@
 @UI
 @US078
-Feature: US078_TC001_
+Feature: US078_TC001_As a user, should able to cancel/completed/share the event(s)
 
   Background: User goes to URL
     Given User goes to My Event page
