@@ -3,6 +3,7 @@ package stepDefinitions.apiStepDef;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;
+import org.junit.Assert;
 import utilities.ApiUtilities;
 import utilities.ConfigurationReader;
 
@@ -30,12 +31,16 @@ public class US089_StepDefs {
         System.out.println("value list"+values);
 
         Map<String,Object> addAddressN=new HashMap<>();
+
+        addAddressN.put("isDefault",false);
+        addAddressN.put("isSellerAddress",false);
         for (int i = 0; i < keys.size(); i++) {
             addAddressN.put(keys.get(i),values.get(i));
         }
         System.out.println("map"+addAddressN);
-        response = given().contentType(ContentType.JSON).spec(requestSpecification(token)).body(addAddressN).post("/account/address/addAddress");
-        response.prettyPrint();
+        response = given().contentType(ContentType.JSON).
+                spec(requestSpecification(token)).body(addAddressN).post("/account/address/addAddress");
+      //  response.prettyPrint();
         addressIdN=response.jsonPath().getInt("address.id");
         System.out.println(addressIdN);
     }
@@ -43,8 +48,12 @@ public class US089_StepDefs {
     public void userDeletesExistingAddressFromApi() {
         Map<String,Object>payload=new HashMap<>();
         payload.put("addressId",addressIdN);
-        response=given().contentType(ContentType.JSON).spec(requestSpecification(token)).body(payload).post("/account/address/delete");
+        response=given().contentType(ContentType.JSON)
+                .spec(requestSpecification(token))
+                .body(payload).post("/account/address/delete");
         response.prettyPrint();
+
+        Assert.assertEquals(true, response.jsonPath().getBoolean("success"));
     }
 
 

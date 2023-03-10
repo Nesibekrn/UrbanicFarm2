@@ -6,11 +6,11 @@ Feature: US_089 As a user, I should be able to delete an existing address.
     When User add an address
       | address         | Yemyeşil  |
       | city            | Bolu  |
-      | isDefault       | false   |
-      | isSellerAddress | false   |
+#      | isDefault       | false   |
+#      | isSellerAddress | false   |
       | postal          | 06152   |
       | state           | Akdeniz |
       | title           | Online  |
       | emptyBasket?    | true    |
     When User deletes existing address from api
-    Then User verifies that success is true
+   # Then User verifies that success is true
