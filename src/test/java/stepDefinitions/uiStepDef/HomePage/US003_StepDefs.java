@@ -19,4 +19,5 @@ public class US003_StepDefs extends CommonPage {
         Assert.assertEquals("https://test.urbanicfarm.com/blog/", driver.getCurrentUrl());
 
     }
-}
+
+  }
