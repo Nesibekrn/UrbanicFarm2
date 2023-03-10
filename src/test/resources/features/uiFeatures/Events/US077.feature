@@ -44,4 +44,3 @@ Feature:As a User, should able to delete the event
     And User click the Yes button
     And User sees "Event deleted" message
     And User sees "Event deleted" text and event is not in Scheduled Events List
-
