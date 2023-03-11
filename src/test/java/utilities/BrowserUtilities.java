@@ -16,11 +16,9 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 import static stepDefinitions.Hooks.*;
 
@@ -481,6 +479,25 @@ public class BrowserUtilities {
     public static String addTwoDouble(String no1, String no2) {
 
         return "";
+    }
+    public static String getDateForFuture(int dayToSkip) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, dayToSkip);
+        SimpleDateFormat format1 = new SimpleDateFormat("MM/dd/yyyy");
+        return format1.format(cal.getTime());
+    }
+    public static String getDateForFuture2(int dayToSkip) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, dayToSkip);
+        SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
+        return format1.format(cal.getTime());
+    }
+
+    public static String getTimeForFuture(int hourToSkip) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.HOUR, hourToSkip);
+        SimpleDateFormat format1 = new SimpleDateFormat("hh:mm");
+        return format1.format(cal.getTime());
     }
 
 }

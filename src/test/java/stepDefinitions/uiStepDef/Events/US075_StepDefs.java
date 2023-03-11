@@ -19,17 +19,16 @@ public class US075_StepDefs extends CommonPage {
 
     String eventName;
 
-    @And("user clicks on register")
-    public void userClicksOnRegister() {
+    @And("User clicks on register")
+    public void UserClicksOnRegister() {
         for (int i = 0; i < getEvent().registerButton.size() ; i++) {
             if (Integer.parseInt(getEvent().availableSeatNumber.get(i).getText())>0 && (Integer.parseInt(getEvent().availableSeatNumber.get(i).getText())<=Integer.parseInt(getEvent().attendeeLimitNumber.get(i).getText()))){
-                BrowserUtilities.wait(1);
+                BrowserUtilities.wait(2);
                 BrowserUtilities.scrollAndClickWithJS(getEvent().registerButton.get(i));
                 if (!driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
                     eventName=getEvent().registeredEventName.getText();
                     break;
                 }
-
             }
         }
         if (driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
@@ -42,9 +41,9 @@ public class US075_StepDefs extends CommonPage {
             Select select = new Select(getEvent().addressBox);
             select.selectByIndex(1);
             BrowserUtilities.wait(1);
-            getEvent().dateBox.sendKeys("12.03.2023");
+            getEvent().dateBox.sendKeys(BrowserUtilities.getDateForFuture2(1));
             BrowserUtilities.wait(1);
-            getEvent().timeBox.sendKeys("15.00");
+            getEvent().timeBox.sendKeys(BrowserUtilities.getTimeForFuture(0)+"P");
             BrowserUtilities.wait(1);
             getEvent().feeeBox.sendKeys("1");
             BrowserUtilities.wait(1);
@@ -60,8 +59,8 @@ public class US075_StepDefs extends CommonPage {
             BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("buyerToken"), "account/events");
             for (int j = 0; j < getEvent().registerButton.size(); j++) {
                 if (Integer.parseInt(getEvent().availableSeatNumber.get(j).getText()) > 0 && (Integer.parseInt(getEvent().availableSeatNumber.get(j).getText()) <= Integer.parseInt(getEvent().attendeeLimitNumber.get(j).getText()))) {
-                    BrowserUtilities.wait(1);
                     BrowserUtilities.scrollAndClickWithJS(getEvent().registerButton.get(j));
+                    BrowserUtilities.wait(2);
                     if (!driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
                         eventName = getEvent().registeredEventName.getText();
                         break;
@@ -72,15 +71,14 @@ public class US075_StepDefs extends CommonPage {
 
     }
 
-    @And("user clicks on Terms and conditions box")
-    public void userClicksOnTermsAndConditionsBox() {
+    @And("User clicks on Terms and conditions box")
+    public void UserClicksOnTermsAndConditionsBox() {
         BrowserUtilities.wait(2);
         BrowserUtilities.scrollAndClickWithJS(getEvent().termsAndConditionsCheckBox);
-        BrowserUtilities.wait(2);
     }
 
-    @And("user clicks on Approve button")
-    public void userClicksOnApproveButton() {
+    @And("User clicks on Approve button")
+    public void UserClicksOnApproveButton() {
         BrowserUtilities.wait(2);
         BrowserUtilities.scrollAndClickWithJS(getEvent().approveButton);
         BrowserUtilities.wait(2);
@@ -106,25 +104,14 @@ public class US075_StepDefs extends CommonPage {
                 } else {
                     commonPage.getCartPage().next.click();
                     commonPage.getPayPalPage().password.sendKeys(ConfigurationReader.getProperty("paypal_password"));
-
-
-                    //Assert.fail("2. senaryo olan passsword un farkli sayfada gelmesi gerceklesti");
                 }
-
                 BrowserUtilities.scrollAndClickWithJS(commonPage.getCartPage().paypal_btnLogin_down);
-
             }
-
             BrowserUtilities.scrollAndClickWithJS(commonPage.getPayPalPage().payment_submit_btn);
-
-           //BrowserUtilities.waitForClickable(commonPage.getPayPalPage().paymentSuccesfull);
-            //BrowserUtilities.switchToWindow();
-
         }
-
     }
-    @Then("user verifies valid registered message {string} if the event free")
-    public void userVerifiesValidRegisteredMessageIfTheEventFree(String alert) {
+    @Then("User verifies valid registered message {string} if the event free")
+    public void UserVerifiesValidRegisteredMessageIfTheEventFree(String alert) {
         if(driver.getWindowHandles().size()==1) {
             BrowserUtilities.waitForVisibility(getEvent().registeredMessage, 5);
             Assert.assertEquals(alert, getEvent().registeredMessage.getText());
@@ -132,8 +119,8 @@ public class US075_StepDefs extends CommonPage {
 
     }
 
-    @Then("user verifies valid registered message {string} if the event required fee")
-    public void userVerifiesValidRegisteredMessageIfTheEventRequiredFee(String alert) {
+    @Then("User verifies valid registered message {string} if the event required fee")
+    public void UserVerifiesValidRegisteredMessageIfTheEventRequiredFee(String alert) {
         if(driver.getWindowHandles().size()>1) {
             BrowserUtilities.waitForVisibility(getEvent().registeredMessage, 5);
             Assert.assertEquals(alert, getEvent().registeredMessage.getText());
@@ -141,12 +128,19 @@ public class US075_StepDefs extends CommonPage {
         }
     }
 
-    @Then("user should see the event on the Registered Events page")
-    public void userShouldSeeTheEventOnTheRegisteredEventsPage() {
+    @Then("User should see the event on the Registered Events page")
+    public void UserShouldSeeTheEventOnTheRegisteredEventsPage() {
 
         getEvent().registeredEventsButton.click();
 
         Assert.assertTrue(getEvent().registeredEvents.stream().anyMatch(t->t.getText().equals(eventName)));
+
+        BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerTokenOmer"), "account/events-i-organize");
+        try{getEvent().deleteButton.click();}
+        catch (Exception e ){
+            e.printStackTrace();
+        }
+
         /*
         //YÖNTEM-2
         List<String> registeredEventsNames= new ArrayList<>();
@@ -155,7 +149,6 @@ public class US075_StepDefs extends CommonPage {
         }
         Assert.assertTrue(registeredEventsNames.stream().anyMatch(t->t.equals(eventName)));
          */
-
     }
 
 
