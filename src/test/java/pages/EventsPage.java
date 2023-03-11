@@ -47,15 +47,11 @@ public class EventsPage extends CommonPage{
 @FindBy(xpath = "//a[text()='My Events']")
     public WebElement MyEvents;
 
-
-
 @FindBy(xpath="//input[@id='title']")
     public WebElement titleName;
 
 @FindBy(xpath="//button[@class='btn btn-outline-success px-4']")
     public WebElement submitButton;
-
-
 
 @FindBy(xpath = "//button[text()='Delete']")
     public WebElement deleteButton;
@@ -89,7 +85,6 @@ public class EventsPage extends CommonPage{
 
     @FindBy(xpath = "//button[@class='btn btn-outline-success ml-3']")
     public WebElement submitButtonS;
-
 
     @FindBy(xpath = "(//*[@class='card-title'])[9]")
     public WebElement confAddress;
@@ -167,7 +162,7 @@ public class EventsPage extends CommonPage{
     //Said US078
     @FindBy(xpath = "//button[@class='btn btn-outline-danger p-1 col-lg-3 col-12 ScheduledEvents_btn__1gJtD']")
     public WebElement delete2Button;
-////button[@name='delete']
+
     //Said US078
     @FindBy(xpath = "(//button[@class='btn btn-primary mr-4'])[1]")
     public WebElement yesButtonForDeleting;
@@ -202,8 +197,19 @@ public class EventsPage extends CommonPage{
     public WebElement toastMessageOfEventLinkCopied;
 
 
+    //aziz US071
+    @FindBy(xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
+    public WebElement eventCreateddAlertMassage;
 
+    //aziz US071
+    @FindBy(xpath = "(//*[text()='NEW'])[1]")
+    public WebElement newSinggMassage;
 
+  //aziz US071
+    @FindBy(xpath = "//button[@class='btn btn-outline-success px-4']")
+    public WebElement submitButton2;
+
+// public class EventsPage extends CommonPage{
 
     @FindBy(xpath="//input[@id='addressTitle']")
     public WebElement addressTitle;
@@ -239,7 +245,7 @@ public class EventsPage extends CommonPage{
     public WebElement notScheduledEvents;
 
 @FindBy(xpath = "//button[text()='Submit']")
-    public WebElement submitButton2;
+    public WebElement submitButton3;
 
 //NİDA
 
@@ -285,3 +291,6 @@ public class EventsPage extends CommonPage{
 
 
 }
+
+
+

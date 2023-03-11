@@ -21,6 +21,7 @@ public class US064_StepDefs extends CommonPage {
 
     @And("User click the Login link")
     public void userClickTheLoginLink() {
+        BrowserUtilities.wait(1);
         getHomePage().loginButton.click();
     }
 

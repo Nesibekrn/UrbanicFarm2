@@ -91,6 +91,25 @@ public class CartPage extends CommonPage{
     public WebElement paypal_btnLogin_up;
     @FindBy(id = "btnLogin")
     public WebElement paypal_btnLogin_down;
+    //nesibe US069
+    @FindBy(xpath = "//*[@class='proceed_circle__3NRN8']")
+    public WebElement informationCycle;
+    @FindBy(xpath = "(//*[@class='proceed_circle__3NRN8'])[2]")
+    public WebElement addressCycle;
+    @FindBy(xpath = "(//*[@class='proceed_circle__3NRN8'])[3]")
+    public WebElement reviewCycle;
+    @FindBy(xpath = "(//*[@class='proceed_circle__3NRN8'])[4]")
+    public WebElement paymentCycle;
+    @FindBy(xpath = "(//*[@class='proceed_circle__3NRN8'])[5]")
+    public WebElement completedCycle;
+    @FindBy(xpath = "//*[text()='Prev']")
+    public WebElement prevButton;
+    @FindBy(css = ".btn-info")
+    public WebElement rateOurServiceButton;
+    @FindBy(xpath = "//a[@href='/account/orders']")
+    public WebElement viewOrderDetailLink;
+    @FindBy(css = ".close.btn")
+    public WebElement rateOurServiceXButton;
 
 }
 
