@@ -244,6 +244,52 @@ public class EventsPage extends CommonPage{
 @FindBy(xpath = "//div[text()='You have not any scheduled events yet.']")
     public WebElement notScheduledEvents;
 
+@FindBy(xpath = "//button[text()='Submit']")
+    public WebElement submitButton3;
+
+//NİDA
+
+    @FindBy (xpath =" a[text()='Events']")
+    public WebElement events;
+    //////a[@class='Sidebar_section_btn__1sp6i h6 Sidebar_active__1HCV5']
+// a[text()='Events']
+    @FindBy (xpath = "//button[@class='events_accordionTab__2Oisf events_accordionActive__gh3Yk'][text()='Scheduled Events']")
+    public WebElement scheduledEvents;
+
+    @FindBy (xpath = "//button[@class='btn btn-outline-success p-1 col-lg-3 col-12 ScheduledEvents_btn__1gJtD']")
+    public List<WebElement> registerButton;
+
+    @FindBy (xpath = "//input[@class='eventRegister_custom-checkbox__3eYP8']")
+    public WebElement termsAndConditionsCheckBox;
+
+    @FindBy (xpath = "//button[@class='eventRegister_approveBtn__1P-N2']")
+    public WebElement approveButton;
+
+    @FindBy (xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
+    public WebElement registeredMessage;
+
+    @FindBy (xpath = "//h6[text() = 'Attendee Limit:']//span[@class='text-muted']")
+    public List<WebElement> attendeeLimitNumber;
+
+    @FindBy (xpath = "//h6[text() = 'Available Seat:']//span[@class='text-muted']")
+    public List<WebElement> availableSeatNumber;
+
+    @FindBy (xpath = "//button[text()= 'Registered Events']")
+    public WebElement registeredEventsButton;
+
+    @FindBy (xpath = "//span[@class= 'ml-2']")
+    public WebElement registeredEventName;
+
+    @FindBy (xpath = "//h5[@class='row justify-content-center text-warning']")
+    public List<WebElement> registeredEvents;
+
+
+    @FindBy (xpath = "span[style=\"margin-left: 3.2rem;\"]")
+    // //p[text()='Fee: ']/following::span
+    public WebElement fee;
+
+
+
 }
 
 
