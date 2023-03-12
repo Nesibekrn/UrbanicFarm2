@@ -491,7 +491,13 @@ public class BrowserUtilities {
         cal.add(Calendar.DATE, dayToSkip);
         SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
         return format1.format(cal.getTime());
+    }    public static String getDateForFuture3(int dayToSkip) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, dayToSkip);
+        SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+        return format1.format(cal.getTime());
     }
+
 
     public static String getTimeForFuture(int hourToSkip) {
         Calendar cal = Calendar.getInstance();
