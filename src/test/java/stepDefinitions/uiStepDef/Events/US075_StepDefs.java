@@ -3,13 +3,12 @@ package stepDefinitions.uiStepDef.Events;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 import pages.CommonPage;
-import utilities.BrowserUtilities;
-import utilities.ConfigurationReader;
-import utilities.Driver;
+import utilities.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,6 +26,8 @@ public class US075_StepDefs extends CommonPage {
     Response response;
     Integer eventId;
 
+    int adressId;
+
 
     @And("User clicks on register")
     public void UserClicksOnRegister() {
@@ -37,7 +38,7 @@ public class US075_StepDefs extends CommonPage {
                 if (!driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
                     eventName=getEvent().registeredEventName.getText();
                     break;
-                }
+                }getEvent().alertCloseButton.click();
             }
         }
         if (driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
@@ -68,6 +69,18 @@ public class US075_StepDefs extends CommonPage {
 
            BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("buyerToken"), "account/events");
              */
+            Map<String, Object> adressPayLoad = new HashMap<>();
+            adressPayLoad.put("isDefault",false);
+            adressPayLoad.put("isSellerAddress",false);
+            adressPayLoad.put("address","Mavi");
+            adressPayLoad.put("city","Bolu");
+            adressPayLoad.put("postal","06152");
+            adressPayLoad.put("state","Akdeniz");
+            adressPayLoad.put("title","Online");
+            adressPayLoad.put("emptyBasket?",false);
+            response = given().contentType(ContentType.JSON).
+                    spec(requestSpecification(ConfigurationReader.getProperty("sellerTokenOmer"))).body(adressPayLoad).post("/account/address/addAddress");
+            adressId = response.jsonPath().getInt("address.id");
 
             Map<String,Object> payLoad= new HashMap<>();
             payLoad.put("title",Faker.instance().name().title());
@@ -75,7 +88,7 @@ public class US075_StepDefs extends CommonPage {
             payLoad.put("fee",1);
             payLoad.put("duration",50);
             payLoad.put("attendeeLimit",10);
-            payLoad.put("addressId",764);
+            payLoad.put("addressId",adressId);
             payLoad.put("tac","null");
             response=given().spec(requestSpecification(ConfigurationReader.getProperty("sellerTokenOmer"))).formParams(payLoad).post("/account/event/create");
             response.prettyPrint();
@@ -89,7 +102,7 @@ public class US075_StepDefs extends CommonPage {
                     if (!driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
                         eventName = getEvent().registeredEventName.getText();
                         break;
-                    }
+                    }getEvent().alertCloseButton.click();
                 }
             }
         }
@@ -106,13 +119,12 @@ public class US075_StepDefs extends CommonPage {
     public void UserClicksOnApproveButton() {
         BrowserUtilities.wait(2);
         BrowserUtilities.scrollAndClickWithJS(getEvent().approveButton);
-        BrowserUtilities.wait(2);
+        BrowserUtilities.wait(5);
         if(driver.getWindowHandles().size()>1){
-
             BrowserUtilities.switchToWindow(1);
 
             if (BrowserUtilities.isDisplayed(commonPage.getCartPage().paypal_btnLogin_up)) {
-                commonPage.getCartPage().paypal_btnLogin_up.click();
+                JSutilities.clickWithJS(getCartPage().paypal_btnLogin_up);
                 BrowserUtilities.wait(3);
             }
 
@@ -137,9 +149,11 @@ public class US075_StepDefs extends CommonPage {
     }
     @Then("User verifies valid registered message {string} if the event free")
     public void UserVerifiesValidRegisteredMessageIfTheEventFree(String alert) {
+
         if(driver.getWindowHandles().size()==1) {
             BrowserUtilities.waitForVisibility(getEvent().registeredMessage, 5);
             Assert.assertEquals(alert, getEvent().registeredMessage.getText());
+
         }
 
     }
@@ -181,6 +195,13 @@ public class US075_StepDefs extends CommonPage {
             e.printStackTrace();
         }
          */
+
+        Map<String,Object> adressDeletePayload =new HashMap<>();
+        adressDeletePayload.put("addressId",adressId);
+        response=given().contentType(ContentType.JSON)
+                .spec(requestSpecification(ConfigurationReader.getProperty("sellerTokenOmer")))
+                .body(adressDeletePayload).post("/account/address/delete");
+
     }
 
 
