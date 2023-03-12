@@ -240,4 +240,15 @@ public class EventsPage extends CommonPage{
 
 @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButton2;
+
+// Vural
+@FindBy(xpath = "//button[text()='Update']")
+public WebElement updateButton;
+
+
+
 }
+
+
+
+
