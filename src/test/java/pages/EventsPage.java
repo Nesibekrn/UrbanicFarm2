@@ -288,6 +288,15 @@ public class EventsPage extends CommonPage{
     // //p[text()='Fee: ']/following::span
     public WebElement fee;
 
+    @FindBy (xpath = "//a[text()='Events']")
+    public WebElement eventsButton;
+
+    @FindBy (xpath = "//input[@type='number']" )
+    public WebElement numberOfAttendeesBox;
+
+    @FindBy (xpath = "//input[@class='eventRegister_custom-checkbox__3eYP8']")
+    public WebElement iAcceptTheTermsAndConditionsCheckBox;
+
 
 
 }
