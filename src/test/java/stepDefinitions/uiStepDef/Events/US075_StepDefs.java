@@ -78,6 +78,7 @@ public class US075_StepDefs extends CommonPage {
             payLoad.put("addressId",764);
             payLoad.put("tac","null");
             response=given().spec(requestSpecification(ConfigurationReader.getProperty("sellerTokenOmer"))).formParams(payLoad).post("/account/event/create");
+            response.prettyPrint();
             eventId=response.jsonPath().getInt("event.id");
             driver.navigate().refresh();
             BrowserUtilities.waitForPageToLoad(10);
@@ -157,8 +158,9 @@ public class US075_StepDefs extends CommonPage {
 
         getEvent().registeredEventsButton.click();
 
+        BrowserUtilities.wait(2);
         Assert.assertTrue(getEvent().registeredEvents.stream().anyMatch(t->t.getText().equals(eventName)));
-
+        BrowserUtilities.wait(2);
         /*
         //YÖNTEM-2
         List<String> registeredEventsNames= new ArrayList<>();
@@ -171,7 +173,7 @@ public class US075_StepDefs extends CommonPage {
         Map<String,Integer> payLoad2=new HashMap<>();
         payLoad2.put("eventId",eventId);
         response=given().spec(requestSpecification(ConfigurationReader.getProperty("sellerTokenOmer"))).formParams(payLoad2).post("/account/event/delete");
-
+        response.prettyPrint();
         /* Delete Event Yöntem-2
         BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerTokenOmer"), "account/events-i-organize");
         try{getEvent().deleteButton.click();}
