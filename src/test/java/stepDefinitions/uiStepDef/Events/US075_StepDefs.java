@@ -3,6 +3,7 @@ package stepDefinitions.uiStepDef.Events;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.restassured.response.Response;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 import pages.CommonPage;
@@ -11,20 +12,28 @@ import utilities.ConfigurationReader;
 import utilities.Driver;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.requestSpecification;
 import static stepDefinitions.Hooks.*;
+import static utilities.ApiUtilities.requestSpecification;
 
 public class US075_StepDefs extends CommonPage {
 
     String eventName;
+    Response response;
+    Integer eventId;
+
 
     @And("User clicks on register")
     public void UserClicksOnRegister() {
         for (int i = 0; i < getEvent().registerButton.size() ; i++) {
             if (Integer.parseInt(getEvent().availableSeatNumber.get(i).getText())>0 && (Integer.parseInt(getEvent().availableSeatNumber.get(i).getText())<=Integer.parseInt(getEvent().attendeeLimitNumber.get(i).getText()))){
-                BrowserUtilities.wait(2);
                 BrowserUtilities.scrollAndClickWithJS(getEvent().registerButton.get(i));
+                BrowserUtilities.wait(1);
                 if (!driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
                     eventName=getEvent().registeredEventName.getText();
                     break;
@@ -32,6 +41,7 @@ public class US075_StepDefs extends CommonPage {
             }
         }
         if (driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
+            /* Create Event Yöntem-2
             BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerTokenOmer"), "account/events-i-organize");
             getEvent().createNewEventButton.click();
             BrowserUtilities.wait(1);
@@ -56,11 +66,25 @@ public class US075_StepDefs extends CommonPage {
             BrowserUtilities.scrollAndClickWithJS(getEvent().submitButton);
             BrowserUtilities.wait(5);
 
-            BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("buyerToken"), "account/events");
+           BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("buyerToken"), "account/events");
+             */
+
+            Map<String,Object> payLoad= new HashMap<>();
+            payLoad.put("title",Faker.instance().name().title());
+            payLoad.put("date",BrowserUtilities.getDateForFuture3(1)+"T23:59");
+            payLoad.put("fee",1);
+            payLoad.put("duration",50);
+            payLoad.put("attendeeLimit",10);
+            payLoad.put("addressId",764);
+            payLoad.put("tac","null");
+            response=given().spec(requestSpecification(ConfigurationReader.getProperty("sellerTokenOmer"))).formParams(payLoad).post("/account/event/create");
+            eventId=response.jsonPath().getInt("event.id");
+            driver.navigate().refresh();
+            BrowserUtilities.waitForPageToLoad(10);
             for (int j = 0; j < getEvent().registerButton.size(); j++) {
                 if (Integer.parseInt(getEvent().availableSeatNumber.get(j).getText()) > 0 && (Integer.parseInt(getEvent().availableSeatNumber.get(j).getText()) <= Integer.parseInt(getEvent().attendeeLimitNumber.get(j).getText()))) {
                     BrowserUtilities.scrollAndClickWithJS(getEvent().registerButton.get(j));
-                    BrowserUtilities.wait(2);
+                    BrowserUtilities.wait(1);
                     if (!driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
                         eventName = getEvent().registeredEventName.getText();
                         break;
@@ -135,12 +159,6 @@ public class US075_StepDefs extends CommonPage {
 
         Assert.assertTrue(getEvent().registeredEvents.stream().anyMatch(t->t.getText().equals(eventName)));
 
-        BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerTokenOmer"), "account/events-i-organize");
-        try{getEvent().deleteButton.click();}
-        catch (Exception e ){
-            e.printStackTrace();
-        }
-
         /*
         //YÖNTEM-2
         List<String> registeredEventsNames= new ArrayList<>();
@@ -148,6 +166,18 @@ public class US075_StepDefs extends CommonPage {
             registeredEventsNames.add(getEvent().registeredEvents.get(i).getText());
         }
         Assert.assertTrue(registeredEventsNames.stream().anyMatch(t->t.equals(eventName)));
+         */
+
+        Map<String,Integer> payLoad2=new HashMap<>();
+        payLoad2.put("eventId",eventId);
+        response=given().spec(requestSpecification(ConfigurationReader.getProperty("sellerTokenOmer"))).formParams(payLoad2).post("/account/event/delete");
+
+        /* Delete Event Yöntem-2
+        BrowserUtilities.loginWithToken(ConfigurationReader.getProperty("sellerTokenOmer"), "account/events-i-organize");
+        try{getEvent().deleteButton.click();}
+        catch (Exception e ){
+            e.printStackTrace();
+        }
          */
     }
 
