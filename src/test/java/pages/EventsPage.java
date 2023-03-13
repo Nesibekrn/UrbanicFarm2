@@ -47,15 +47,11 @@ public class EventsPage extends CommonPage{
 @FindBy(xpath = "//a[text()='My Events']")
     public WebElement MyEvents;
 
-
-
 @FindBy(xpath="//input[@id='title']")
     public WebElement titleName;
 
 @FindBy(xpath="//button[@class='btn btn-outline-success px-4']")
     public WebElement submitButton;
-
-
 
 @FindBy(xpath = "//button[text()='Delete']")
     public WebElement deleteButton;
@@ -89,7 +85,6 @@ public class EventsPage extends CommonPage{
 
     @FindBy(xpath = "//button[@class='btn btn-outline-success ml-3']")
     public WebElement submitButtonS;
-
 
     @FindBy(xpath = "(//*[@class='card-title'])[9]")
     public WebElement confAddress;
@@ -167,7 +162,7 @@ public class EventsPage extends CommonPage{
     //Said US078
     @FindBy(xpath = "//button[@class='btn btn-outline-danger p-1 col-lg-3 col-12 ScheduledEvents_btn__1gJtD']")
     public WebElement delete2Button;
-////button[@name='delete']
+
     //Said US078
     @FindBy(xpath = "(//button[@class='btn btn-primary mr-4'])[1]")
     public WebElement yesButtonForDeleting;
@@ -202,8 +197,19 @@ public class EventsPage extends CommonPage{
     public WebElement toastMessageOfEventLinkCopied;
 
 
+    //aziz US071
+    @FindBy(xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
+    public WebElement eventCreateddAlertMassage;
 
+    //aziz US071
+    @FindBy(xpath = "(//*[text()='NEW'])[1]")
+    public WebElement newSinggMassage;
 
+  //aziz US071
+    @FindBy(xpath = "//button[@class='btn btn-outline-success px-4']")
+    public WebElement submitButton2;
+
+// public class EventsPage extends CommonPage{
 
     @FindBy(xpath="//input[@id='addressTitle']")
     public WebElement addressTitle;
@@ -239,16 +245,62 @@ public class EventsPage extends CommonPage{
     public WebElement notScheduledEvents;
 
 @FindBy(xpath = "//button[text()='Submit']")
-    public WebElement submitButton2;
+    public WebElement submitButton3;
 
-// Vural
-@FindBy(xpath = "//button[text()='Update']")
-public WebElement updateButton;
+//NİDA
+
+    @FindBy (xpath =" a[text()='Events']")
+    public WebElement events;
+    //////a[@class='Sidebar_section_btn__1sp6i h6 Sidebar_active__1HCV5']
+// a[text()='Events']
+    @FindBy (xpath = "//button[@class='events_accordionTab__2Oisf events_accordionActive__gh3Yk'][text()='Scheduled Events']")
+    public WebElement scheduledEvents;
+
+    @FindBy (xpath = "//button[@class='btn btn-outline-success p-1 col-lg-3 col-12 ScheduledEvents_btn__1gJtD']")
+    public List<WebElement> registerButton;
+
+    @FindBy (xpath = "//input[@class='eventRegister_custom-checkbox__3eYP8']")
+    public WebElement termsAndConditionsCheckBox;
+
+    @FindBy (xpath = "//button[@class='eventRegister_approveBtn__1P-N2']")
+    public WebElement approveButton;
+
+    @FindBy (xpath = "//div[@class='Toastify__toast-body toastr_custom-toastr__iiU37']")
+    public WebElement registeredMessage;
+
+    @FindBy (xpath = "//h6[text() = 'Attendee Limit:']//span[@class='text-muted']")
+    public List<WebElement> attendeeLimitNumber;
+
+    @FindBy (xpath = "//h6[text() = 'Available Seat:']//span[@class='text-muted']")
+    public List<WebElement> availableSeatNumber;
+
+    @FindBy (xpath = "//button[text()= 'Registered Events']")
+    public WebElement registeredEventsButton;
+
+    @FindBy (xpath = "//span[@class= 'ml-2']")
+    public WebElement registeredEventName;
+
+    @FindBy (xpath = "//h5[@class='row justify-content-center text-warning']")
+    public List<WebElement> registeredEvents;
+
+
+    @FindBy (xpath = "span[style=\"margin-left: 3.2rem;\"]")
+    // //p[text()='Fee: ']/following::span
+    public WebElement fee;
+
+    @FindBy (xpath = "//a[text()='Events']")
+    public WebElement eventsButton;
+
+    @FindBy (xpath = "//input[@type='number']" )
+    public WebElement numberOfAttendeesBox;
+
+    @FindBy (xpath = "//input[@class='eventRegister_custom-checkbox__3eYP8']")
+    public WebElement iAcceptTheTermsAndConditionsCheckBox;
+
+    // Vural
+    @FindBy(xpath = "//button[text()='Update']")
+    public WebElement updateButton;
 
 
 
 }
-
-
-
-

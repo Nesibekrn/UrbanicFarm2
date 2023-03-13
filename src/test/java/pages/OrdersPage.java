@@ -85,6 +85,8 @@ public class OrdersPage extends  CommonPage{
     public List<WebElement> markReadList;
     @FindBy(xpath = "//*[text()='View all']")
     public WebElement viewAllLink;
+    @FindBy(xpath = "//*[text()='How would you rate our service ?']")
+    public WebElement howWouldYouRateOurServiceTitle;
     @FindBy(xpath = "//*[text()='Filter by unread']")
     public WebElement filterByUnreadLink;
 

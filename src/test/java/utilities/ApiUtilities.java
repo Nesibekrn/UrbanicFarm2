@@ -46,7 +46,7 @@ public class ApiUtilities {
                 .baseUri("https://test.urbanicfarm.com/api")
                 .post("/public/login");
 
-        response.prettyPrint();
+        //response.prettyPrint();
         token = response.jsonPath().getString("token");
         return token;
     }
@@ -60,8 +60,15 @@ public class ApiUtilities {
 
 
             return response.jsonPath().getList("addresses.id");
+        }
+
+            public static List<Integer> getAddress(String token) {
+                response = given().spec(requestSpecification(token)).post("/account/address/getAddress");
+
+                response.prettyPrint();
 
 
+                return response.jsonPath().getList("addresses.id");
         }
 
         public static int addAddress(String address, String city, boolean isDefault, boolean isSellerAddress, String postal, String state, String title, boolean emptyBasket, USER user) {
