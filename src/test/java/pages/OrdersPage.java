@@ -87,6 +87,8 @@ public class OrdersPage extends  CommonPage{
     public WebElement viewAllLink;
     @FindBy(xpath = "//*[text()='How would you rate our service ?']")
     public WebElement howWouldYouRateOurServiceTitle;
+    @FindBy(xpath = "//*[text()='Filter by unread']")
+    public WebElement filterByUnreadLink;
 
 
 }

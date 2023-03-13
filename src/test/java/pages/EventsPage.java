@@ -297,9 +297,10 @@ public class EventsPage extends CommonPage{
     @FindBy (xpath = "//input[@class='eventRegister_custom-checkbox__3eYP8']")
     public WebElement iAcceptTheTermsAndConditionsCheckBox;
 
+    // Vural
+    @FindBy(xpath = "//button[text()='Update']")
+    public WebElement updateButton;
+
 
 
 }
-
-
-
