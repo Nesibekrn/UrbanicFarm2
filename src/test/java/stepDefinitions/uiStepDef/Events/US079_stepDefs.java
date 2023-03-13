@@ -30,7 +30,7 @@ public class US079_stepDefs extends CommonPage {
     @When("User updates an event")
     public void userUpdatesAnEvent() {
         getEvent().updateButton.click();
-        getEvent().dateBox.sendKeys(BrowserUtilities.);
+        getEvent().dateBox.sendKeys(BrowserUtilities.getDateForFuture2(5));
         BrowserUtilities.wait(2);
         getEvent().submitButton.click();
         BrowserUtilities.wait(2);
