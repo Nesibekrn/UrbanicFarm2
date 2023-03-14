@@ -37,7 +37,7 @@ public class OrdersPage extends  CommonPage{
 @FindBy(xpath="(//button[@type='button'])[2]")
     public WebElement submitButton;
 
-@FindBy(xpath="//div[@role='alert']")
+@FindBy(xpath="(//div[@role='alert'])[last()]")
     public WebElement alert;
 
 
@@ -89,6 +89,29 @@ public class OrdersPage extends  CommonPage{
     public WebElement howWouldYouRateOurServiceTitle;
     @FindBy(xpath = "//*[text()='Filter by unread']")
     public WebElement filterByUnreadLink;
+
+    @FindBy(xpath = "//p[@class='ProductCard_userName__MaY5h']")
+    public List<WebElement> productUserName;
+
+    @FindBy(xpath = "//a[@aria-label='View larger map']")
+    public WebElement viewLargerMap;
+
+    @FindBy(xpath = "//*[@class='row d-flex justify-content-center']/button[text()='Add to Cart']")
+    public List<WebElement> listAddCartButton;
+
+    @FindBy(xpath = "//button[@class='Point_addToCart__1FBbZ']")
+    public List<WebElement> addCartButtonList;
+
+    @FindBy(xpath = "//div[@class = 'Tabs_containerOfProducts__3o6Pk']")
+    public List<WebElement> allOrderList;
+
+    @FindBy(xpath = "//iframe[@class='my-0 mx-auto d-block shadow mb-5 bg-white rounded']")
+    public WebElement iframeMap;
+
+    @FindBy(css = ".text-center.Chat_close_icon__1r5ZO")
+    public WebElement chatCloseButton;
+
+
 
 
 }
