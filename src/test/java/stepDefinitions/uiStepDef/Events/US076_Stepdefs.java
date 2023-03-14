@@ -47,7 +47,10 @@ public class US076_Stepdefs extends CommonPage {
                 if (!driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
                     eventName=getEvent().registeredEventName.getText();
                     break;
-                }getEvent().alertCloseButton.click();
+                }try{getEvent().alertCloseButton.click();}
+                catch (Exception e){
+                    e.printStackTrace();
+                }
             }
         }
         if (driver.getCurrentUrl().equals("https://test.urbanicfarm.com/account/events")) {
@@ -103,30 +106,36 @@ public class US076_Stepdefs extends CommonPage {
         BrowserUtilities.cleanTextFromWebelemnt(getEvent().numberOfAttendeesBox);
         getEvent().numberOfAttendeesBox.sendKeys(Integer.parseInt(getEvent().numberOfAttendeesBox.getAttribute("min")) + Integer.parseInt(numberOfAttendee.get(0)) + "");
         Assert.assertEquals(alertMessage.get(0),getEvent().numberOfAttendeesBox.getAttribute("validationMessage"));
-        assertTextColor(color.get(0), getEvent().numberOfAttendeesBox);
+        Assert.assertEquals(color.get(0),getEvent().borderColor.getCssValue("box-shadow").split("\\.")[0]);
         Assert.assertFalse(getEvent().approveButton.isEnabled());
+        BrowserUtilities.wait(1);
 
         BrowserUtilities.cleanTextFromWebelemnt(getEvent().numberOfAttendeesBox);
         Assert.assertEquals(alertMessage.get(1),getEvent().numberOfAttendeesBox.getAttribute("validationMessage"));
-        assertTextColor(color.get(1), getEvent().numberOfAttendeesBox);
+        Assert.assertEquals(color.get(1),getEvent().borderColor.getCssValue("box-shadow").split("\\.")[0]);
         Assert.assertFalse(getEvent().approveButton.isEnabled());
+        BrowserUtilities.wait(1);
 
         BrowserUtilities.cleanTextFromWebelemnt(getEvent().numberOfAttendeesBox);
         getEvent().numberOfAttendeesBox.sendKeys(numberOfAttendee.get(2));
-        //Assert.assertEquals(alertMessage.get(2),getEvent().numberOfAttendeesBox.getAttribute("validationMessage"));
-        assertTextColor(color.get(2), getEvent().numberOfAttendeesBox);
+        BrowserUtilities.wait(1);
+        Assert.assertEquals(alertMessage.get(2),getEvent().numberOfAttendeesBox.getAttribute("validationMessage"));
+        Assert.assertEquals(color.get(2),getEvent().borderColor.getCssValue("box-shadow").split("\\.")[0]);
         Assert.assertFalse(getEvent().approveButton.isEnabled());
+        BrowserUtilities.wait(1);
 
         BrowserUtilities.cleanTextFromWebelemnt(getEvent().numberOfAttendeesBox);
         getEvent().numberOfAttendeesBox.sendKeys(Integer.parseInt(getEvent().numberOfAttendeesBox.getAttribute("max")) + Integer.parseInt(numberOfAttendee.get(3)) + "");
         Assert.assertTrue(getEvent().numberOfAttendeesBox.getAttribute("validationMessage").contains(alertMessage.get(3)));
-        assertTextColor(color.get(0), getEvent().numberOfAttendeesBox);
+        Assert.assertEquals(color.get(3),getEvent().borderColor.getCssValue("box-shadow").split("\\.")[0]);
         Assert.assertFalse(getEvent().approveButton.isEnabled());
+        BrowserUtilities.wait(1);
 
         BrowserUtilities.cleanTextFromWebelemnt(getEvent().numberOfAttendeesBox);
         getEvent().numberOfAttendeesBox.sendKeys(numberOfAttendee.get(4));
-        assertTextColor(color.get(0), getEvent().numberOfAttendeesBox);
+        Assert.assertEquals(color.get(4),getEvent().borderColor.getCssValue("box-shadow").split("\\.")[0]);
         Assert.assertFalse(getEvent().approveButton.isEnabled());
+        BrowserUtilities.wait(1);
     }
 
     @When("User doesn't click to checkbox approve button is disabled")
@@ -151,14 +160,9 @@ public class US076_Stepdefs extends CommonPage {
                 JSutilities.clickWithJS(getCartPage().paypal_btnLogin_up);
                 BrowserUtilities.wait(3);
             }
-
-
             if (BrowserUtilities.isDisplayed(commonPage.getPayPalPage().email)) {
-
-//            BrowserUtilities.cleanTextFromWebelemnt(commonPage.getPayPalPage().email);
                 commonPage.getPayPalPage().email.clear();
                 commonPage.getPayPalPage().email.sendKeys(ConfigurationReader.getProperty("paypal_username"));
-
 
                 if (BrowserUtilities.isDisplayed(commonPage.getPayPalPage().password)) {
                     commonPage.getPayPalPage().password.sendKeys(ConfigurationReader.getProperty("paypal_password"));
@@ -171,17 +175,13 @@ public class US076_Stepdefs extends CommonPage {
             BrowserUtilities.scrollAndClickWithJS(commonPage.getPayPalPage().payment_submit_btn);
         }
     }
-
     @And("User clicks to register button of registered event")
     public void userClicksToRegisterButtonOfRegisteredEvent() {
-
         BrowserUtilities.wait(1);
         try{BrowserUtilities.scrollAndClickWithJS(getEvent().registerButton.get(1));}catch(Exception e){
             e.printStackTrace();
         }
-
     }
-
     @And("User verifies {string} alert is disabled")
     public void userVerifiesAlertIsDisabled(String alert) {
         BrowserUtilities.wait(1);
@@ -190,7 +190,6 @@ public class US076_Stepdefs extends CommonPage {
         payLoad2.put("eventId",eventId);
         response=given().spec(requestSpecification(ConfigurationReader.getProperty("sellerTokenOmer"))).formParams(payLoad2).post("/account/event/delete");
         response.prettyPrint();
-
 
         Map<String,Object> adressDeletePayload =new HashMap<>();
         adressDeletePayload.put("addressId",adressId);
