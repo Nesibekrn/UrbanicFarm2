@@ -2,21 +2,18 @@ package stepDefinitions.apiStepDef;
 
 import enums.USER;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
-import utilities.ApiUtilities;
 
 import java.util.*;
 
 import static io.restassured.RestAssured.given;
 
-public class AllProducts {
+public class US097_StepDefs {
     Response response;
     RequestSpecification specification = new RequestSpecBuilder()
             .addHeader("Authorization", "Bearer " + USER.BUYER2.getToken())
@@ -53,4 +50,6 @@ public class AllProducts {
         Assert.assertEquals(true,response.jsonPath().getBoolean("success"));
 
     }
+
+
 }
