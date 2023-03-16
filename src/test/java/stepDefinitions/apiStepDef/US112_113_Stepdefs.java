@@ -1,4 +1,4 @@
-package stepDefinitions;
+package stepDefinitions.apiStepDef;
 
 import enums.USER;
 import io.cucumber.java.en.And;

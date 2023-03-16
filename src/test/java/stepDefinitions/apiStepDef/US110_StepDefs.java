@@ -36,15 +36,15 @@ public class US110_StepDefs {
 
     }
 
-//   @Then("User verifies the status code is {int}")
-//    public void user_verifies_the_status_code_is(int statusCode) {
-//
-//        Assert.assertEquals(statusCode,response.statusCode());
+   @Then("User verifies the status code is {int}")
+    public void user_verifies_the_status_code_is(int statusCode) {
+
+        Assert.assertEquals(statusCode,response.statusCode());
 
 
 
 
-//    }
+    }
 
 
 }
