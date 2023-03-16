@@ -13,10 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.requestSpecification;
 import static utilities.ApiUtilities.requestSpecification;
 
-public class US0118_StepDefs {
+public class US0118_119_StepDefs {
     Map<String, Object> body = new HashMap<>();
 
     Response response;
