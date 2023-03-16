@@ -58,6 +58,8 @@ public class US086_StepDefs {
 
     @Then("user gets the status code {int}")
     public void userGetsTheStatusCode(int statusCode) {
+
+
         Assert.assertEquals(statusCode, response.statusCode());
     }
 

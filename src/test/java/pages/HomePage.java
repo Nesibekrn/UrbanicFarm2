@@ -182,6 +182,9 @@ public class HomePage extends CommonPage {
     @FindBy(xpath = "//span[@class='Navbar_cartText__1jkrK']")
     public WebElement go_to_cart_button;
 
+    @FindBy(xpath = "(//*[text()='Contact Us'])[2]")
+    public WebElement contactUsNavbar;
+
 
     public List<WebElement> getProductNames() {
 

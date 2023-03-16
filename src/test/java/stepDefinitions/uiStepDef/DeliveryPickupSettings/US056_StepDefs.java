@@ -14,6 +14,7 @@ import utilities.BrowserUtilities;
 
 import java.util.List;
 
+import static stepDefinitions.Hooks.actions;
 import static stepDefinitions.Hooks.driver;
 
 
@@ -46,6 +47,18 @@ public class US056_StepDefs extends CommonPage {
         Assert.assertTrue(getDeliveryPickupSettingsPage().sellerFlexibleDeliveryCheckbox.isEnabled());
         Assert.assertTrue(getDeliveryPickupSettingsPage().buyerPicksUpCheckbox.isEnabled());
         BrowserUtilities.wait(5);
+        if (getDeliveryPickupSettingsPage().buyerPicksUpOnTheVineCheckbox.isSelected())
+        {
+            getDeliveryPickupSettingsPage().buyerPicksUpOnTheVineCheckbox.click();
+        }
+        if (getDeliveryPickupSettingsPage().buyerPicksUpCheckbox.isSelected())
+        {
+            getDeliveryPickupSettingsPage().buyerPicksUpCheckbox.click();
+        }
+        if (getDeliveryPickupSettingsPage().sellerFlexibleDeliveryCheckbox.isSelected())
+        {
+            getDeliveryPickupSettingsPage().sellerFlexibleDeliveryCheckbox.click();
+        }
         if (getDeliveryPickupSettingsPage().sellerDeliversTheProductsCheckbox.isSelected()) {
             System.out.println("Appropriate option is selected");
         } else {
@@ -66,6 +79,7 @@ public class US056_StepDefs extends CommonPage {
                 Assert.assertEquals("Please select an option", element.getAttribute("validationMessage"));
             } else {
                 element.click();
+                actions.sendKeys(Keys.END).perform();
                 BrowserUtilities.cleanTextFromWebelemnt(element);
                 element.sendKeys(Keys.ENTER);
                 BrowserUtilities.wait(1);
