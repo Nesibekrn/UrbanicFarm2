@@ -1,4 +1,5 @@
 Feature: As a user, I should be able to receive all products' details
+ @US097
   Scenario: User should be able to receive all products details
 
 
