@@ -1,16 +1,17 @@
 Feature:US112_TC001_As a user, I should be able to register an existing event
 
   @API
-  @US110
+  @US112_113
   Scenario: To check register in existing event
     Given User logs in as Seller with API
+    And User creates Address
     And User creates Event
     And User gets Register
     Then User verifies success message is true
-    Then User verifies if status code is 200
+    Then User verifies if status code is 200 on Event
     And User Go To Payment
     Then User verifies success message is true
-    Then User verifies if status code is 200
+    Then User verifies if status code is 200 on Event
 
 
 #  Events
