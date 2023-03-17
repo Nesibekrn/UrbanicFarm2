@@ -6,6 +6,7 @@ import utilities.BrowserUtilities;
 import utilities.JSutilities;
 
 import static stepDefinitions.Hooks.commonPage;
+import static stepDefinitions.Hooks.driver;
 
 public class US011_StepDefs  {
     @Then("User assert register now button is clickable")
@@ -17,4 +18,6 @@ public class US011_StepDefs  {
     public void userClicksOnRegisterNowButton(){
         JSutilities.clickElementByJS(commonPage.getHomePage().registernow);
     }
+
+
 }
