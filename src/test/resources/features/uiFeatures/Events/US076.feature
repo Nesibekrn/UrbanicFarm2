@@ -14,11 +14,11 @@ Feature:
     Then  user clicks on events
     And  user clicks on Register button on events page
     Then enter data and verifies approve button is disabled and frame color is red
-      | Negative value                | -1 | Value must be greater than or equal to 0. | rgba(37, 44, 67, 1) |
-      | Blank                         |    | Please fill out this field.               | rgba(37, 44, 67, 1) |
-      | Zero                          | 0  | Value must be bigger than 0.              | rgba(37, 44, 67, 1)|
-      | Upper value of attendee limit | 1  | Value must be less than or equal to       | rgba(37, 44, 67, 1)|
-      | Valid value                   | 1  |                                           | rgba(37, 44, 67, 1)|
+      | Negative value                | -1 | Value must be greater than or equal to 0. | rgba(255, 0, 0, 0 |
+      | Blank                         |    | Please fill in this field.                | rgba(255, 0, 0, 0 |
+      | Zero                          | 0  | Value must be bigger than 0.              | rgba(255, 0, 0, 0 |
+      | Upper value of attendee limit | 1  | Value must be less than or equal to       | rgba(255, 0, 0, 0 |
+      | Valid value                   | 1  |                                           | none              |
     When  User doesn't click to checkbox approve button is disabled
     Then User clicks to checkbox
     And  User clicks to approve button
@@ -27,4 +27,3 @@ Feature:
     And  User verifies "You've already registered this event. Please check 'Registered Events' tab." alert is disabled
 
 
-#    GEÇTİ AMA BİZİ KANDIRIYOR.. SON VERİMİZ VALİD ONDA DA KIRMIZI CERCEVE VARMIŞ GİBİ DOĞRULADI.. EZRA HOCAYLA ÇALIŞIRSANIZ SORMAYI UNUTMAYIN.. KOLAY GELSİN

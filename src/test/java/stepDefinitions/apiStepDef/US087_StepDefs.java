@@ -21,7 +21,9 @@ public class US087_StepDefs {
 
     @When("User adds addresses {string},{string},{string},{string},{string},{string},{string},{string}")
     public void userAddsAddresses(String address, String city, String isDefault, String isSellerAddress, String postal, String state, String title, String emptyBasket) {
-        ApiUtilities.Address.addAddress(address, city, Boolean.parseBoolean(isDefault), Boolean.parseBoolean(isSellerAddress), postal, state, title, Boolean.parseBoolean(emptyBasket), token);
+
+        ApiUtilities.Address.addAddress(address, city, Boolean.parseBoolean(isDefault),
+                Boolean.parseBoolean(isSellerAddress), postal, state, title, Boolean.parseBoolean(emptyBasket), token);
         response.prettyPrint();
     }
 }

@@ -300,7 +300,11 @@ public class EventsPage extends CommonPage{
     // Vural
     @FindBy(xpath = "//button[text()='Update']")
     public WebElement updateButton;
+    @FindBy(css = ".eventRegister_miniBox__2Ukis.ml-4")
+    public WebElement borderColor;
 
-
+    //Rumeysa US074
+    @FindBy (xpath = "//div[@class='CreateEvents_inlineErrormsg__2AiUS']")
+    public List<WebElement> alertAddAddressMessage;
 
 }
