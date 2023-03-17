@@ -1,18 +1,14 @@
 package stepDefinitions.apiStepDef;
 
-import com.github.javafaker.Faker;
-import com.thoughtworks.qdox.model.expression.Add;
-import enums.USER;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import utilities.ApiUtilities;
 
 import java.util.List;
 import java.util.Random;
 
-import static stepDefinitions.apiStepDef.US_082_StepDefs.token;
+import static stepDefinitions.apiStepDef.US082_StepDefs.token;
 
-public class US_088_StepDefs {
+public class US088_StepDefs {
 
 
     Integer id;
