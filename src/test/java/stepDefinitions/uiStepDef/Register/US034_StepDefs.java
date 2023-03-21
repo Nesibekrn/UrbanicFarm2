@@ -1,11 +1,13 @@
 package stepDefinitions.uiStepDef.Register;
 
+import com.github.javafaker.Faker;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pages.CommonPage;
 import utilities.BrowserUtilities;
 
@@ -18,8 +20,14 @@ import static stepDefinitions.Hooks.*;
 
 public class US034_StepDefs extends CommonPage {
 
+    static Faker faker = new Faker();
+    Actions actions = new Actions(driver);
     List<String> lastNames = new ArrayList<>(Arrays.asList("Apaydin", "Duyarer", "Siler", "Basar"));
     Random rand = new Random();
+    public static String firstname=faker.name().firstName();
+    public static String middleName=faker.name().firstName();
+    public static String lastName=faker.name().lastName().replaceAll("[^A-Za-z]", "");
+    public static String email=faker.internet().emailAddress().toLowerCase();
 
     @And("user fills out the registration form")
     public void userFillsOutTheRegistrationForm() {

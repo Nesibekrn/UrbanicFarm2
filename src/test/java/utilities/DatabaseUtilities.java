@@ -6,7 +6,7 @@ import java.sql.*;
 public class DatabaseUtilities {
     private static Connection connection;
     private static Statement statement;
-    private static ResultSet resultSet;
+    public static ResultSet resultSet;
 
     /**
      * method database connection i olusturmak icin kullanildi
@@ -17,9 +17,9 @@ public class DatabaseUtilities {
     public static void createConnection() {
         try {
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://51.158.110.102:3366/urbanicfarm",
-                    "urbanicfarm_mysql_user",
-                    "urbanicfarm_mysql_password"
+                    ConfigurationReader.getProperty("url"),
+                    ConfigurationReader.getProperty("username"),
+                    ConfigurationReader.getProperty("password")
             );
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -65,7 +65,8 @@ public class DatabaseUtilities {
      * @author omeryttnc
      * @since 11.02.2023
      */
-    public static void executeQuerry(String sql) {
+
+    public static void executeQuery(String sql) {
         try {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
