@@ -12,7 +12,7 @@ Feature: US123
     And user clicks on registration button on the navbar
     And user fills out the registration form
     And user clicks on Register button
-    Then user verifies following column names are present in "user"
+    Then user verifies following column names are present in "user" table
       | email      |
       | first_name |
       | id         |
