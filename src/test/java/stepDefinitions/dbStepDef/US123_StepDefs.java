@@ -65,8 +65,8 @@ public class US123_StepDefs {
         }
     }
 
-    @Then("user verifies following column names are present in {string}")
-    public void userVerifiesFollowingColumnNamesArePresentIn(String tableName, DataTable dataTable) throws SQLException {
+    @Then("user verifies following column names are present in {string} table")
+    public void userVerifiesFollowingColumnNamesArePresentInTable(String tableName, DataTable dataTable) throws SQLException {
         List<String> columnNames = dataTable.column(0);
         /*
         DatabaseUtilities.executeQuery("SELECT * from user");
