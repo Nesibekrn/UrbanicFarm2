@@ -10,3 +10,4 @@ Feature: US126
   Scenario: TC001
     Given user connect to the database
     And user send the query to the promo code table
+    And user send query for code colum om the promo code table

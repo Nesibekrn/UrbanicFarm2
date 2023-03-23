@@ -17,15 +17,22 @@ public class US126_StepDefs {
 
     @And("user send the query to the promo code table")
     public void userSendTheQueryToThePromoCodeTable() throws SQLException {
-        DatabaseUtilities.executeQuery("select * from promo_code");
+        DatabaseUtilities.executeQuery("select * from promo_code where discount_type = 'percentage'");
 //       resultSet=executeQuery("select * from promo_code");
         while (resultSet.next()) {
 
             System.out.println(resultSet.getString(1));
             System.out.println(resultSet.getString("code"));
             System.out.println(resultSet.getString(3));
-            System.out.println(resultSet.getMetaData());
             System.out.println(resultSet.getString("discount_type"));
         }
+    }
+
+    @And("user send query for code colum om the promo code table")
+    public void userSendQueryForCodeColumOmThePromoCodeTable() throws SQLException {
+        DatabaseUtilities.executeQuery("select * from promo_code where code = 'Jackie Funk' and id = '10'");
+        resultSet.next();
+        System.out.println(resultSet.getString("code"));
+        System.out.println(resultSet.getString("id"));
     }
 }
