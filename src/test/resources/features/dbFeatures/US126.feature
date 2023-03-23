@@ -5,7 +5,6 @@
 # I should see user informations in the correct columns, eg : id;1905 name; burakPromo
 
 Feature: US126
-
   @DB
   Scenario: TC001
     Given user connect to the database
