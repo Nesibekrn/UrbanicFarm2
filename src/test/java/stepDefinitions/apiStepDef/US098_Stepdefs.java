@@ -46,6 +46,7 @@ public class US098_Stepdefs {
 
     @Then("User verifies success is true")
     public void userVerifiesSuccessIsTrue() {
+
         Assert.assertTrue(response.jsonPath().getBoolean("success"));
     }
 

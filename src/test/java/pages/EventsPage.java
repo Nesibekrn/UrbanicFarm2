@@ -307,4 +307,13 @@ public class EventsPage extends CommonPage{
     @FindBy (xpath = "//div[@class='CreateEvents_inlineErrormsg__2AiUS']")
     public List<WebElement> alertAddAddressMessage;
 
+    //US128
+    @FindBy (xpath = "//h5[@class='text-center text-warning mt-3']")
+    public List<WebElement> myEventsList;
+
+    @FindBy (xpath = "//button[@class='events-i-organize_accordionTab__166n1 events-i-organize_accordionActive__3YSTx']")
+    public WebElement myScheduledEvents;
+
+    @FindBy (xpath = "//article[contains(@class,'events-i-organize_accordionActive__3YSTx')]//h5[@class='text-center text-warning mt-3']")
+    public List<WebElement> myEventsList2;
 }

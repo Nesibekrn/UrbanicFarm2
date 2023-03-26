@@ -55,8 +55,10 @@ public class US116_117_StepDefs {
 
     }
 
-    @And("User verifies success is true")
-    public void userVerifiesSuccessIsTrue() {
+    @And("User verifies success is true for Event")
+    public void userVerifiesSuccessIsTrueForEvent() {
+
+
         Assert.assertTrue(response.jsonPath().getBoolean("success"));
     }
 
