@@ -2,7 +2,6 @@ package stepDefinitions.apiStepDef;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.restassured.response.Response;
 import org.junit.Assert;
 import utilities.ApiUtilities;
 import utilities.ConfigurationReader;
@@ -14,7 +13,7 @@ import static io.restassured.RestAssured.given;
 import static utilities.ApiUtilities.requestSpecification;
 import static utilities.ApiUtilities.response;
 
-public class US_109_StepDefs {
+public class US109_StepDefs {
 
     String token;
 
