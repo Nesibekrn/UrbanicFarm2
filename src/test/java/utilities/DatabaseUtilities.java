@@ -66,12 +66,9 @@ public class DatabaseUtilities {
      * @since 11.02.2023
      * @return
      */
-<<<<<<< HEAD
-    public static ResultSet executeQuerry(String sql) {
-=======
 
-    public static void executeQuery(String sql) {
->>>>>>> main
+    public static ResultSet executeQuery(String sql) {
+
         try {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
@@ -81,7 +78,7 @@ public class DatabaseUtilities {
         return null;
     }
 
-    public static void updateQuerry(String sql) {
+    public static void updateQuery(String sql) {
         try {
             statement = connection.createStatement();
             int i = statement.executeUpdate(sql);
@@ -98,10 +95,10 @@ public class DatabaseUtilities {
      * @since 11.02.2023
      */
     public static void approveLastProduct() {
-        updateQuerry("UPDATE `hub_product` SET `product_listing_state` = 'APPROVED' WHERE `product_listing_state` LIKE 'IN_REVIEW' order BY id DESC;");
+        updateQuery("UPDATE `hub_product` SET `product_listing_state` = 'APPROVED' WHERE `product_listing_state` LIKE 'IN_REVIEW' order BY id DESC;");
 
     }
     public static void deleteUsedPromoCode(){
-        updateQuerry("DELETE FROM promo_code_user");
+        updateQuery("DELETE FROM promo_code_user");
     }
 }

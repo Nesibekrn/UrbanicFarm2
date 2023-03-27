@@ -6,7 +6,6 @@ import utilities.DatabaseUtilities;
 
 import java.sql.SQLException;
 
-import static utilities.DatabaseUtilities.executeQuery;
 import static utilities.DatabaseUtilities.resultSet;
 
 public class US126_StepDefs {
