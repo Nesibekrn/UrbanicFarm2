@@ -29,7 +29,7 @@ public class US062_stepDefs extends CommonPage {
 
     @And("the user clicks account name")
     public void theUserClicksAccountName() {
-        BrowserUtilities.wait(2);
+        BrowserUtilities.wait(4);
         getAccountPage().accountName.click();
         BrowserUtilities.wait(2);
     }

@@ -56,10 +56,17 @@ public class Driver {
             chromeOptions.addArguments("--window-size=1920,1080");
             chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--disable-dev-shm-usage");
+            chromeOptions.addArguments("--remote-allow-origins=*");
+            chromeOptions.addArguments("−−lang=en");
+            chromeOptions.addArguments("lang=en-GB");
+
         } else {
             chromeOptions.addArguments("use-fake-ui-for-media-stream");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--window-size=1920,1080");
+            chromeOptions.addArguments("--remote-allow-origins=*");
+            chromeOptions.addArguments("−−lang=en");
+            chromeOptions.addArguments("lang=en-GB");
         }
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();

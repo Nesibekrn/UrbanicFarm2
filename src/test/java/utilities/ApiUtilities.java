@@ -46,7 +46,7 @@ public class ApiUtilities {
                 .baseUri("https://test.urbanicfarm.com/api")
                 .post("/public/login");
 
-        response.prettyPrint();
+        //response.prettyPrint();
         token = response.jsonPath().getString("token");
         return token;
     }

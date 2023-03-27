@@ -8,7 +8,7 @@ import utilities.ApiUtilities;
 
 import static utilities.ApiUtilities.response;
 
-public class US_082_StepDefs {
+public class US082_StepDefs {
     public static
     String token;
     @Given("user connects to the {string} api")

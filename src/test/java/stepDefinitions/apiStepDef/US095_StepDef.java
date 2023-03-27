@@ -2,7 +2,6 @@ package stepDefinitions.apiStepDef;
 
 import enums.USER;
 import enums.USERINFO;
-import io.cucumber.gherkin.internal.com.eclipsesource.json.JsonObject;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.builder.RequestSpecBuilder;
@@ -15,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import static io.restassured.RestAssured.given;
 
-public class US095_stepDef {
+public class US095_StepDef {
     String token;
     public static Response response;
     public static RequestSpecification specification;
