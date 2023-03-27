@@ -1,4 +1,4 @@
-package stepDefinitions.databaseStepDef;
+package stepDefinitions.dbStepDef;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -14,7 +14,7 @@ import java.util.List;
 import static utilities.DatabaseUtilities.resultSet;
 
 
-public class US125_databaseStepDef {
+public class US125_StepDefs {
 
 
 
