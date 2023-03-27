@@ -194,6 +194,17 @@ public class HomePage extends CommonPage {
 
     }
 
+    // Gülsüm & Nida
+
+    @FindBy (xpath = "//div[@class='Chat_chatBtn__1R54Q']")
+    public WebElement sendMessageIcon;
+
+    @FindBy (xpath = "//div[@class='col-4 pb-5 Chat_conversation_card_container__D00UY']/div")
+    public List<WebElement> sendMessageParticipant;
+
+    @FindBy (xpath = "//input[@class='Chat_input__1XjY8']")
+    public WebElement enterToSendMessage;
+
 }
 
 

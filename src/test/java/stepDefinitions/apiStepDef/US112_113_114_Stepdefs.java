@@ -4,6 +4,7 @@ import enums.USER;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
@@ -16,7 +17,8 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static utilities.ApiUtilities.requestSpecification;
 
-public class US112_113_Stepdefs {
+public class US112_113_114_Stepdefs {
+    String orderId;
     Map<String, Object> body = new HashMap<>();
 
     Response response;
@@ -79,6 +81,7 @@ public class US112_113_Stepdefs {
                 body(body).
                 post("/account/event/attendance/gotopayment");
         response.prettyPrint();
+        orderId = response.jsonPath().getString("orderId");
     }
 
     @And("User creates Address")
@@ -94,5 +97,29 @@ public class US112_113_Stepdefs {
         response = given().contentType(ContentType.JSON).spec(requestSpecification(tokenBuyer)).body(body).post("/account/address/addAddress");
         response.prettyPrint();
         addressId = response.jsonPath().getInt("address.id");
+    }
+
+    @When("User checks the Order Status")
+    public void userChecksTheOrderStatus() {
+        body.put("orderId",orderId);
+        response = given().spec(requestSpecification(token)).contentType(ContentType.JSON).body(body).post("/account/event/attendance/checkOrder");
+        response.prettyPrint();
+
+    }
+    @And("User deletes created event")
+    public void userDeletesCreatedEvent() {
+        body.put("eventId",eventId);
+        response = given().spec(requestSpecification(tokenBuyer)).contentType(ContentType.JSON).body(body).post("/account/event/delete");
+        response.prettyPrint();
+        Assert.assertTrue(response.jsonPath().getBoolean("success"));
+    }
+
+    @And("User deletes created address")
+    public void userDeletesCreatedAddress() {
+        body.put("addressId",addressId);
+        response = given().spec(requestSpecification(tokenBuyer)).contentType(ContentType.JSON).body(body).post("/account/address/delete");
+        response.prettyPrint();
+        Assert.assertTrue(response.jsonPath().getBoolean("success"));
+
     }
 }
