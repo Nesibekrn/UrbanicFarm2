@@ -27,7 +27,7 @@ public class US125_StepDefs {
     @And("see all column names by sending column names query")
     public void seeAllColumnNamesBySendingColumnNamesQuery() throws SQLException{
 
-       DatabaseUtilities.executeQuerry("select id, title,unique_name, hub_title ,descr  from product");
+       DatabaseUtilities.executeQuery("select id, title,unique_name, hub_title ,descr  from product");
         ResultSetMetaData rsmd = resultSet.getMetaData();
 //        while ( resultSet.next()) {
 
@@ -43,7 +43,7 @@ public class US125_StepDefs {
     @And("check product columns name by sending data table")
     public void checkProductColumnsNameBySendingDataTable(DataTable dataTable) throws SQLException {
         List<String> columnNames = dataTable.column(0);
-        DatabaseUtilities.executeQuerry("select " + columnNames.get(0) + "," + columnNames.get(1) + "," + columnNames.get(2) + " from product");
+        DatabaseUtilities.executeQuery("select " + columnNames.get(0) + "," + columnNames.get(1) + "," + columnNames.get(2) + " from product");
         ResultSetMetaData rsmd = resultSet.getMetaData();
         resultSet.next();
         System.out.println(" ");
@@ -59,7 +59,7 @@ public class US125_StepDefs {
 
         for (int i = 0; i <productNames.size() ; i++) {
 
-        DatabaseUtilities.executeQuerry("select * from product where unique_name = '"+productNames.get(i)+"'");
+        DatabaseUtilities.executeQuery("select * from product where unique_name = '"+productNames.get(i)+"'");
 int count=0;
 while(resultSet.next()) {
     count++;

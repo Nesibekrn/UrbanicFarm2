@@ -7,9 +7,7 @@ import pages.CommonPage;
 import utilities.BrowserUtilities;
 import utilities.DatabaseUtilities;
 
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 

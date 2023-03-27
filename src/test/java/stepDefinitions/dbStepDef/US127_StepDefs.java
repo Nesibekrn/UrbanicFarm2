@@ -2,7 +2,6 @@ package stepDefinitions.dbStepDef;
 
 import com.github.javafaker.Faker;
 import enums.USER;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
