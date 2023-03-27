@@ -1,4 +1,5 @@
 Feature:As a user, I should be able to change availability for buyer picks up
+  @UF2-354
   Scenario:Delivery & Pick Up Settings
   User should be able to change availability for buyer picks up.
 

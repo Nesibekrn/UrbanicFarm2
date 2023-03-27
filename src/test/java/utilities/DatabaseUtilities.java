@@ -64,15 +64,21 @@ public class DatabaseUtilities {
      * @param sql
      * @author omeryttnc
      * @since 11.02.2023
+     * @return
      */
+<<<<<<< HEAD
+    public static ResultSet executeQuerry(String sql) {
+=======
 
     public static void executeQuery(String sql) {
+>>>>>>> main
         try {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sql);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return null;
     }
 
     public static void updateQuerry(String sql) {
