@@ -25,15 +25,8 @@ import static stepDefinitions.Hooks.*;
 public class BrowserUtilities {
     static Random random = new Random();
 
-    public static void loginMethod(USERINFO userinfo) {
-        driver.get("https://test.urbanicfarm.com/auth/login");
-        commonPage.getLoginPage().loginMethod(userinfo);
-    }
 
-    public static void loginMethod(String userName, String password) {
-        driver.get("https://test.urbanicfarm.com/auth/login");
-        commonPage.getLoginPage().loginMethod(userName, password);
-    }
+
 
     public static void wait(int second) {
         try {
@@ -405,12 +398,7 @@ public class BrowserUtilities {
     }
 
 
-    public static void toastMessageAssertion(String toastMessage) {
-        BrowserUtilities.waitForClickable(commonPage.getAccountPage().toastMessage);
-        String actualToastMessage = commonPage.getAccountPage().toastMessage.getText();
-        String expectedToastMessage = toastMessage;
-        Assert.assertEquals(expectedToastMessage, actualToastMessage);
-    }
+
 
     public static void verifyElementEnabled(WebElement element) {
         Assert.assertTrue(element.isEnabled());

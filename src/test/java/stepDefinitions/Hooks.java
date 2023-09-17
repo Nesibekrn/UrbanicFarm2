@@ -11,7 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import pages.CommonPage;
+
 import utilities.BrowserUtilities;
 import utilities.DatabaseUtilities;
 import utilities.Driver;
@@ -19,7 +19,7 @@ import utilities.Driver;
 
 public class Hooks {
     public static WebDriver driver;
-    public static CommonPage commonPage;
+
 
 
     public static Actions actions;
@@ -57,13 +57,7 @@ public class Hooks {
 
         driver = Driver.getDriver();
 
-        commonPage = new CommonPage() {
-        };
-        actions = new Actions(driver);
-        faker=new Faker();
-
     }
-
     @After(value = "@UI")
     public void tearDown(Scenario scenario) {
 
@@ -87,14 +81,6 @@ public class Hooks {
         DatabaseUtilities.closeConnection();
     }
 
-    @Before(order = 2, value = "@buyer")
-    public void loginAsBasic() {
-        BrowserUtilities.loginMethod(USERINFO.BUYER);
-    }
 
-    @Before(order = 2, value = "@seller")
-    public void loginAsStandard() {
-        BrowserUtilities.loginMethod(USERINFO.SELLER);
-    }
 
 }
